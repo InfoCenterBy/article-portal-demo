@@ -10215,6 +10215,46 @@ if (btnsDropdown) {
   });
 }
 
+function initSearchClear() {
+  document.querySelectorAll(".search-container").forEach((container) => {
+    const input = container.querySelector(".search-input");
+    const clearBtn = container.querySelector(".search-clear");
+
+    function updateClearButton() {
+      clearBtn.hidden = input.value.trim() === "";
+    }
+
+    function clearSearch() {
+      input.value = "";
+      input.focus();
+      clearBtn.hidden = true;
+    }
+
+    input.addEventListener("input", updateClearButton);
+    clearBtn.addEventListener("click", clearSearch);
+
+    updateClearButton();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initSearchClear);
+
+function initProgressBar() {
+  const progressBar = document.querySelector(".progress");
+
+  function updateProgress() {
+    if (progressBar) {
+      const progress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      progressBar.style.transform = `scaleX(${progress})`;
+    }
+  }
+
+  window.addEventListener("scroll", updateProgress);
+  updateProgress();
+}
+
+document.addEventListener("DOMContentLoaded", initProgressBar);
+
 // document.addEventListener("click", (e) => {
 //   if (
 //     !e.target.closest(
