@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<title>Главная</title>
+	<title>Уведомление</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -194,12 +194,11 @@
           <div class="header-notification-btn header-button-notification header-button-new-label flex-row align-items-center">
                <i class="bi bi-megaphone"></i>
           </div>
-          <div class="header-button header-button-enter header-button-notification flex-row align-items-center" type="button" class="how"
-               data-bs-toggle="dropdown" aria-expanded="true" data-bs-auto-close="outside">
-               <span>Иванова И.И.</span>
+          <a href="personal-area.html" class="header-button header-button-enter header-button-notification flex-row align-items-center" type="button">
+               <span class="header-login-name">Иванова И.И.</span>
                <div class="header-button__hr"></div>
                <i class="icon-circle-user"></i>
-          </div>
+          </a>
           <div class="dropdown-menu dropdown-menu-user dropdown-menu-end py-2 border-10" data-popper-placement="bottom-end">
                <div class="dropdown-menu-wrapper">
                     <div class="dropdown-arrow"></div>
@@ -216,6 +215,7 @@
                     <a href="new-main.html" class="py-2 px-3 d-block"><i class="bi bi-box-arrow-right me-3"></i>Выйти</a>
                </div>
           </div>
+
           <div class="header-button header-button-subscribe flex-row align-items-center">
                <span>Оформить доступ</span>
                <div class="header-button__hr"></div>
@@ -265,8 +265,7 @@
 					<a href="">Медиатека</a>
 					<a href="" class="d-flex flex-row align-items-center color-gold">
 						<span>Еще</span>
-						<i class="bi-chevron-right ms-1 bi hover-gold"
-							style="font-size: 14px; line-height: 14px; margin-top: 2px"></i>
+						<i class="bi-chevron-right ms-1 bi hover-gold" style="font-size: 14px; line-height: 14px; margin-top: 2px"></i>
 					</a>
 				</div>
 			</div>
@@ -358,6 +357,14 @@
 			<a href="/payment/">Оплата доступа</a>
 		</div>
 	</div>
+	<div class="nav-link" title="Оплата доступа">
+		<a href="support.html" class="nav-link__icon-simple">
+			<i class="bi bi-gear"></i>
+		</a>
+		<div class="nav-link__text">
+			<a href="support.html">Техническая поддержка</a>
+		</div>
+	</div>
 	<a class="nav-hidden mt-3 subcribe-btn" href="#"> Оформить доступ </a>
 	<div class="nav-hidden mt-2 text-center">
 		<span class="d-block">Телефон для консультации:</span>
@@ -430,12 +437,15 @@
         <div class="sidebar-wrapper__content pt-0">
           <h2 class="h2">Новое на Padatak.by</h2>
           <div class="d-flex flex-column gap-3">
-            <div class="item-notification">
+            <div class="item-notification border-gold bg-white-gray">
               <div class="item-notification__icon">
                 <i class="bi bi-card-heading"></i>
               </div>
               <div class="item-notification__info">
-                <p class="mb-2 color-gray fs-14">Сервис</p>
+                <div class="d-flex justify-content-between gap-3">
+                  <p class="mb-2 color-gray-dark fs-14">Сервис</p>
+                  <p class="mb-2 color-gray-dark fs-14">11.11.2025</p>
+                </div>
                 <a href="#" class="item-notification__title fs-18 mb-3 d-block">График подключения к СККО кассовых суммирующих аппаратов, совмещенных с
                   таксометрами</a>
                 <p class="fs-14 mb-0">Для обеспечения своевременного выполнения требований законодательства субъектам хозяйствования, осуществляющим
@@ -456,7 +466,10 @@
                 <i class="bi bi-card-heading"></i>
               </div>
               <div class="item-notification__info">
-                <p class="mb-2 color-gray fs-14">Сервис</p>
+                <div class="d-flex justify-content-between gap-3">
+                  <p class="mb-2 color-gray fs-14">Сервис</p>
+                  <p class="mb-2 color-gray fs-14">11.11.2025</p>
+                </div>
                 <a href="#" class="item-notification__title fs-18 mb-3 d-block">График подключения к СККО кассовых суммирующих аппаратов, совмещенных с
                   таксометрами</a>
                 <p class="fs-14 mb-0">Для обеспечения своевременного выполнения требований законодательства субъектам хозяйствования, осуществляющим
@@ -504,7 +517,8 @@
                          <nav class="menu-footer">
                               <div class="menu-footer__collapse">
                                    <a href="forms-of-documents.html" class="menu-footer__link">Аналитические материалы</a>
-                                   <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-forms-doc-collapse" aria-expanded="false" aria-current="true">
+                                   <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-forms-doc-collapse"
+                                        aria-expanded="false" aria-current="true">
                                         <i class="bi bi-chevron-down"></i>
                                    </button>
                               </div>
@@ -536,7 +550,8 @@
                          <nav class="menu-footer">
                               <div class="menu-footer__collapse">
                                    <a href="#" class="menu-footer__link">Информация о платформе</a>
-                                   <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-ref-info-collapse" aria-expanded="false" aria-current="true">
+                                   <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-ref-info-collapse"
+                                        aria-expanded="false" aria-current="true">
                                         <i class="bi bi-chevron-down"></i>
                                    </button>
                               </div>
@@ -546,6 +561,7 @@
                                    <li><a href="#" class="submenu-footer__link">Политика обработки персональных данных</a></li>
                                    <li><a href="#" class="submenu-footer__link">Пользовательское соглашение</a></li>
                                    <li><a href="#" class="submenu-footer__link">Оплата доступа</a></li>
+                                   <li><a href="support.html" class="submenu-footer__link">Техническая поддержка</a></li>
                               </ul>
                          </nav>
                     </div>
@@ -553,13 +569,15 @@
                          <nav class="menu-footer">
                               <div class="menu-footer__collapse">
                                    <div class="menu-footer__title">Контакты</div>
-                                   <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-contacts-collapse" aria-expanded="false" aria-current="true">
+                                   <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-contacts-collapse"
+                                        aria-expanded="false" aria-current="true">
                                         <i class="bi bi-chevron-down"></i>
                                    </button>
                               </div>
                               <ul class="submenu-footer collapse" id="footer-contacts-collapse">
                                    <li>
-                                        <a href="https://yandex.by/maps/157/minsk/?from=api-maps&amp;ll=27.574767%2C53.913305&amp;mode=poi&amp;poi%5Bpoint%5D=27.574228%2C53.913730&amp;poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D76571038512&amp;utm_source=api-maps&amp;z=18.18" class="submenu-footer__link d-flex flex-row" target="_blank">
+                                        <a href="https://yandex.by/maps/157/minsk/?from=api-maps&amp;ll=27.574767%2C53.913305&amp;mode=poi&amp;poi%5Bpoint%5D=27.574228%2C53.913730&amp;poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D76571038512&amp;utm_source=api-maps&amp;z=18.18"
+                                             class="submenu-footer__link d-flex flex-row" target="_blank">
                                              <i class="bi bi-geo-alt me-2"></i>
                                              <span>
                                                   г.Минск, пр-т. Машерова, 7

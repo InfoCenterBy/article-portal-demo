@@ -675,3 +675,27 @@ if (checkAllBlocks) {
     });
   });
 }
+
+function initSearchClear() {
+  document.querySelectorAll(".search-container").forEach((container) => {
+    const input = container.querySelector(".search-input");
+    const clearBtn = container.querySelector(".search-clear");
+
+    function updateClearButton() {
+      clearBtn.hidden = input.value.trim() === "";
+    }
+
+    function clearSearch() {
+      input.value = "";
+      input.focus();
+      clearBtn.hidden = true;
+    }
+
+    input.addEventListener("input", updateClearButton);
+    clearBtn.addEventListener("click", clearSearch);
+
+    updateClearButton();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initSearchClear);
