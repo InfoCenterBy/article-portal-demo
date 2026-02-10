@@ -44,29 +44,29 @@ const btnsDropdown = document.querySelectorAll(".btn-dropdown");
 //   });
 // };
 
-if (burger) {
-  burger.addEventListener("click", () => {
-    if (!burger.classList.contains("_active")) {
-      showOverlay();
-      showMenu();
-    } else {
-      hideOverlay();
-      closeMenu();
-    }
-  });
-}
-if (btnsDropdown) {
-  btnsDropdown.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      console.log("click");
-      if (btn.classList.contains("show")) {
-        showOverlay();
-      } else {
-        hideOverlay();
-      }
-    });
-  });
-}
+// if (burger) {
+//   burger.addEventListener("click", () => {
+//     if (!burger.classList.contains("_active")) {
+//       showOverlay();
+//       showMenu();
+//     } else {
+//       hideOverlay();
+//       closeMenu();
+//     }
+//   });
+// }
+// if (btnsDropdown) {
+//   btnsDropdown.forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//       console.log("click");
+//       if (btn.classList.contains("show")) {
+//         showOverlay();
+//       } else {
+//         hideOverlay();
+//       }
+//     });
+//   });
+// }
 
 function initSearchClear() {
   document.querySelectorAll(".search-container").forEach((container) => {
@@ -97,7 +97,9 @@ function initProgressBar() {
 
   function updateProgress() {
     if (progressBar) {
-      const progress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const progress =
+        window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight);
       progressBar.style.transform = `scaleX(${progress})`;
     }
   }
@@ -126,17 +128,19 @@ document.addEventListener("DOMContentLoaded", initProgressBar);
 
 // header search
 const buttonOpenHeaderSearch = document.querySelector(".header-search-button"),
-  buttonCloseHeaderSearch = document.querySelector(".header-search__button-close"),
+  buttonCloseHeaderSearch = document.querySelector(
+    ".header-search__button-close",
+  ),
   headerSearch = document.querySelector(".header-search");
 if (buttonOpenHeaderSearch) {
   buttonOpenHeaderSearch.addEventListener("click", () => {
-    showOverlay();
+    // showOverlay();
     headerSearch.classList.add("_active");
   });
 }
 if (buttonCloseHeaderSearch) {
   buttonCloseHeaderSearch.addEventListener("click", () => {
-    hideOverlay();
+    // hideOverlay();
     headerSearch.classList.remove("_active");
   });
 }
@@ -169,22 +173,30 @@ if (buttonMenuFormNews) {
 }
 
 // form-documents
-const buttonOpenFormDocuments = document.querySelector(".form-documents__button-open"),
-  buttonCloseFormDocuments = document.querySelector(".form-documents__button-close"),
+const buttonOpenFormDocuments = document.querySelector(
+    ".form-documents__button-open",
+  ),
+  buttonCloseFormDocuments = document.querySelector(
+    ".form-documents__button-close",
+  ),
   wrapperFormDocuments = document.querySelector(".form-documents__wrapper");
 if (buttonOpenFormDocuments) {
   buttonOpenFormDocuments.addEventListener("click", () => {
-    showOverlay();
+    // showOverlay();
     wrapperFormDocuments.classList.add("_open");
   });
 
   buttonCloseFormDocuments.addEventListener("click", () => {
-    hideOverlay();
+    // hideOverlay();
     wrapperFormDocuments.classList.remove("_open");
   });
 
   document.addEventListener("click", function (e) {
-    if (!e.target.closest(".form-documents__button-open, .form-documents__wrapper")) {
+    if (
+      !e.target.closest(
+        ".form-documents__button-open, .form-documents__wrapper",
+      )
+    ) {
       wrapperFormDocuments.classList.remove("_open");
     }
   });
@@ -203,7 +215,8 @@ function formRemoveError(input) {
 }
 // switch password type
 const btnsVisibilityPassword = document.querySelectorAll(".icon-password");
-const siblings = (el) => [].slice.call(el.parentNode.children).filter((child) => child !== el);
+const siblings = (el) =>
+  [].slice.call(el.parentNode.children).filter((child) => child !== el);
 btnsVisibilityPassword.forEach((btn) =>
   btn.addEventListener("click", () => {
     let input = siblings(btn);
@@ -216,7 +229,7 @@ btnsVisibilityPassword.forEach((btn) =>
       btn.classList.add("bi-eye-slash");
       btn.classList.remove("bi-eye");
     }
-  })
+  }),
 );
 
 // toast
@@ -232,7 +245,7 @@ if (toastButtons) {
           el.show();
         }
       });
-    })
+    }),
   );
 }
 
@@ -243,7 +256,9 @@ const rub = document.getElementById("rub");
 
 async function getExchangeRates() {
   try {
-    let response = await fetch("https://www.nbrb.by/api/exrates/rates?periodicity=0");
+    let response = await fetch(
+      "https://www.nbrb.by/api/exrates/rates?periodicity=0",
+    );
     let exchangeRates = await response.json();
     exchangeRates.forEach((item) => {
       if (item.Cur_Abbreviation === "USD") {
@@ -274,13 +289,17 @@ getExchangeRates();
         var parentOffset = $(this).offset(),
           relX = e.pageX - parentOffset.left,
           relY = e.pageY - parentOffset.top;
-        $(this).find(".button-hover__hover-wrap").css({ top: relY, left: relX });
+        $(this)
+          .find(".button-hover__hover-wrap")
+          .css({ top: relY, left: relX });
       })
       .on("mouseout", function (e) {
         var parentOffset = $(this).offset(),
           relX = e.pageX - parentOffset.left,
           relY = e.pageY - parentOffset.top;
-        $(this).find(".button-hover__hover-wrap").css({ top: relY, left: relX });
+        $(this)
+          .find(".button-hover__hover-wrap")
+          .css({ top: relY, left: relX });
       });
     // $('[href=#]').click(function(){return false});
   });
@@ -293,7 +312,9 @@ getExchangeRates();
   });
 })(jQuery);
 
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+var popoverTriggerList = [].slice.call(
+  document.querySelectorAll('[data-bs-toggle="popover"]'),
+);
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   return new bootstrap.Popover(popoverTriggerEl);
 });
@@ -649,7 +670,9 @@ if (checkAllBlocks) {
       const masterCheckbox = block.querySelector(".check-all-input");
 
       // Find all regular checkboxes within this block (excluding the master checkbox)
-      const checkboxes = block.querySelectorAll('input[type="checkbox"]:not(.check-all-input)');
+      const checkboxes = block.querySelectorAll(
+        'input[type="checkbox"]:not(.check-all-input)',
+      );
 
       if (masterCheckbox) {
         masterCheckbox.addEventListener("change", function () {

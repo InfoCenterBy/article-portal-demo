@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<title>Личный кабинет</title>
+	<title>Архив коэффициентов изменения стоимости видов (групп) основных средств</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,7 +49,7 @@
 
 
 <body>
-    <header class="new-header d-flex flex-row justify-content-between align-items-center">
+  <header class="new-header d-flex flex-row justify-content-between align-items-center">
      <div class="d-flex flex-row align-items-center">
           <div class="mobile-menu me-2">
                <button type="button" class="bi bi-list" id="mobile-button"></button>
@@ -224,7 +224,7 @@
      </div>
      <div class="progress"></div>
 </header>
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
      <div class="modal-dialog">
           <div class="modal-content">
                <div class="modal-body d-flex flex-row align-items-center justify-content-between">
@@ -239,7 +239,7 @@
           </div>
      </div>
 </div>
-    <nav class="flex-column justify-content-start pb-140 overflow-auto side-navbar active-nav" id="sidebar">
+  <nav class="flex-column justify-content-start pb-140 overflow-auto side-navbar active-nav" id="sidebar">
 	<div class="flex-column w-100 nav main-nav">
 		<div href="#" class="nav-link">
 			<a href="" class="nav-link__icon">
@@ -372,197 +372,188 @@
 	</div>
 </nav>
 
-    <div class="nav-container active-container">
+  <div class="nav-container active-container">
+    <a class="" id="menu-btn"><i class="bi bi-chevron-right"></i></a>
+    <section class="main-content">
+      <section class="d-flex w-100 justify-content-between flex-wrap">
+        <div class="color-gray-dark fin-wrapper col-4 my-3 fs-14 d-sm-none d-md-flex justify-content-around">
+          <div class="flex justify-between items-center px-2 py-1 bg-gray-900 rounded flex-nowrap">
+            <span class="mx-1">USD:</span>
+            <strong class="mx-1" id="usd">2.8741</strong>
+          </div>
+          <div class="flex justify-between items-center px-2 py-1 bg-gray-900 rounded flex-nowrap">
+            <span class="mx-1">EUR:</span>
+            <strong class="mx-1" id="eur">3.4092</strong>
+          </div>
+          <div class="flex justify-between items-center px-2 py-1 bg-gray-900 rounded flex-nowrap">
+            <span class="mx-1">RUB:</span>
+            <strong class="mx-1" id="rub">3.7254</strong>
+          </div>
+        </div>
+        <div class="color-gray-dark fin-wrapper col-8 my-3 fs-14 d-sm-none d-md-flex justify-content-around">
+          <div class="d-flex items-center px-2 py-1 bg-gray-900 rounded flex-wrap">
+            <span class="mx-1">Ставка&nbsp;рефинансирования:</span><strong class="mx-1">9.75&nbsp;%</strong>
+          </div>
+          <div class="d-flex items-center px-2 py-1 bg-gray-900 rounded flex-wrap">
+            <span class="mx-1">Базовая&nbsp;величина:</span><strong class="mx-1">45&nbsp;BYN</strong>
+          </div>
+          <div class="d-flex items-center px-2 py-1 bg-gray-900 rounded flex-wrap">
+            <span class="mx-1">МЗП&nbsp;за&nbsp;январь:</span><strong class="mx-1">858.00&nbsp;BYN</strong>
+          </div>
+        </div>
+        <nav aria-label="breadcrumb" class="mx-3 w-100">
+          <link href="/bitrix/css/main/font-awesome.css?166460420128777" type="text/css" rel="stylesheet">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" id="bx_breadcrumb_0">
+              <a href="/"> <i class="bi bi-house"></i> </a>
+              <a href="/" title="" itemprop="item">
+                <span itemprop="name"></span>
+              </a>
+              <meta itemprop="position" content="1">
+            </li>
+            <li class="breadcrumb-item">
+              <i class="fa fa-angle-right mx-1"></i>
+              <span>Архив коэффициентов изменения стоимости видов (групп) основных средств</span>
+            </li>
+          </ol>
+        </nav>
+      </section>
+      <section class="main-section mb-5 justify-content-start">
+        <div class="sidebar-wrapper">
+          <div class="sidebar-wrapper__content">
+            <div class="content-forms-documents__title d-flex gap-3 mt-4 flex-wrap">
+              <p class="ff-inter fs-28 fw-semibold mb-0">
+                Архив коэффициентов изменения стоимости видов (групп) основных средств
+              </p>
+            </div>
 
-        <a class="" id="menu-btn"><i class="bi bi-chevron-right"></i></a>
+            <div class="mt-40 d-flex flex-column gap-3">
+              <a href="#" class="archive-card d-flex justify-content-between align-items-center w-100 mt-0" download="">
+                <div class="archive-card__info d-flex flex-row align-items-center">
+                  <div><i class="bi bi-filetype-xls"></i></div>
+                  <div class="d-flex flex-column ms-md-3 ms-1 align-items-start">
+                    <p class="archive-card__title mb-2">
+                      Коэффициенты изменения стоимости видов (групп) основных средств
+                      по состоянию на 1 января 2025
+                    </p>
+                    <p class="mb-0 color-black fs-14">
+                      Дата размещения: <span class="color-gray-dark">31.12.2024</span>
+                    </p>
 
-        <div class="main-content">
-            <section class="main-section row w-100 justify-content-between">
-     <div class="color-gray-dark fin-wrapper col-md-4 my-3 row row-container fs-14">
-          <div class="fin-block col my-1">
-               <span class="mx-1">USD:</span>
-               <strong class="mx-1">2.5931</strong>
-          </div>
-          <div class="fin-block col my-1">
-               <span class="mx-1">EUR:</span>
-               <strong class="mx-1">2.7589</strong>
-          </div>
-          <div class="fin-block col my-1">
-               <span class="mx-1">RUB:</span>
-               <strong class="mx-1">4.2823</strong>
-          </div>
-     </div>
-     <div class="color-gray-dark fin-wrapper col-md-8 my-3 row row-container fs-14">
-          <div class="fin-block col my-1">
-               <span class="mx-1">Базовая величина:</span>
-               <strong class="mx-1">32 BYN</strong>
-          </div>
-          <div class="fin-block col my-1">
-               <span class="mx-1">Базовая арендная величина:</span> 
-               <strong class="mx-1">16,9 BYN</strong>
-          </div>
-          <div class="fin-block col my-1">
-               <span class="mx-1">Базовая ставка:</span>
-               <strong class="mx-1">210 BYN</strong>
-          </div>
-     </div>
-</section>
-
-            <section class="main-section">
-                <div class="row">
-                    <nav aria-label="breadcrumb" class="col-12">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="new-main.html"><i class="bi bi-house"></i></a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">Личный кабинет</li>
-                        </ol>
-                    </nav>
+                  </div>
                 </div>
+                <div><i class="bi bi-download"></i></div>
+              </a>
+              <a href="#" class="archive-card d-flex justify-content-between align-items-center w-100 mt-0" download="">
+                <div class="archive-card__info d-flex flex-row align-items-center">
+                  <div><i class="bi bi-filetype-xls"></i></div>
+                  <div class="d-flex flex-column ms-md-3 ms-1 align-items-start">
+                    <p class="archive-card__title mb-2">
+                      Коэффициенты изменения стоимости видов (групп) основных средств
+                      по состоянию на 1 января 2025
+                    </p>
+                    <p class="mb-0 color-black fs-14">
+                      Дата размещения: <span class="color-gray-dark">31.12.2024</span>
+                    </p>
+
+                  </div>
+                </div>
+                <div><i class="bi bi-download"></i></div>
+              </a>
+              <a href="#" class="archive-card d-flex justify-content-between align-items-center w-100 mt-0" download="">
+                <div class="archive-card__info d-flex flex-row align-items-center">
+                  <div><i class="bi bi-filetype-xls"></i></div>
+                  <div class="d-flex flex-column ms-md-3 ms-1 align-items-start">
+                    <p class="archive-card__title mb-2">
+                      Коэффициенты изменения стоимости видов (групп) основных средств
+                      по состоянию на 1 января 2025
+                    </p>
+                    <p class="mb-0 color-black fs-14">
+                      Дата размещения: <span class="color-gray-dark">31.12.2024</span>
+                    </p>
+
+                  </div>
+                </div>
+                <div><i class="bi bi-download"></i></div>
+              </a>
+            </div>
+          </div>
+          <aside class="sidebar-wrapper__aside" data-da=".content-forms-documents__title,1100,1">
+            <section class="form-documents">
+              <button class="form-documents__button-open button-small border-10" type="button">Фильтры</button>
+              <form action="/" class="form-documents__wrapper">
+                <button class="form-documents__button-close" type="button"><i class="bi bi-x-lg"></i></button>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <h4 class="h4 h4_gold m-0">Фильтры</h4>
+                  <button type="reset" class="form-documents__clear-all">Очистить фильтр</button>
+                </div>
+
+                <div>
+                  <p class="m-0 color-blue-light">Период</p>
+                  <p class="m-0 mt-2">c</p>
+                  <div class="d-flex gap-3 justify-between">
+                    <select id="month-select" class="select border-10 mt-2" style="max-width: 140px;">
+                      <option value="01">Январь</option>
+                      <option value="02">Февраль</option>
+                      <option value="03">Март</option>
+                      <option value="04">Апрель</option>
+                      <option value="05">Май</option>
+                      <option value="06">Июнь</option>
+                      <option value="07">Июль</option>
+                      <option value="08">Август</option>
+                      <option value="09">Сентябрь</option>
+                      <option value="10">Октябрь</option>
+                      <option value="11">Ноябрь</option>
+                      <option value="12">Декабрь</option>
+                    </select>
+                    <select id="year-select" class="select border-10 mt-2" style="max-width: 140px;">
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                    </select>
+                  </div>
+                  <p class="m-0 mt-3">по</p>
+                  <div class="d-flex gap-3 justify-between">
+                    <select id="month-select" class="select border-10 mt-2" style="max-width: 140px;">
+                      <option value="01">Январь</option>
+                      <option value="02">Февраль</option>
+                      <option value="03">Март</option>
+                      <option value="04">Апрель</option>
+                      <option value="05">Май</option>
+                      <option value="06">Июнь</option>
+                      <option value="07">Июль</option>
+                      <option value="08">Август</option>
+                      <option value="09">Сентябрь</option>
+                      <option value="10">Октябрь</option>
+                      <option value="11">Ноябрь</option>
+                      <option value="12">Декабрь</option>
+                    </select>
+                    <select id="year-select" class="select border-10 mt-2" style="max-width: 140px;">
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                    </select>
+                  </div>
+                </div>
+                <butto class="button border-10 mt-4">Применить</button>
+              </form>
             </section>
-
-            <div class="mt-4"></div>
-            <div class="main-section">
-                <div class="position-relative" id="upBtn">
-                    <div class="up-btn position-fixed" hidden></div>
-                </div>
-            </div>
+          </aside>
         </div>
 
-        <div class="main-section">
-            <div class="sidebar-wrapper">
-                <div class="sidebar-wrapper__content pt-0">
-                    <h2 class="h2">Личный кабинет</h2>
-                    <div class="border border-gray p-3 p-sm-4 mb-4 d-flex flex-md-row flex-column justify-content-between align-items-center border-20 mt-3">
-                        <div class="d-flex gap-3 flex-wrap flex-xxl-nowrap w-100 ">
-                            <div class="profile-photo">
-                                <div class="profile-photo__body">
-                                    <img src="./img/cabinet-default-avatar.png" alt="avatar" class="img-fluid flex-shrink-0" width="120" height="120">
-                                    <div class="profile-photo__input">
-                                        <form action="#" id="photo-form">
-                                            <label for="change-photo">
-                                                <i class="bi bi-camera"></i>
-                                                <span> Изменить фото </span>
-                                            </label>
-                                            <input id="change-photo" type="file">
-                                        </form>
-                                    </div>
-                                </div>
-                                <button type="button" class="profile-photo__delete" title="Удалить фото">
-                                    <i class="bi bi-x"></i>
-                                </button>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap w-100">
-                                <div class="profile-name d-flex flex-column gap-3">
-                                    <span class="fs-24 fw-semibold">Иванов Иван</span>
-                                    <span class="color-gray-dark">skrinnikov@info-center.by</span>
-                                    <div class="d-flex gap-3 flex-wrap flex-lg-nowrap align-items-center">
-                                        <div class="bg-green-status-background border-10 py-2 px-3 d-flex align-items-center justify-content-center">
-                                            <span class="color-green-status ">
-                                                Доступ активен
-                                            </span>
-                                        </div>
-                                        <span>До окончания <span class="color-blue-light">68 дней</span></span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button class="button border-10 button_empty px-3">Редактировать профиль</button>
-                                </div>
-                            </div>
+      </section>
 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="d-flex col-12 col-xl-6 col-3xl-4">
-                            <a href="/services/faq/" class="bg-white-gray w-100 card-link mb-4 align-items-start p-4 border-20" style="height: unset;">
-                                <span class="card-link__row w-100 align-items-start">
-                                    <span class="me-3 d-flex">
-                                        <img src="./img/cabinet/access-control.svg" class="img-fluid flex-shrink-0" width="72" height="72" alt="Иконка">
-                                    </span>
-                                    <span class="card-link__content">
-                                        <span class="card-link__title">Управление доступом</span>
-                                        <span class="card-link__text">История ваших заказов и срок окончания доступа</span>
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="d-flex col-12 col-xl-6 col-3xl-4">
-                            <a href="/services/faq/" class="w-100 card-link mb-4 align-items-start p-4 border-20" style="height: unset;">
-                                <span class="card-link__row w-100 align-items-start">
-                                    <span class="me-3 d-flex">
-                                        <img src="./img/cabinet/favorites.svg" class="img-fluid flex-shrink-0" width="72" height="72" alt="Иконка">
-                                    </span>
-                                    <span class="card-link__content">
-                                        <span class="card-link__title">Избранное</span>
-                                        <span class="card-link__text">Материалы, которые вы добавили в закладки</span>
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="d-flex col-12 col-xl-6 col-3xl-4">
-                            <a href="/services/faq/" class="bg-white-gray w-100 card-link mb-4 align-items-start p-4 border-20" style="height: unset;">
-                                <span class="card-link__row w-100 align-items-start">
-                                    <span class="me-3 d-flex">
-                                        <img src="./img/cabinet/safety.svg" class="img-fluid flex-shrink-0" width="72" height="72" alt="Иконка">
-                                    </span>
-                                    <span class="card-link__content">
-                                        <span class="card-link__title">Безопасность</span>
-                                        <span class="card-link__text">Информация о согласиях на обработку персональных данных и возможность изменить
-                                            пароль</span>
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="d-flex col-12 col-xl-6">
-                            <a href="/services/faq/" class="w-100 card-link mb-4 align-items-start p-4 border-20" style="height: unset;">
-                                <span class="card-link__row w-100 align-items-start">
-                                    <span class="me-3 d-flex">
-                                        <img src="./img/cabinet/browsing-history.svg" class="img-fluid flex-shrink-0" width="72" height="72" alt="Иконка">
-                                    </span>
-                                    <span class="card-link__content">
-                                        <span class="card-link__title">История просмотров</span>
-                                        <span class="card-link__text">Вернитесь к материалам, которые просматривали</span>
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="d-flex col-12 col-xl-6">
-                            <a href="/services/faq/" class="bg-white-gray w-100 card-link mb-4 align-items-start p-4 border-20" style="height: unset;">
-                                <span class="card-link__row w-100 align-items-start">
-                                    <span class="me-3 d-flex">
-                                        <img src="./img/cabinet/notifications.svg" class="img-fluid flex-shrink-0" width="72" height="72" alt="Иконка">
-                                    </span>
-                                    <span class="card-link__content">
-                                        <span class="card-link__title">Уведомления</span>
-                                        <span class="card-link__text">Уведомления о выходе новых материалов</span>
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <aside data-da=".sidebar-wrapper__content,1100,1" class="sidebar-wrapper__aside mb-4">
-                    <h4 class="h4 h4_gold hidden-title">Личный кабинет</h4>
-                    <nav class="nav-links mb-4">
-                        <div class="nav-links__wrapper">
-                            <a href="profile.html" class="nav-links__link">Профиль</a>
-                            <a href="favorites.html" class="nav-links__link">Избранное</a>
-                            <a href="browsing-history.html" class="nav-links__link">История просмотров</a>
-                            <a href="settings.html" class="nav-links__link">Настройки</a>
-                            <a href="subscription.html" class="nav-links__link">Подписка</a>
-                            <a href="notifications.html" class="nav-links__link active">Уведомления</a>
-                            <a href="new-on-padatak.html" class="nav-links__link active">Новое на Padatak.by</a>
-                        </div>
-                    </nav>
-                    <hr>
-                    <h5 class="h4 h4_gold">Техническая поддежка</h5>
-                    <a href="tel:+37517111111" class="link link_gray">+375 (17) 11-11-11</a>
-                </aside>
-            </div>
-        </div>
 
-        <div class="my-5"></div>
-        <footer class="footer">
+    </section>
+    <footer class="footer">
      <div class="main-section">
           <div class="footer__body">
                <div class="row g-4">
@@ -726,8 +717,9 @@
           </div>
      </div>
 </footer>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -746,6 +738,7 @@
 
 
 <script src="js/script.min.js"></script>
+
 </body>
 
 </html>
