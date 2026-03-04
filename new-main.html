@@ -530,7 +530,7 @@
     addRadioHandlers();
 
     // Показываем виджет через 60 секунд
-    showWidget();
+    showWidget()
     setTimeout(showWidget, 60000);
 
     function checkStorage() {
@@ -617,7 +617,9 @@
       // Обновляем состояние кнопок
       updateButtons();
     }
+
     updateButtonVisibility(1);
+
     function updateButtonVisibility(step) {
       // На первом шаге скрываем кнопку "Назад"
       if (step === 1) {
@@ -685,17 +687,39 @@
       // Здесь можно отправить данные на сервер
       console.log('Отправка данных:', answers);
 
-      // Показываем тоаст
-      toast.classList.add('show');
-
       // Сохраняем дату отправки
       localStorage.setItem('surveyLastSubmitted', new Date().toISOString());
 
-      // Закрываем виджет через 2 секунды
+      // Сначала скрываем виджет
+      widget.classList.remove('show');
+
+      // Показываем тоаст
+      toast.classList.add('show');
+
+      // Сбрасываем виджет для следующего раза (через месяц)
+      resetWidget();
+
+      // Автоматически скрываем тоаст через 3 секунды
       setTimeout(function () {
-        widget.classList.remove('show');
         toast.classList.remove('show');
-      }, 2000);
+      }, 3000);
+    }
+
+    function resetWidget() {
+      // Сбрасываем текущий шаг на первый
+      currentStep = 1;
+
+      // Очищаем ответы
+      answers = {};
+
+      // Сбрасываем отображение на первый шаг
+      showStep(1);
+
+      // Сбрасываем все радио кнопки
+      const allRadios = document.querySelectorAll('input[type="radio"]');
+      allRadios.forEach(function (radio) {
+        radio.checked = false;
+      });
     }
   });
 </script>

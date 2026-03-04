@@ -7395,7 +7395,7 @@ td.vertical-bottom {
   color: var(--color-black);
   text-align: center;
   margin-bottom: 20px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .rating-options {
@@ -7592,10 +7592,7 @@ td.vertical-bottom {
 .toast {
   position: fixed;
   bottom: 20px;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(100px);
-      -ms-transform: translateX(-50%) translateY(100px);
-          transform: translateX(-50%) translateY(100px);
+  right: 20px;
   background-color: #28a745;
   color: white;
   padding: 12px 24px;
@@ -7605,17 +7602,14 @@ td.vertical-bottom {
   -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1100;
-  opacity: 0;
+  display: none;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .toast.show {
-  -webkit-transform: translateX(-50%) translateY(0);
-      -ms-transform: translateX(-50%) translateY(0);
-          transform: translateX(-50%) translateY(0);
-  opacity: 1;
+  display: block;
 }
 
 .page {
