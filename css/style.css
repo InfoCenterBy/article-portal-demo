@@ -7325,7 +7325,49 @@ td.vertical-bottom {
   display: block;
 }
 
-.survey-container {
+.survey-widget.collapsed {
+  width: 60px;
+  height: 60px;
+  background-image: url("../img/icons/survey-widget-collapsed.png");
+  background-repeat: no-repeat;
+  background-position: 60% 60%;
+  background-size: 38px 38px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-animation: surveyWidgetSoftBreathe 2s ease-in-out infinite;
+          animation: surveyWidgetSoftBreathe 2s ease-in-out infinite;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}
+
+.survey-widget.collapsed:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: var(--color-gold-light);
+}
+
+.survey-widget.collapsed .survey-widget__container {
+  display: none;
+}
+
+.survey-widget__container {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7338,7 +7380,7 @@ td.vertical-bottom {
   padding: 24px;
 }
 
-.close-btn {
+.survey-widget__close-btn {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -7365,22 +7407,22 @@ td.vertical-bottom {
   transition: all 0.2s;
 }
 
-.close-btn:hover {
+.survey-widget__close-btn:hover {
   color: var(--color-black);
 }
 
-.step {
+.survey-widget__step {
   display: none;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.step.active {
+.survey-widget__step.active {
   display: block;
 }
 
-.survey-image {
+.survey-widget__image {
   width: 100%;
   height: 200px;
   -o-object-fit: cover;
@@ -7389,7 +7431,7 @@ td.vertical-bottom {
   margin-bottom: 20px;
 }
 
-.question-text {
+.survey-widget__question-text {
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-black);
@@ -7398,7 +7440,7 @@ td.vertical-bottom {
   font-weight: 600;
 }
 
-.rating-options {
+.survey-widget__rating-options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7409,7 +7451,7 @@ td.vertical-bottom {
   margin-bottom: 20px;
 }
 
-.rating-label {
+.survey-widget__rating-label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7422,17 +7464,17 @@ td.vertical-bottom {
   color: var(--color-black);
 }
 
-.rating-label input[type=radio] {
+.survey-widget__rating-label input[type=radio] {
   width: 18px;
   height: 18px;
   cursor: pointer;
 }
 
-.rating-label input[type=radio]:checked {
+.survey-widget__rating-label input[type=radio]:checked {
   accent-color: var(--color-gold);
 }
 
-.options {
+.survey-widget__options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7444,7 +7486,7 @@ td.vertical-bottom {
   margin-bottom: 20px;
 }
 
-.option-label {
+.survey-widget__option-label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7460,11 +7502,11 @@ td.vertical-bottom {
   transition: background-color 0.2s;
 }
 
-.option-label:hover {
+.survey-widget__option-label:hover {
   background-color: #f8f9fa;
 }
 
-.option-label input[type=radio] {
+.survey-widget__option-label input[type=radio] {
   min-width: 18px;
   min-height: 18px;
   width: 18px;
@@ -7472,25 +7514,24 @@ td.vertical-bottom {
   cursor: pointer;
 }
 
-.option-label input[type=radio]:checked {
+.survey-widget__option-label input[type=radio]:checked {
   accent-color: var(--color-gold);
 }
 
-.option-label span {
+.survey-widget__option-label span {
   font-size: 15px;
   color: var(--color-black);
 }
 
-.buttons {
+.survey-widget__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
 }
 
-.btn {
+.survey-widget__btn {
   padding: 10px 20px;
-  border: none;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
@@ -7514,40 +7555,40 @@ td.vertical-bottom {
   border: 1px solid var(--color-gray-light);
 }
 
-.btn:disabled {
+.survey-widget__btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   border: 1px solid var(--color-gray-stroke);
 }
 
-.btn-back {
+.survey-widget__btn--back {
   background-color: #e9ecef;
   color: var(--color-gray-dark);
 }
 
-.btn-back:hover:not(:disabled) {
+.survey-widget__btn--back:hover:not(:disabled) {
   background-color: var(--color-gray-light);
 }
 
-.btn-next,
-.btn-submit {
+.survey-widget__btn--next,
+.survey-widget__btn--submit {
   color: var(--color-gray-dark);
   border-color: var(--color-gray-dark);
 }
 
-.btn-next:hover:not(:disabled),
-.btn-submit:hover {
+.survey-widget__btn--next:hover:not(:disabled),
+.survey-widget__btn--submit:hover:not(:disabled) {
   color: var(--color-gold);
   border-color: var(--color-gold);
 }
 
-.arrow-left,
-.arrow-right {
+.survey-widget__arrow-left,
+.survey-widget__arrow-right {
   font-size: 16px;
   line-height: 1;
 }
 
-.progress-container {
+.survey-widget__progress-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7558,7 +7599,7 @@ td.vertical-bottom {
   margin-bottom: 14px;
 }
 
-.progress-bar {
+.survey-widget__progress-bar {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -7568,7 +7609,7 @@ td.vertical-bottom {
   overflow: hidden;
 }
 
-.progress-fill {
+.survey-widget__progress-fill {
   height: 100%;
   background-color: #c47a2c;
   width: 25%;
@@ -7577,47 +7618,23 @@ td.vertical-bottom {
   transition: width 0.3s ease;
 }
 
-.step-indicator {
+.survey-widget__step-indicator {
   font-size: 14px;
   color: #666;
   min-width: 40px;
   text-align: right;
 }
 
-.step-indicator .active-step {
+.survey-widget__step-indicator .active-step {
   color: var(--color-gold);
   font-weight: 600;
 }
 
-.toast {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: var(--color-white);
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  z-index: 1100;
-  display: none;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.toast-bacic {
-  background-color: var(--color-gold-light);
-}
-
-.toast.show {
-  display: block;
-}
-
-.open-question {
+.survey-widget__open-question {
   margin-bottom: 20px;
 }
 
-.open-textarea {
+.survey-widget__textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ddd;
@@ -7631,105 +7648,93 @@ td.vertical-bottom {
   transition: border-color 0.2s;
 }
 
-.open-textarea:focus {
+.survey-widget__textarea:focus {
   outline: none;
   border-color: #c47a2c;
 }
 
-.open-textarea::-webkit-input-placeholder {
+.survey-widget__textarea::-webkit-input-placeholder {
   color: #999;
 }
 
-.open-textarea::-moz-placeholder {
+.survey-widget__textarea::-moz-placeholder {
   color: #999;
 }
 
-.open-textarea:-ms-input-placeholder {
+.survey-widget__textarea:-ms-input-placeholder {
   color: #999;
 }
 
-.open-textarea::-ms-input-placeholder {
+.survey-widget__textarea::-ms-input-placeholder {
   color: #999;
 }
 
-.open-textarea::placeholder {
+.survey-widget__textarea::placeholder {
   color: #999;
 }
 
-.survey-widget.collapsed {
-  width: 60px;
-  height: 60px;
-  background-image: url("../img/icons/survey-widget-collapsed.png");
-  background-repeat: no-repeat;
-  background-position: 60% 60%;
-  background-size: 38px 38px;
-  border-radius: 50%;
-  background-color: var(--color-gold);
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+@-webkit-keyframes surveyWidgetSoftBreathe {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(196, 122, 44, 0.7);
+            box-shadow: 0 0 0 0 rgba(196, 122, 44, 0.7);
+  }
+
+  50% {
+    -webkit-box-shadow: 0 0 0 10px rgba(196, 122, 44, 0);
+            box-shadow: 0 0 0 10px rgba(196, 122, 44, 0);
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(196, 122, 44, 0);
+            box-shadow: 0 0 0 0 rgba(196, 122, 44, 0);
+  }
+}
+
+@keyframes surveyWidgetSoftBreathe {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(196, 122, 44, 0.7);
+            box-shadow: 0 0 0 0 rgba(196, 122, 44, 0.7);
+  }
+
+  50% {
+    -webkit-box-shadow: 0 0 0 10px rgba(196, 122, 44, 0);
+            box-shadow: 0 0 0 10px rgba(196, 122, 44, 0);
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(196, 122, 44, 0);
+            box-shadow: 0 0 0 0 rgba(196, 122, 44, 0);
+  }
+}
+
+.toast {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 1100;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  -webkit-animation: softBreathe 2s ease-in-out infinite;
-          animation: softBreathe 2s ease-in-out infinite;
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
+  width: 400px;
+  padding: 16px 24px;
+  color: var(--color-white);
+  background-color: var(--color-blue-light);
 }
 
-.survey-widget.collapsed:hover {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
-  background-color: var(--color-gold-light);
+.toast-basic {
+  color: var(--color-gold);
+  background-color: color-mix(in srgb, var(--color-gold-semi-light), transparent 1%);
+  -webkit-box-shadow: 3px 3px transparent, 4px 4px var(--color-gold);
+          box-shadow: 3px 3px transparent, 4px 4px var(--color-gold);
 }
 
-.survey-widget.collapsed .survey-container {
-  display: none;
-}
-
-@-webkit-keyframes softBreathe {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(196, 122, 44, 0.7);
-            box-shadow: 0 0 0 0 rgba(196, 122, 44, 0.7);
-  }
-
-  50% {
-    -webkit-box-shadow: 0 0 0 10px rgba(196, 122, 44, 0);
-            box-shadow: 0 0 0 10px rgba(196, 122, 44, 0);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(196, 122, 44, 0);
-            box-shadow: 0 0 0 0 rgba(196, 122, 44, 0);
-  }
-}
-
-@keyframes softBreathe {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(196, 122, 44, 0.7);
-            box-shadow: 0 0 0 0 rgba(196, 122, 44, 0.7);
-  }
-
-  50% {
-    -webkit-box-shadow: 0 0 0 10px rgba(196, 122, 44, 0);
-            box-shadow: 0 0 0 10px rgba(196, 122, 44, 0);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(196, 122, 44, 0);
-            box-shadow: 0 0 0 0 rgba(196, 122, 44, 0);
-  }
+.toast.show {
+  display: block;
 }
 
 .stats-overview {
@@ -12597,37 +12602,42 @@ html {
     right: 15px;
   }
 
-  .survey-image {
+  .survey-widget.collapsed {
+    width: 50px;
+    height: 50px;
+  }
+
+  .survey-widget__image {
     display: none;
   }
 
-  .question-text {
+  .survey-widget__question-text {
     font-size: 15px;
     margin-bottom: 15px;
   }
 
-  .rating-options {
+  .survey-widget__rating-options {
     gap: 16px;
   }
 
-  .rating-label span {
+  .survey-widget__rating-label span {
     font-size: 13px;
   }
 
-  .option-label span {
+  .survey-widget__option-label span {
     font-size: 14px;
   }
 
-  .btn {
+  .survey-widget__btn {
     padding: 8px 15px;
     font-size: 13px;
   }
 
-  .survey-container {
+  .survey-widget__container {
     padding: 15px;
   }
 
-  .close-btn {
+  .survey-widget__close-btn {
     top: 2px;
     right: 2px;
     width: 28px;
@@ -12641,25 +12651,6 @@ html {
     padding: 8px 12px;
     max-width: 300px;
   }
-
-  .survey-widget.collapsed {
-    width: 50px;
-    height: 50px;
-  }
-
-@-webkit-keyframes softBreathe {
-    50% {
-      -webkit-transform: scale(1.05);
-              transform: scale(1.05);
-    }
-}
-
-@keyframes softBreathe {
-    50% {
-      -webkit-transform: scale(1.05);
-              transform: scale(1.05);
-    }
-}
 
   .login .h1 {
     font-size: 24px;
@@ -12900,7 +12891,7 @@ html {
     left: 80%;
   }
 
-  .survey-image {
+  .survey-widget__image {
     display: none;
   }
 
