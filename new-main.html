@@ -707,8 +707,6 @@
 
         const surveyData = prepareSurveyData();
 
-        console.log('Отправка данных:', surveyData);
-
         // test
         await new Promise(resolve => setTimeout(resolve, 1000));
 
@@ -728,7 +726,6 @@
     }
 
     function showToast(message, type = 'success', duration = 3000) {
-      console.log("toast show")
       const toast = document.createElement('div');
       toast.className = `toast toast-basic toast--${type} show`;
       toast.textContent = message;
