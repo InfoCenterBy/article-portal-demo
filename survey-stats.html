@@ -387,9 +387,34 @@
         </nav>
 
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 row-gap-3 mt-32 align-items-end">
-          <div></div>
           <div class="col">
-            <button class="button button_empty border-10" style="padding: 14px 0; max-width: 245px; width: 100%;">Скачать Excel</button>
+            <div class="input">
+              <div class="form-group my-2 my-md-0">
+                <label for="date">Дата опроса от</label>
+                <div class="input-group date mt-1 datetimepicker-wrapper datetimepicker-reg" id="datetimepicker" data-target-input="nearest">
+                  <input type="text" class="form-control datetimepicker-input border-right-0" data-target="#datetimepicker" placeholder="01.01.2026">
+                  <div class="input-group-text" data-target="#datetimepicker" data-toggle="datetimepicker">
+                    <i class="bi bi-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="input">
+              <div class="form-group my-2 my-md-0 ">
+                <label for="date">Дата опроса до</label>
+                <div class="input-group date mt-1 datetimepicker-wrapper datetimepicker-reg" id="datetimepickerEnd" data-target-input="nearest">
+                  <input type="text" class="form-control datetimepicker-input border-right-0" data-target="#datetimepickerEnd" placeholder="01.01.2026">
+                  <div class="input-group-text" data-target="#datetimepickerEnd" data-toggle="datetimepicker">
+                    <i class="bi bi-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <button class="button button_empty border-10" style="padding: 15px 0; max-width: 245px; width: 100%;">Скачать Excel</button>
           </div>
         </div>
 
@@ -457,9 +482,6 @@
             </tbody>
           </table>
         </div>
-
-
-
       </div>
     </div>
 

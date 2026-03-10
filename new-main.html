@@ -393,7 +393,7 @@
 
     <div class="survey-widget__step active" id="step1">
       <img src="./img/survey-widget-img.png" alt="Survey illustration" class="survey-widget__image">
-      <p class="survey-widget__question-text">Общее впечатление: Насколько вы довольны сайтом сетевого издания «Padatak.by»? (1 - совсем не доволен, 5 -
+      <p class="survey-widget__question-text">Насколько вы довольны сайтом сетевого издания «Padatak.by»? (1 - совсем не доволен, 5 -
         полностью доволен)</p>
       <div class="survey-widget__rating-options">
         <label class="survey-widget__rating-label"><input type="radio" name="general-impression" value="1"><span>1</span></label>
@@ -405,7 +405,7 @@
     </div>
 
     <div class="survey-widget__step" id="step2">
-      <p class="survey-widget__question-text">Полезность материалов: Насколько материалы на сайте полезны для вашей работы/деятельности? (1 - совсем не полезны,
+      <p class="survey-widget__question-text">Насколько материалы на сайте полезны для вашей работы/деятельности? (1 - совсем не полезны,
         5 - очень полезны)</p>
       <div class="survey-widget__rating-options">
         <label class="survey-widget__rating-label"><input type="radio" name="usefulness" value="1"><span>1</span></label>
@@ -417,7 +417,7 @@
     </div>
 
     <div class="survey-widget__step" id="step3">
-      <p class="survey-widget__question-text">Доступность информации: Насколько легко находить нужную информацию на сайте? (1 - очень сложно, 5 - очень легко)
+      <p class="survey-widget__question-text">Насколько легко находить нужную информацию на сайте? (1 - очень сложно, 5 - очень легко)
       </p>
       <div class="survey-widget__rating-options">
         <label class="survey-widget__rating-label"><input type="radio" name="accessibility" value="1"><span>1</span></label>
@@ -429,7 +429,7 @@
     </div>
 
     <div class="survey-widget__step" id="step4">
-      <p class="survey-widget__question-text">Довольство интерфейсом: Насколько вам удобно пользоваться сайтом? (1 - очень неудобно, 5 - очень удобно)</p>
+      <p class="survey-widget__question-text">Насколько вам удобно пользоваться сайтом? (1 - очень неудобно, 5 - очень удобно)</p>
       <div class="survey-widget__rating-options">
         <label class="survey-widget__rating-label"><input type="radio" name="interface" value="1"><span>1</span></label>
         <label class="survey-widget__rating-label"><input type="radio" name="interface" value="2"><span>2</span></label>
@@ -440,7 +440,7 @@
     </div>
 
     <div class="survey-widget__step" id="step5">
-      <p class="survey-widget__question-text">Открытый вопрос: Что, по вашему мнению, можно улучшить на сайте?</p>
+      <p class="survey-widget__question-text">Что, по вашему мнению, можно улучшить на сайте?</p>
       <div class="survey-widget__open-question">
         <textarea class="survey-widget__textarea" name="improvements" placeholder="Введите ваш ответ здесь..." rows="5"></textarea>
       </div>
@@ -706,6 +706,14 @@
         submitBtn.disabled = true;
 
         const surveyData = prepareSurveyData();
+
+        // const response = await fetch('https://your-server.com/api/survey', {
+        //   method: 'POST',
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //   },
+        //   body: JSON.stringify(surveyData),
+        // });
 
         // test
         await new Promise(resolve => setTimeout(resolve, 1000));
