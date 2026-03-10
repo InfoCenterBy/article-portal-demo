@@ -174,8 +174,8 @@ if (buttonMenuFormNews) {
 
 // form-documents
 const buttonOpenFormDocuments = document.querySelector(
-    ".form-documents__button-open",
-  ),
+  ".form-documents__button-open",
+),
   buttonCloseFormDocuments = document.querySelector(
     ".form-documents__button-close",
   ),
@@ -508,13 +508,18 @@ const actualList = new Swiper("#actualList", {
       slidesPerView: 1,
       spaceBetween: 8,
     },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 8,
+    },
     // when window width is >= 1100px
     1100: {
       slidesPerView: 3,
       spaceBetween: 8,
     },
     // when window width is >= 1300px
-    1300: {
+    1400: {
       slidesPerView: 4,
       spaceBetween: 16,
     },
@@ -570,6 +575,11 @@ const topicSlider = new Swiper(".topic-slider", {
     // when window width is >= 320px
     320: {
       slidesPerView: 1,
+      spaceBetween: 8,
+    },
+    // when window width is >= 576px
+    576: {
+      slidesPerView: 2,
       spaceBetween: 8,
     },
     // when window width is >= 1100px
