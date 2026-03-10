@@ -595,6 +595,27 @@ const topicSlider = new Swiper(".topic-slider", {
   },
 });
 
+const bannerSlider = new Swiper(".banner-slider .swiper", {
+  slidesPerView: 4,
+  speed: 400,
+  spaceBetween: 16,
+  loop: false,
+  navigation: {
+    nextEl: ".banner-slider .swiper-button-next",
+    prevEl: ".banner-slider .swiper-button-prev",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 8,
+    },
+    1400: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+    },
+  },
+});
+
 let actualBook = document.querySelectorAll("#actualBook");
 
 if (actualBook) {
