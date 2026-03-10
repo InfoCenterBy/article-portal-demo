@@ -533,10 +533,11 @@
   </div>
 </div>
 
-<div class="toast" id="toast">Спасибо за вашу оценку!</div>
-
+<div class="toast toast-basic" id="toast">Спасибо за вашу оценку!</div>
 <script>
+  // Инициализация виджета после загрузки страницы
   document.addEventListener('DOMContentLoaded', function () {
+    // Получаем элементы
     const widget = document.getElementById('surveyWidget');
     const closeBtn = document.getElementById('closeBtn');
     const backBtn = document.getElementById('backBtn');
@@ -546,43 +547,76 @@
     const stepIndicator = document.getElementById('stepIndicator');
     const toast = document.getElementById('toast');
 
+    // Переменные состояния
     let currentStep = 1;
     const totalSteps = 5;
     let answers = {};
 
+    // Проверяем localStorage при загрузке
     checkStorage();
 
-    closeBtn.addEventListener('click', closeWidget);
+    // Добавляем обработчики событий
+    closeBtn.addEventListener('click', collapseWidget);
     backBtn.addEventListener('click', prevStep);
     nextBtn.addEventListener('click', nextStep);
     submitBtn.addEventListener('click', submitSurvey);
 
-    addInputHandlers();
+    // Добавляем обработчик для разворачивания по клику на свернутый виджет
+    widget.addEventListener('click', function (e) {
+      // Если виджет свернут - разворачиваем при клике в любом месте
+      if (widget.classList.contains('collapsed')) {
+        expandWidget();
+      }
+    });
 
+    // Добавляем обработчики для радио кнопок и текстового поля
+    addInputHandlers();
     showWidget()
+    // Показываем виджет через 60 секунд
     setTimeout(showWidget, 60000);
 
     function checkStorage() {
-      const lastClosed = localStorage.getItem('surveyLastClosed');
       const lastSubmitted = localStorage.getItem('surveyLastSubmitted');
-      const today = new Date().toDateString();
+      const widgetCollapsed = localStorage.getItem('widgetCollapsed');
+      const collapseUntil = localStorage.getItem('collapseUntil');
+      const now = new Date().getTime();
 
+      // Если пользователь отправлял опрос в течение месяца
       if (lastSubmitted) {
         const submittedDate = new Date(lastSubmitted);
-        const daysSinceSubmitted = Math.floor((new Date() - submittedDate) / (1000 * 60 * 60 * 24));
+        const daysSinceSubmitted = Math.floor((now - submittedDate) / (1000 * 60 * 60 * 24));
 
+        // Если прошло меньше 30 дней - скрываем виджет полностью
         if (daysSinceSubmitted < 30) {
           widget.style.display = 'none';
           return;
         }
       }
 
-      if (lastClosed === today) {
-        widget.style.display = 'none';
+      // Проверяем, не свернут ли виджет до определенной даты
+      if (collapseUntil && widgetCollapsed === 'true') {
+        const collapseTime = parseInt(collapseUntil);
+
+        // Если еще не прошло 7 дней, показываем в свернутом виде
+        if (now < collapseTime) {
+          widget.classList.add('collapsed');
+          widget.classList.remove('show');
+          // В свернутом виде кнопка закрытия не нужна
+          closeBtn.style.display = 'none';
+          return;
+        } else {
+          // Если 7 дней прошло, удаляем информацию о сворачивании
+          localStorage.removeItem('widgetCollapsed');
+          localStorage.removeItem('collapseUntil');
+        }
       }
+
+      // По умолчанию виджет скрыт, пока не наступит время показа
+      widget.classList.remove('collapsed', 'show');
     }
 
     function addInputHandlers() {
+      // Обработчики для радио кнопок
       const radioGroups = ['general-impression', 'usefulness', 'accessibility', 'interface'];
 
       radioGroups.forEach(function (group) {
@@ -595,63 +629,120 @@
         });
       });
 
+      // Обработчик для текстового поля
       const textarea = document.querySelector('textarea[name="improvements"]');
       if (textarea) {
         textarea.addEventListener('input', function (e) {
           answers.improvements = e.target.value;
-          updateButtons();
         });
       }
     }
 
     function showWidget() {
-      const lastClosed = localStorage.getItem('surveyLastClosed');
       const lastSubmitted = localStorage.getItem('surveyLastSubmitted');
-      const today = new Date().toDateString();
+      const widgetCollapsed = localStorage.getItem('widgetCollapsed');
+      const collapseUntil = localStorage.getItem('collapseUntil');
+      const now = new Date().getTime();
 
+      // Проверяем, нужно ли показывать виджет
       if (lastSubmitted) {
         const submittedDate = new Date(lastSubmitted);
-        const daysSinceSubmitted = Math.floor((new Date() - submittedDate) / (1000 * 60 * 60 * 24));
+        const daysSinceSubmitted = Math.floor((now - submittedDate) / (1000 * 60 * 60 * 24));
 
+        // Если прошло меньше 30 дней - не показываем
         if (daysSinceSubmitted < 30) {
           return;
         }
       }
 
-      if (lastClosed !== today) {
-        widget.classList.add('show');
+      // Проверяем, не свернут ли виджет
+      if (collapseUntil && widgetCollapsed === 'true') {
+        const collapseTime = parseInt(collapseUntil);
+
+        // Если еще не прошло 7 дней, показываем в свернутом виде
+        if (now < collapseTime) {
+          widget.classList.add('collapsed');
+          widget.classList.remove('show');
+          // В свернутом виде кнопка закрытия не нужна
+          closeBtn.style.display = 'none';
+          return;
+        }
       }
+
+      // Если нет условий для сворачивания, показываем полноразмерный виджет
+      widget.classList.remove('collapsed');
+      widget.classList.add('show');
+      closeBtn.style.display = 'block';
+      closeBtn.innerHTML = '&times;';
+      closeBtn.title = 'Свернуть';
     }
 
-    function closeWidget() {
+    function collapseWidget(event) {
+      // Предотвращаем всплытие события
+      event.stopPropagation();
+
+      const now = new Date().getTime();
+      const sevenDaysFromNow = now + (7 * 24 * 60 * 60 * 1000); // 7 дней в миллисекундах
+
+      localStorage.setItem('widgetCollapsed', 'true');
+      localStorage.setItem('collapseUntil', sevenDaysFromNow.toString());
+
+      // Сворачиваем виджет
+      widget.classList.add('collapsed');
+      widget.classList.add('pulsing');
       widget.classList.remove('show');
-      localStorage.setItem('surveyLastClosed', new Date().toDateString());
+
+      // В свернутом виде кнопка закрытия не нужна
+      closeBtn.style.display = 'none';
+    }
+
+    function expandWidget() {
+      // Разворачиваем виджет
+      widget.classList.remove('collapsed');
+      widget.classList.remove('pulsing');
+      widget.classList.add('show');
+
+      // Показываем кнопку закрытия
+      closeBtn.style.display = 'block';
+      closeBtn.innerHTML = '&times;';
+      closeBtn.title = 'Свернуть';
+
+      // НЕ удаляем информацию о сворачивании - виджет должен снова свернуться через 7 дней
+      // при следующем закрытии, а не при разворачивании
     }
 
     function showStep(step) {
+      // Скрываем все шаги
       document.querySelectorAll('.step').forEach(function (s) {
         s.classList.remove('active');
       });
 
+      // Показываем нужный шаг
       document.getElementById('step' + step).classList.add('active');
 
+      // Обновляем прогресс бар
       const progress = (step / totalSteps) * 100;
       progressFill.style.width = progress + '%';
 
+      // Обновляем индикатор шага
       stepIndicator.innerHTML = '<span class="active-step">' + step + '</span>/' + totalSteps;
 
+      // Обновляем видимость кнопок
       updateButtonVisibility(step);
 
+      // Обновляем состояние кнопок
       updateButtons();
     }
-    updateButtonVisibility(1)
+    updateButtonVisibility(1);
     function updateButtonVisibility(step) {
+      // На первом шаге кнопка "Назад" скрыта
       if (step === 1) {
         backBtn.style.display = 'none';
       } else {
         backBtn.style.display = 'block';
       }
 
+      // На последнем шаге показываем кнопку "Отправить", скрываем "Далее"
       if (step === totalSteps) {
         nextBtn.style.display = 'none';
         submitBtn.style.display = 'block';
@@ -662,10 +753,12 @@
     }
 
     function updateButtons() {
+      // На первом шаге кнопка "Назад" скрыта, на остальных - активна
       if (currentStep > 1) {
         backBtn.disabled = false;
       }
 
+      // Проверяем, выбран ли ответ на текущем шаге
       let hasAnswer = false;
 
       switch (currentStep) {
@@ -682,7 +775,8 @@
           hasAnswer = answers.interface !== undefined;
           break;
         case 5:
-          hasAnswer = true
+          // На последнем шаге всегда разрешаем отправить, даже если поле пустое
+          hasAnswer = true;
           break;
       }
 
@@ -708,58 +802,51 @@
     }
 
     function prepareSurveyData() {
-      const surveyData = {
+      // Данные для отправки без метаданных
+      return {
         generalImpression: answers['general-impression'] || null,
-
         usefulness: answers.usefulness || null,
-
         accessibility: answers.accessibility || null,
-
         interface: answers.interface || null,
-
-        improvements: answers.improvements || '',
+        improvements: answers.improvements || ''
       };
-
-      return surveyData;
     }
 
     async function submitSurvey() {
       try {
-        const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Отправка...';
         submitBtn.disabled = true;
 
         const surveyData = prepareSurveyData();
 
+        console.log('Отправка данных:', surveyData);
+
+        // Раскомментируйте для реальной отправки
         // const response = await fetch('https://your-server.com/api/survey', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify(surveyData)
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(surveyData)
         // });
 
         // if (!response.ok) {
-        //   throw new Error(`HTTP error! status: ${response.status}`);
+        //     throw new Error(`HTTP error! status: ${response.status}`);
         // }
 
-        // const result = await response.json();
+        // Имитация успешной отправки для теста
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
         localStorage.setItem('surveyLastSubmitted', new Date().toISOString());
 
         widget.classList.remove('show');
-
+        widget.classList.remove('collapsed');
         showToast('Спасибо за вашу оценку!');
-
         resetWidget();
 
       } catch (error) {
-        console.error('Ошибка при отправке:', error);
-
+        console.error('Ошибка:', error);
         submitBtn.textContent = 'Отправить';
         submitBtn.disabled = false;
-
-        showToast('Произошла ошибка. Попробуйте позже.', 'error');
+        showToast('Ошибка. Попробуйте позже.', 'error');
       }
     }
 
@@ -768,27 +855,19 @@
       toast.textContent = message;
       toast.classList.add('show');
 
-      setTimeout(function () {
+      setTimeout(() => {
         toast.classList.remove('show');
       }, 3000);
     }
 
     function resetWidget() {
       currentStep = 1;
-
       answers = {};
-
       showStep(1);
 
-      const allRadios = document.querySelectorAll('input[type="radio"]');
-      allRadios.forEach(function (radio) {
-        radio.checked = false;
-      });
-
+      document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
       const textarea = document.querySelector('textarea[name="improvements"]');
-      if (textarea) {
-        textarea.value = '';
-      }
+      if (textarea) textarea.value = '';
     }
   });
 </script>
