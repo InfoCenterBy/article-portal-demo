@@ -402,9 +402,7 @@
   </nav>
 
   <div class="nav-container active-container">
-    <!-- Nav Button -->
     <a class id="menu-btn"><i class="bi bi-chevron-right"></i></a>
-    <!--Nav Button -->
     <div class="main-content">
       <section class="main-section">
         <div class="row">
@@ -437,10 +435,43 @@
         </nav>
 
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 row-gap-3 mt-32 align-items-end">
-          <div></div>
           <div class="col">
-            <button class="button button_empty border-10" style="padding: 14px 0; max-width: 245px; width: 100%;">Lorem ipsum d</button>
+            <div class="input">
+              <div class="form-group my-2 my-md-0">
+                <label for="date">Lorem ipsum do</label>
+                <div class="input-group date mt-1 datetimepicker-wrapper datetimepicker-reg" id="datetimepicker" data-target-input="nearest">
+                  <input id="dateFrom" type="text" class="form-control datetimepicker-input border-right-0" data-target="#datetimepicker" placeholder="01.01.2026">
+                  <div class="input-group-text" data-target="#datetimepicker" data-toggle="datetimepicker">
+                    <i class="bi bi-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="col">
+            <div class="input">
+              <div class="form-group my-2 my-md-0 ">
+                <label for="date">Lorem ipsum do</label>
+                <div class="input-group date mt-1 datetimepicker-wrapper datetimepicker-reg" id="datetimepickerEnd" data-target-input="nearest">
+                  <input id="dateTo" type="text" class="form-control datetimepicker-input border-right-0" data-target="#datetimepickerEnd" placeholder="01.01.2026">
+                  <div class="input-group-text" data-target="#datetimepickerEnd" data-toggle="datetimepicker">
+                    <i class="bi bi-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <button class="button border-10" style="padding: 17px 0; max-width: 300px; width: 100%;">Lorem ip</button>
+          </div>
+          <div class="col ms-auto">
+            <button class="button button_empty border-10" style="padding: 15px 0; max-width: 300px; width: 100%;">Lorem ipsum d</button>
+          </div>
+
+        </div>
+
+        <div class="flex-column justify-content-center align-items-center my-5 loader">
+          <div class="spinner" style="margin: 0 auto"></div>
         </div>
 
         <div class="table-4 border-10 mt-32 mb-5">
@@ -507,9 +538,6 @@
             </tbody>
           </table>
         </div>
-
-
-
       </div>
     </div>
 
@@ -689,7 +717,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
 
 
-  <script src="js/script.min.js"></script>
+  <script src="js/script.min.js"></script>\
+
 </body>
 
 </html>

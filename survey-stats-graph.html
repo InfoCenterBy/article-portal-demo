@@ -403,9 +403,7 @@
   </nav>
 
   <div class="nav-container active-container">
-    <!-- Nav Button -->
     <a class id="menu-btn"><i class="bi bi-chevron-right"></i></a>
-    <!--Nav Button -->
     <div class="main-content">
       <section class="main-section">
         <div class="row">
@@ -436,6 +434,38 @@
             <a class="nav-tab__button active px-5" href="survey-stats-graph.html">Lorem i</a>
           </div>
         </nav>
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 row-gap-3 mt-32 align-items-end">
+          <div class="col">
+            <div class="input">
+              <div class="form-group my-2 my-md-0">
+                <label for="date">Lorem ipsum do</label>
+                <div class="input-group date mt-1 datetimepicker-wrapper datetimepicker-reg" id="datetimepicker" data-target-input="nearest">
+                  <input type="text" class="form-control datetimepicker-input border-right-0" data-target="#datetimepicker" placeholder="01.01.2026">
+                  <div class="input-group-text" data-target="#datetimepicker" data-toggle="datetimepicker">
+                    <i class="bi bi-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="input">
+              <div class="form-group my-2 my-md-0 ">
+                <label for="date">Lorem ipsum do</label>
+                <div class="input-group date mt-1 datetimepicker-wrapper datetimepicker-reg" id="datetimepickerEnd" data-target-input="nearest">
+                  <input type="text" class="form-control datetimepicker-input border-right-0" data-target="#datetimepickerEnd" placeholder="01.01.2026">
+                  <div class="input-group-text" data-target="#datetimepickerEnd" data-toggle="datetimepicker">
+                    <i class="bi bi-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <button class="button border-10" style="padding: 17px 0; max-width: 300px; width: 100%;">Lorem ip</button>
+          </div>
+        </div>
 
         <div class="mt-32 mb-5">
           <div class="stats-overview" id="graphsOverview"></div>
@@ -624,29 +654,50 @@
 
   <script src="js/script.min.js"></script>
   <script>
+    const stats = {
+      "stats": {
+        "generalImpression": {
+          "ratings": [5, 12, 25, 40, 18],
+          "total": 100
+        },
+        "usefulness": {
+          "ratings": [3, 8, 22, 35, 32],
+          "total": 100
+        },
+        "accessibility": {
+          "ratings": [7, 15, 28, 30, 20],
+          "total": 100
+        },
+        "interface": {
+          "ratings": [4, 10, 25, 38, 23],
+          "total": 100
+        }
+      }
+    }
+
     const surveyData = {
       generalImpression: {
         question: 'Общее впечатление о сайте',
         labels: ['1', '2', '3', '4', '5'],
-        values: [5, 12, 25, 40, 18],
+        values: stats.stats.generalImpression.ratings,
         colors: ['#D24344', '#D1D2D4', '#F9B974', '#034A66', '#C47A2C']
       },
       usefulness: {
         question: 'Полезность материалов',
         labels: ['1', '2', '3', '4', '5'],
-        values: [3, 8, 22, 35, 32],
+        values: stats.stats.usefulness.ratings,
         colors: ['#D24344', '#D1D2D4', '#F9B974', '#034A66', '#C47A2C']
       },
       accessibility: {
         question: 'Доступность информации',
         labels: ['1', '2', '3', '4', '5'],
-        values: [7, 15, 28, 30, 20],
+        values: stats.stats.accessibility.ratings,
         colors: ['#D24344', '#D1D2D4', '#F9B974', '#034A66', '#C47A2C']
       },
       interface: {
         question: 'Удобство интерфейса',
         labels: ['1', '2', '3', '4', '5'],
-        values: [4, 10, 25, 38, 23],
+        values: stats.stats.interface.ratings,
         colors: ['#D24344', '#D1D2D4', '#F9B974', '#034A66', '#C47A2C']
       }
     };
@@ -667,7 +718,7 @@
           percentages
         };
       }
-
+      console.log(stats)
       return stats;
     }
 
@@ -779,74 +830,6 @@
       });
     }
 
-    function createPieCharts(stats) {
-      const container = document.getElementById('chartsGrid');
-      container.innerHTML = '';
-
-      const charts = [
-        { key: 'generalImpression', title: 'Общее впечатление' },
-        { key: 'usefulness', title: 'Полезность материалов' },
-        { key: 'accessibility', title: 'Доступность информации' },
-        { key: 'interface', title: 'Удобство интерфейса' }
-      ];
-
-      charts.forEach(chart => {
-        const data = stats[chart.key];
-
-        const chartContainer = document.createElement('div');
-        chartContainer.className = 'graph-container';
-        chartContainer.innerHTML = `
-            <h2>${chart.title}</h2>
-            <div class="chart-wrapper">
-                <canvas id="pie-${chart.key}"></canvas>
-            </div>
-            <div class="stats-footer">
-                <span>Средняя оценка: <strong>${data.average}</strong></span>
-                <span>Всего: ${data.total}</span>
-            </div>
-        `;
-
-        container.appendChild(chartContainer);
-
-        const ctx = document.getElementById(`pie-${chart.key}`).getContext('2d');
-
-        new Chart(ctx, {
-          type: 'doughnut',
-          data: {
-            labels: data.labels.map((label, i) => `${label} (${data.percentages[i]}%)`),
-            datasets: [{
-              data: data.values,
-              backgroundColor: data.colors,
-              borderColor: 'white',
-              borderWidth: 2
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                position: 'bottom',
-                labels: {
-                  boxWidth: 12,
-                  padding: 15
-                }
-              },
-              tooltip: {
-                callbacks: {
-                  label: function (context) {
-                    const value = context.raw;
-                    const percentage = data.percentages[context.dataIndex];
-                    return `${value} ответов (${percentage}%)`;
-                  }
-                }
-              }
-            }
-          }
-        });
-      });
-    }
-
     // Инициализация
     document.addEventListener('DOMContentLoaded', function () {
       const stats = calculateStats(surveyData);
@@ -878,6 +861,7 @@
       }
     }
   </script>
+
 </body>
 
 </html>

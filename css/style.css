@@ -13288,6 +13288,15 @@ html {
             justify-content: space-between;
   }
 
+  .popular-block img,
+  .popular-block picture {
+    display: none;
+  }
+
+  .popular-block__title {
+    padding: 32px 10px;
+  }
+
   .popular-block picture,
   .popular-block img {
     max-width: 150px;
