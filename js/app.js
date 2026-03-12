@@ -609,8 +609,20 @@ const bannerSlider = new Swiper(".banner-slider .swiper", {
       slidesPerView: 1,
       spaceBetween: 8,
     },
-    1400: {
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 8,
+    },
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 8,
+    },
+    1200: {
       slidesPerView: 3,
+      spaceBetween: 8,
+    },
+    1400: {
+      slidesPerView: 4,
       spaceBetween: 16,
     },
   },
