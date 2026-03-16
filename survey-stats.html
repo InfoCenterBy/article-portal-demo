@@ -462,10 +462,10 @@
             </div>
           </div>
           <div class="col">
-            <button class="button border-10" style="padding: 17px 0; max-width: 300px; width: 100%;">Lorem ip</button>
+            <button class="button border-10" style="padding: 17px 0; max-width: 400px; width: 100%;">Lorem ip</button>
           </div>
           <div class="col ms-auto">
-            <button class="button button_empty border-10" style="padding: 15px 0; max-width: 300px; width: 100%;">Lorem ipsum d</button>
+            <button id="exportToExcel" class="button button_empty border-10" style="padding: 15px 0; max-width: 400px; width: 100%;">Lorem ipsum d</button>
           </div>
 
         </div>
@@ -475,7 +475,7 @@
         </div>
 
         <div class="table-4 border-10 mt-32 mb-5">
-          <table class="w-100">
+          <table class="w-100" id="dataTable">
             <thead>
               <tr>
                 <td>L</td>
@@ -718,7 +718,129 @@
 
 
   <script src="js/script.min.js"></script>\
+  <!-- <script>
+    function exportTableToExcel() {
+      try {
+        const table = document.getElementById('dataTable');
 
+        let html = `
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Экспорт таблицы</title>
+        </head>
+        <body>
+          ${table.outerHTML}
+        </body>
+      </html>
+    `;
+
+        const blob = new Blob([html], { type: 'application/vnd.ms-excel' });
+
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `survey_stats_${new Date().toISOString().slice(0, 10)}.xls`;
+
+        document.body.appendChild(link);
+        link.click();
+
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+
+      } catch (error) {
+        console.error('Ошибка при экспорте:', error);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      const exportBtn = document.getElementById('exportToExcel');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', exportTableToExcel);
+      }
+    });
+  </script> -->
+  <script>
+    function exportToExcel() {
+      const table = document.getElementById('dataTable');
+
+      if (!table) {
+        alert('Таблица не найдена');
+        return;
+      }
+
+      const rows = table.querySelectorAll('tr');
+
+      if (rows.length === 0) {
+        alert('Нет данных для экспорта');
+        return;
+      }
+
+      const excelData = [];
+
+      const headerCells = rows[0].querySelectorAll('th, td');
+      const headers = [];
+      headerCells.forEach(cell => {
+        headers.push(cell.textContent.trim());
+      });
+
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        const cells = row.querySelectorAll('td');
+
+        if (cells.length === 1 && cells[0].hasAttribute('colspan')) {
+          continue;
+        }
+
+        if (cells.length > 0) {
+          const rowData = {};
+          cells.forEach((cell, index) => {
+            rowData[headers[index] || `Колонка ${index + 1}`] = cell.textContent.trim();
+          });
+          excelData.push(rowData);
+        }
+      }
+
+      if (excelData.length === 0) {
+        alert('Нет данных для экспорта');
+        return;
+      }
+
+      const tableHeaders = headers;
+
+      const csvContent = [
+        tableHeaders.join(';'),
+        ...excelData.map(row => tableHeaders.map(header => {
+          const value = row[header];
+          if (value === null || value === undefined) return '';
+          if (typeof value === 'string' && (value.includes(';') || value.includes('"'))) {
+            return `"${value.replace(/"/g, '""')}"`;
+          }
+          return value;
+        }).join(';'))
+      ].join('\n');
+
+      const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+
+      const date = new Date();
+      const dateStr = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+
+      link.href = url;
+      link.setAttribute('download', `survey_stats_${dateStr}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const exportBtn = document.getElementById('exportToExcel');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', exportToExcel);
+      }
+    });
+  </script>
 </body>
 
 </html>

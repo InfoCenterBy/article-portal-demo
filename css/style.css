@@ -9262,6 +9262,11 @@ i {
   display: block;
 }
 
+.banner-slider .swiper-button-next,
+.banner-slider .swiper-button-prev {
+  z-index: 1;
+}
+
 .topic-slider .swiper-slide {
   min-height: 108px;
   font-size: 16px;
