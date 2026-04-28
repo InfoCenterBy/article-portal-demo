@@ -423,12 +423,16 @@
 	}
 
 	.video-lock-card {
-		width: min(520px, 100%);
+		width: min(260px, 100%);
 		background: var(--color-white);
-		border-radius: 16px;
-		padding: 32px 28px;
 		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
 		text-align: center;
+	}
+
+	@media screen and (min-width: 1200px) {
+		.video-lock-card {
+			width: min(530px, 100%);
+		}
 	}
 </style>
 <script>
@@ -467,8 +471,8 @@
 
 					<div v-if="locked && !authorized" class="video-lock-overlay" @click.stop>
 						<div
-							class="video-lock-card d-flex flex-column justify-content-center gap-4 align-items-center">
-							<div class="video-lock-icon" aria-hidden="true">
+							class="video-lock-card d-flex flex-column justify-content-center gap-3 gap-lg-4 align-items-center border-10 p-xl-4 p-lg-2 p-2">
+							<div class="video-lock-icon d-xl-block d-none" aria-hidden="true">
 								<svg width="80" height="80" viewBox="0 0 80 80" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path d="M39.5 6.8125C42.0527 6.8125 44.5009 7.82656 46.3059 9.6316C48.1109 11.4366 49.125 13.8848 49.125 16.4375V35.6875H29.875V16.4375C29.875 13.8848 30.8891 11.4366 32.6941 9.6316C34.4991 7.82656 36.9473 6.8125 39.5 6.8125ZM53.9375 35.6875V16.4375C53.9375 12.6084 52.4164 8.9362 49.7089 6.22865C47.0013 3.52109 43.3291 2 39.5 2C35.6709 2 31.9987 3.52109 29.2911 6.22865C26.5836 8.9362 25.0625 12.6084 25.0625 16.4375V35.6875C22.5098 35.6875 20.0616 36.7016 18.2566 38.5066C16.4516 40.3116 15.4375 42.7598 15.4375 45.3125V69.375C15.4375 71.9277 16.4516 74.3759 18.2566 76.1809C20.0616 77.9859 22.5098 79 25.0625 79H53.9375C56.4902 79 58.9384 77.9859 60.7434 76.1809C62.5484 74.3759 63.5625 71.9277 63.5625 69.375V45.3125C63.5625 42.7598 62.5484 40.3116 60.7434 38.5066C58.9384 36.7016 56.4902 35.6875 53.9375 35.6875ZM25.0625 40.5H53.9375C55.2139 40.5 56.4379 41.007 57.3405 41.9095C58.243 42.8121 58.75 44.0361 58.75 45.3125V69.375C58.75 70.6514 58.243 71.8754 57.3405 72.778C56.4379 73.6805 55.2139 74.1875 53.9375 74.1875H25.0625C23.7861 74.1875 22.5621 73.6805 21.6595 72.778C20.757 71.8754 20.25 70.6514 20.25 69.375V45.3125C20.25 44.0361 20.757 42.8121 21.6595 41.9095C22.5621 41.007 23.7861 40.5 25.0625 40.5Z"
@@ -478,16 +482,16 @@
 										fill="#C47A2C" />
 								</svg>
 							</div>
-							<div class="">
+							<div class="d-lg-block d-none">
 								<h4 class="h4 mb-0 ff-inter fw-600 fs-20">
 									Хотите продолжить просмотр?
 								</h4>
 							</div>
-							<p class="mb-0 ff-inter fs-16">
+							<p class="mb-0 ff-inter fs-lg-16 fs-14">
 								Авторизуйтесь, чтобы получить полный доступ к видео и
 								продолжить с текущего момента
 							</p>
-							<a class="button border-10 d-flex justify-content-center flex-column align-items-center"
+							<a class="button border-10 d-flex justify-content-center flex-column align-items-center p-lg-3 p-2 fs-lg-16 fs-14 w-fit-content"
 								href="./login.html">Авторизоваться</a>
 						</div>
 					</div>
