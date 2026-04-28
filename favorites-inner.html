@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<title>Инструкции</title>
+	<title>Комментарии и разъяснения</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,9 +28,15 @@
 	<link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/style.min.css" />
 </head>
+<style>
+    .custom-tooltip {
+        --bs-tooltip-bg: var(--color-gold);
+        --bs-tooltip-color: var(--color-white);
+    }
+</style>
 
 <body>
-  <header class="new-header d-flex flex-row justify-content-between align-items-center">
+    <header class="new-header d-flex flex-row justify-content-between align-items-center">
      <div class="d-flex flex-row align-items-center">
           <div class="mobile-menu me-2">
                <button type="button" class="bi bi-list" id="mobile-button"></button>
@@ -205,7 +211,7 @@
      </div>
      <div class="progress"></div>
 </header>
-  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
      <div class="modal-dialog">
           <div class="modal-content">
                <div class="modal-body d-flex flex-row align-items-center justify-content-between">
@@ -220,7 +226,7 @@
           </div>
      </div>
 </div>
-  <nav class="flex-column justify-content-start pb-140 overflow-auto side-navbar active-nav" id="sidebar">
+    <nav class="flex-column justify-content-start pb-140 overflow-auto side-navbar active-nav" id="sidebar">
 	<div class="flex-column w-100 nav main-nav">
 		<div href="#" class="nav-link">
 			<a href="" class="nav-link__icon">
@@ -353,124 +359,276 @@
 	</div>
 </nav>
 
-  <div class="nav-container active-container">
+    <div class="nav-container active-container">
 
-    <a class="" id="menu-btn"><i class="bi bi-chevron-right"></i></a>
+        <a class="" id="menu-btn"><i class="bi bi-chevron-right"></i></a>
 
-    <div class="main-content">
-      <section class="main-section row w-100 justify-content-between">
-     <div class="color-gray-dark fin-wrapper col-md-4 my-3 row row-container fs-14">
-          <div class="fin-block col my-1">
-               <span class="mx-1">USD:</span>
-               <strong class="mx-1">2.5931</strong>
-          </div>
-          <div class="fin-block col my-1">
-               <span class="mx-1">EUR:</span>
-               <strong class="mx-1">2.7589</strong>
-          </div>
-          <div class="fin-block col my-1">
-               <span class="mx-1">RUB:</span>
-               <strong class="mx-1">4.2823</strong>
-          </div>
-     </div>
-     <div class="color-gray-dark fin-wrapper col-md-8 my-3 row row-container fs-14">
-          <div class="fin-block col my-1">
-               <span class="mx-1">Базовая величина:</span>
-               <strong class="mx-1">32 BYN</strong>
-          </div>
-          <div class="fin-block col my-1">
-               <span class="mx-1">Базовая арендная величина:</span> 
-               <strong class="mx-1">16,9 BYN</strong>
-          </div>
-          <div class="fin-block col my-1">
-               <span class="mx-1">Базовая ставка:</span>
-               <strong class="mx-1">210 BYN</strong>
-          </div>
-     </div>
-</section>
+        <div class="main-content">
+            <section class="main-section">
+                <div class="row">
+                    <nav aria-label="breadcrumb" class="col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="new-main.html"><i class="bi bi-house"></i></a>
+                            </li>
+                            <li class="breadcrumb-item ">
+                                <a href="personal-area.html">Личный кабинет</a>
+                            </li>
+                            <li class="breadcrumb-item ">
+                                <a href="./favorites.html">Избранное</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Комментарии и разъяснения</li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
 
-      <section class="main-section">
-        <div class="row">
-          <nav aria-label="breadcrumb" class="col-12">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="new-main.html"><i class="bi bi-house"></i></a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="services.html">Сервисы</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="support.html">Техническая поддержка</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">Инструкции</li>
-            </ol>
-          </nav>
+            <div class="mt-4"></div>
+            <div class="main-section">
+                <div class="position-relative" id="upBtn">
+                    <div class="up-btn position-fixed" hidden></div>
+                </div>
+            </div>
         </div>
-      </section>
 
-      <div class="main-section">
-        <div class="position-relative" id="upBtn">
-          <div class="up-btn position-fixed" hidden></div>
-        </div>
-      </div>
-      <div class="main-section">
+        <div class="main-section">
+            <div class="sidebar-wrapper">
+                <div class="sidebar-wrapper__content pt-0">
+                    <div class="d-flex flex-row justify-content-between align-content-center">
+                        <div class="">
+                            <h1 class="h1 mb-0">Комментарии и разъяснения</h1>
+                        </div>
+                        <div class="">
+                            <h1 class="m-0 h1">
+                                <span class="color-gray-dark">
+                                    10
+                                </span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row flex-wrap gap-2 justify-content-between align-items-center mt-5">
+                        <h3 class="h3 m-0">Материалы</h3>
+                        <div class="d-flex flex-row flex-wrap align-items-center notification-all gap-3">
+                            <div class="checkbox text-nowrap">
+                                <input type="checkbox" id="selectAll">
+                                <label class="checkbox__label" for="selectAll">
+                                    <span class="checkbox__label_text">Выделить все</span>
+                                </label>
+                            </div>
+                            <button type="button" class="notification-all__btn-clear text-nowrap"><i
+                                    class="bi bi-x-square me-2"></i>Очистить
+                                все</button>
+                            <button class="d-flex flex-row gap-1 align-items-center color-red text-nowrap">
+                                <i class="bi bi-trash"></i>
+                                <span>Удалить выделенные</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="list-recent-articles mt-4">
+                        <div class="item-article-new">
+                            <div class="d-flex flex-row gap-xl-4 gap-3 align-items-start">
+                                <div class="">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="RefInfo01">
+                                        <label class="checkbox__label" for="RefInfo01"></label>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div
+                                        class="d-flex flex-xxl-row flex-column gap-4 justify-content-between align-content-center mt-1">
+                                        <div class="item-article-new__category">
+                                            <span>
+                                                Комментарии и разъяснения
+                                            </span>
+                                        </div>
+                                        <div class="d-flex flex-row flex-wrap gap-3 justify-content-between">
+                                            <div class="item-article-new__date">
+                                                <div class="item-article-new__date-text">
+                                                    <span>Дата добавления:</span>
+                                                </div>
+                                                <div class="item-article-new__date-value">
+                                                    <span>
+                                                        28.01.2026
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-row gap-2">
+                                                <button class="item-article-new__button" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#transferFolderModal">
+                                                    <i class="bi bi-folder-symlink"></i>
+                                                </button>
+                                                <button class="item-article-new__button" data-bs-toggle="modal"
+                                                    href="#exampleModalToggle" role="button">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <a href="#" class="item-article-new__title">
+                                            <span>
+                                                Практическая конференция «Налоги – 2026: основные изменения и
+                                                практические аспекты»
+                                            </span>
+                                        </a>
+                                        <div class="item-article-new__text mt-3">
+                                            <p>
+                                                Запись приветственного слова в адрес участников и открытия практической
+                                                конференции по теме <b>«Налоги – 2026: основные
+                                                    изменения и практические аспекты»</b>, которая состоялась 17.12.2025
+                                                года
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex flex-column justify-content-center align-items-center text-center">
+                            <div class="">
+                                <i class="bi bi-bookmark-x fs-64 color-gray"></i>
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="mb-0 fw-600">
+                                    У Вас пока нет материалов в папке
+                                </h5>
+                            </div>
+                            <div class="mt-32 col-lg-8">
+                                <p class="mb-0 color-gray-dark">
+                                    Нажмите на иконку «Добавить в закладки» и выберите нужную папку для добавления
+                                    материала
+                                </p>
+                            </div>
+                            <div class="mt-5">
+                                <a href="./favorites.html" target="_self" rel="noopener noreferrer"
+                                    class="button button_empty border-10">Перейти к материалам</a>
+                            </div>
+                        </div>
+                    </div>
 
-        <h2 class="h2 mt-3">Инструкции <span class="color-gray-dark">3</span></h2>
-
-        <div class="d-flex flex-column gap-2">
-          <a href="/upload/iblock/73a/lg2yv7j2rm7to9p1v32908uobbai7ei7/53_Dogovor_arendy_subarendy_mashino_mest.rtf"
-            class="archive-card d-flex justify-content-between align-items-center w-100" download="ДОГОВОР аренды (субаренды) машино-места">
-            <div class="archive-card__info d-flex flex-row align-items-center">
-              <div><i class="bi bi-filetype-doc"></i></div>
-              <div class="d-flex flex-column ms-md-3 ms-1 align-items-start">
-                <div class="archive-card__title">
-                  ДОГОВОР аренды (субаренды) машино-места </div>
-                <div class="archive-card__type mt-3">
-                  <span>Для физических лиц / Договоры </span>
                 </div>
 
-              </div>
+                <aside data-da=".sidebar-wrapper__content,1100,1" class="sidebar-wrapper__aside mb-4">
+                    <h4 class="h4 h4_gold hidden-title">Личный кабинет</h4>
+                    <nav class="nav-links mb-4">
+                        <div class="nav-links__wrapper">
+                            <a href="personal-area.html" class="nav-links__link">Профиль</a>
+                            <a href="favorites.html" class="nav-links__link active">Избранное</a>
+                            <a href="browsing-history.html" class="nav-links__link">История просмотров</a>
+                            <a href="settings.html" class="nav-links__link">Настройки</a>
+                            <a href="subscription.html" class="nav-links__link">Подписка</a>
+                            <a href="notifications.html" class="nav-links__link ">Уведомления</a>
+                            <a href="new-on-padatak.html" class="nav-links__link">Новое на Padatak.by</a>
+                        </div>
+                    </nav>
+                    <hr>
+                    <h5 class="h4 h4_gold">Техническая поддежка</h5>
+                    <a href="tel:+37517111111" class="link link_gray">+375 (17) 11-11-11</a>
+                </aside>
             </div>
-            <div><i class="bi bi-download"></i></div>
-          </a>
-          <a href="/upload/iblock/73a/lg2yv7j2rm7to9p1v32908uobbai7ei7/53_Dogovor_arendy_subarendy_mashino_mest.rtf"
-            class="archive-card d-flex justify-content-between align-items-center w-100" download="ДОГОВОР аренды (субаренды) машино-места">
-            <div class="archive-card__info d-flex flex-row align-items-center">
-              <div><i class="bi bi-filetype-doc"></i></div>
-              <div class="d-flex flex-column ms-md-3 ms-1 align-items-start">
-                <div class="archive-card__title">
-                  ДОГОВОР аренды (субаренды) машино-места </div>
-                <div class="archive-card__type mt-3">
-                  <span>Для физических лиц / Договоры </span>
-                </div>
-
-              </div>
-            </div>
-            <div><i class="bi bi-download"></i></div>
-          </a>
-          <a href="/upload/iblock/73a/lg2yv7j2rm7to9p1v32908uobbai7ei7/53_Dogovor_arendy_subarendy_mashino_mest.rtf"
-            class="archive-card d-flex justify-content-between align-items-center w-100" download="ДОГОВОР аренды (субаренды) машино-места">
-            <div class="archive-card__info d-flex flex-row align-items-center">
-              <div><i class="bi bi-filetype-doc"></i></div>
-              <div class="d-flex flex-column ms-md-3 ms-1 align-items-start">
-                <div class="archive-card__title">
-                  ДОГОВОР аренды (субаренды) машино-места </div>
-                <div class="archive-card__type mt-3">
-                  <span>Для физических лиц / Договоры </span>
-                </div>
-
-              </div>
-            </div>
-            <div><i class="bi bi-download"></i></div>
-          </a>
         </div>
-      </div>
-    </div>
 
+        <div class="my-5"></div>
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-confirm modal-content border-20">
+                    <div class="d-flex aligh-items-flex-end">
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-confirm__body text-center">
+                        <div class="my-4"><i class="bi bi-trash fs-64 color-gold"></i></div>
+                        <h5 class="h5">Вы уверены, что вы хотите удалить выбранную статью?</h5>
+                    </div>
+                    <div class="d-flex align-items-center gap-4">
+                        <button class="button border-10" data-bs-target="#exampleModalToggle2"
+                            data-bs-toggle="modal">Удалить</button>
+                        <button type="button" class="button button_empty border-10" data-bs-dismiss="modal"
+                            aria-label="Close">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-confirm modal-content border-20">
+                    <div class="d-flex aligh-items-flex-end">
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-confirm__body text-center">
+                        <div class="my-4"><i class="bi bi-check-circle fs-64 color-gold"></i></div>
+                        <h5 class="h5">Выбранная статья успешно удалена</h5>
+                    </div>
+                    <button type="button" class="button w-100 border-10" data-bs-dismiss="modal"
+                        aria-label="Close">Вернуться в
+                        Избранное</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="transferFolderModal" aria-hidden="true" aria-labelledby="transferFolderModalLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-confirm modal-content border-20 text-start">
+                    <div class="d-flex aligh-items-flex-end">
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-confirm__body text-start">
+                        <h4 class="h4 m-0">
+                            Переместить избранное
+                        </h4>
+                        <div class="mt-3">
+                            <p class="mb-0">
+                                <span class="color-gray-dark">Текущее расположение:</span>
+                                <span class="color-nav-black">Комментарии и разъяснения</span>
+                            </p>
+                        </div>
+                        <div class="mt-3">
+                            <p class="mb-0 color-gray-dark">
+                                Выберите новое расположение:
+                            </p>
+                            <div class="d-flex flex-column gap-3 mt-3">
+                                <div class="radio">
+                                    <input id="saveToGeneralList" type="radio" name="transferFolder"
+                                        value="saveToGeneralList" checked="">
+                                    <label class="radio__label" for="saveToGeneralList">Сохранить в
+                                        общий список без папки</label>
+                                </div>
+                                <div class="radio">
+                                    <input id="reviewsOfWebinars" type="radio" name="transferFolder"
+                                        value="reviewsOfWebinars">
+                                    <label class="radio__label" for="reviewsOfWebinars">Обзоры по итогам
+                                        вебинаров, семинаров</label>
+                                </div>
+                                <div class="radio">
+                                    <input id="governmentRegulation" type="radio" name="transferFolder"
+                                        value="governmentRegulation">
+                                    <label class="radio__label" for="governmentRegulation">Государственное
+                                        регулирование</label>
+                                </div>
+                                <div class="radio">
+                                    <input id="pricing" type="radio" name="transferFolder" value="pricing">
+                                    <label class="radio__label" for="pricing">Ценообразование</label>
+                                </div>
+                            </div>
+                        </div>
 
-
-    <div class="my-5"></div>
-    <footer class="footer">
+                    </div>
+                    <div class="d-flex align-items-center gap-4 mt-4 justify-content-center">
+                        <button type="button" class="button button_empty border-10" data-bs-dismiss="modal"
+                            aria-label="Close">Отметить</button>
+                        <button type="button" class="button border-10 toast-button" data-bs-dismiss="modal"
+                            aria-label="Close"
+                            onclick="showToast('Статья перемещена в папку «Ценообразование»', 'success')">Переместить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
      <div class="main-section">
           <div class="footer__body">
                <div class="row g-4">
@@ -634,8 +792,20 @@
           </div>
      </div>
 </footer>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        <div class="toast-container position-fixed bottom-0 end-0 p-3 p-md-4">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="h6 h6_white m-0 d-flex align-items-center">
+                        <i class=""></i>
+                        <div class="toast-text"></div>
+                    </div>
+                    <button type="button" class="toast-basic__close" data-bs-dismiss="toast" aria-label="Close"><i
+                            class="bi bi-x"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -654,6 +824,42 @@
 
 
 <script src="js/script.min.js"></script>
+    <script>
+        const showToast = (message, type = 'default') => {
+            let toastItem = document.querySelector('.toast');
+            let myToast = bootstrap.Toast.getOrCreateInstance(toastItem);
+            let toastI = toastItem.querySelector('i');
+            let messageDiv = document.querySelector('.toast-text');
+
+            messageDiv.innerHTML = message;
+
+            switch (type) {
+                case 'success':
+                    toastItem.className = 'toast toast-basic toast-success';
+                    toastI.className = 'bi bi-check2-circle color-gold me-3';
+                    break;
+                case 'fail':
+                    console.log('success12');
+                    toastItem.className = 'toast toast-basic toast-fail';
+                    toastI.className = 'bi bi-exclamation-triangle color-red me-3';
+                    break;
+                case 'attention':
+                    toastItem.className = 'toast toast-basic toast-attention';
+                    toastI.className = 'bi bi-exclamation-circle color-orange me-3';
+                    break;
+                default:
+                    toastItem.className = 'toast toast-basic toast-info';
+                    toastI.className = 'bi bi-info-circle color-indigo me-3';
+                    break
+            }
+
+            myToast.show();
+        }
+    </script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 
 </html>

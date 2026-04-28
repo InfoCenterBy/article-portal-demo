@@ -4202,6 +4202,21 @@ input[type=radio]:checked + .try-btn {
   color: var(--color-gold);
 }
 
+.folder-card-item {
+  -webkit-transition: all ease-out 0.3s;
+  -o-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+  border: 1px solid var(--color-gray);
+}
+
+.folder-card-item__title {
+  color: var(--color-nav-black);
+  -webkit-transition: all ease-out 0.3s;
+  -o-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+  font-weight: 600;
+}
+
 p {
   margin-bottom: 24px;
 }
@@ -14196,6 +14211,14 @@ html {
 
   .item-article-new .item-article-new__button:hover {
     border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .folder-card-item:hover {
+    border-color: var(--color-gold);
+  }
+
+  .folder-card-item__title:hover {
     color: var(--color-gold);
   }
 }
