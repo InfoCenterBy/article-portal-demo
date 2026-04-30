@@ -1172,7 +1172,7 @@ body._lock {
 
 .item-article__bookmark {
   font-size: 28px;
-  color: var(--color-gray);
+  color: var(--color-blue-light);
   position: absolute;
   top: -12px;
   right: 28px;
@@ -1183,8 +1183,8 @@ body._lock {
   background-color: var(--color-white);
 }
 
-.item-article__bookmark:hover {
-  color: var(--color-blue-light);
+.item-article__bookmark:hover .bi-bookmark-check-fill::before {
+  content: "\f197" !important;
 }
 
 .item-article__category {
@@ -11392,7 +11392,7 @@ html {
 
 .card-media-library .item-article__bookmark {
   font-size: 28px;
-  color: var(--color-gray);
+  color: var(--color-blue-light);
   position: absolute;
   top: -12px;
   right: 28px;
@@ -11403,8 +11403,8 @@ html {
   background-color: transparent;
 }
 
-.card-media-library .item-article__bookmark:hover {
-  color: var(--color-blue-light);
+.card-media-library .item-article__bookmark:hover .bi-bookmark-check-fill::before {
+  content: "\f197" !important;
 }
 
 @media screen and (min-width: 576px) {
