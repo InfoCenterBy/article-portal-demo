@@ -4217,6 +4217,272 @@ input[type=radio]:checked + .try-btn {
   font-weight: 600;
 }
 
+.line-clamp-4 {
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+
+.item-crossword {
+  border: 1px solid var(--color-gray);
+  border-radius: 16px;
+  -webkit-transition: border-color 0.3s ease 0s;
+  -o-transition: border-color 0.3s ease 0s;
+  transition: border-color 0.3s ease 0s;
+}
+
+.item-crossword:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.item-crossword:has(.item-crossword__online:hover),
+.item-crossword:has(.item-crossword__print:hover) {
+  border-color: var(--color-gold);
+}
+
+.item-crossword__online {
+  gap: 20px;
+  padding: 20px 24px;
+  color: var(--color-black);
+  min-width: 0;
+}
+
+.item-crossword__online:hover {
+  color: var(--color-black);
+}
+
+.item-crossword__online:hover .item-crossword__title {
+  color: var(--color-gold);
+}
+
+.item-crossword__online:hover .item-crossword__img-wrap {
+  border-color: var(--color-blue-light);
+  background-color: #f5e8d2;
+}
+
+.item-crossword__online:hover .item-crossword__solve {
+  color: var(--color-gold-light);
+}
+
+.item-crossword__online:hover .item-crossword__solve i::before {
+  -webkit-transform: translateX(3px);
+      -ms-transform: translateX(3px);
+          transform: translateX(3px);
+}
+
+.item-crossword__img-wrap {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 170px;
+          flex: 0 0 170px;
+  height: 148px;
+  padding: 5px;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background-color: var(--color-gray);
+  -webkit-transition: border-color 0.3s ease 0s, background-color 0.3s ease 0s;
+  -o-transition: border-color 0.3s ease 0s, background-color 0.3s ease 0s;
+  transition: border-color 0.3s ease 0s, background-color 0.3s ease 0s;
+}
+
+.item-crossword__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+
+.item-crossword__body {
+  min-width: 0;
+}
+
+.item-crossword__title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: var(--color-black);
+  -webkit-transition: color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
+.item-crossword__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0 0 14px;
+  font-size: 16px;
+  color: var(--color-gray-dark);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.item-crossword__footer {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 8px;
+}
+
+.item-crossword__progress-wrap {
+  gap: 8px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80px;
+          flex: 1 1 80px;
+  max-width: 220px;
+}
+
+.item-crossword__progress-bar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  height: 8px;
+  background-color: var(--color-gray);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.item-crossword__progress-fill {
+  height: 100%;
+  background-color: var(--color-gold);
+  border-radius: 10px;
+}
+
+.item-crossword__progress-text {
+  font-size: 14px;
+  color: var(--color-gray-dark);
+  white-space: nowrap;
+}
+
+.item-crossword__solve {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: 8px;
+  font-size: 18px;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+.item-crossword__solve i::before {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.2s ease 0s;
+  transition: -webkit-transform 0.2s ease 0s;
+  -o-transition: transform 0.2s ease 0s;
+  transition: transform 0.2s ease 0s;
+  transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+}
+
+.item-crossword__print {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 160px;
+          flex: 0 0 160px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 16px;
+  border-left: 1px solid var(--color-gray);
+  color: var(--color-gray-dark);
+  -webkit-transition: color 0.3s ease 0s, border-color 0.3s ease 0s, background-color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s, border-color 0.3s ease 0s, background-color 0.3s ease 0s;
+  transition: color 0.3s ease 0s, border-color 0.3s ease 0s, background-color 0.3s ease 0s;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.item-crossword__print:hover {
+  color: var(--color-gold);
+  border-left-color: var(--color-gold);
+  background-color: rgba(196, 122, 44, 0.04);
+}
+
+.item-crossword__print:hover .item-crossword__print-link {
+  color: var(--color-gold-light);
+}
+
+.item-crossword__print:hover .item-crossword__print-link i::before {
+  -webkit-transform: translateX(3px);
+      -ms-transform: translateX(3px);
+          transform: translateX(3px);
+}
+
+.item-crossword__type-label {
+  gap: 5px;
+  margin: 0 0 8px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-gray-dark);
+  background-color: var(--color-gray);
+  border-radius: 20px;
+  line-height: 1.4;
+  white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+  transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+}
+
+.item-crossword__type-label i {
+  font-size: 12px;
+}
+
+.item-crossword__print .item-crossword__type-label {
+  margin: 0;
+}
+
+.item-crossword__online:hover .item-crossword__type-label {
+  color: var(--color-blue-light);
+  background-color: rgba(3, 74, 102, 0.08);
+}
+
+.item-crossword__print:hover .item-crossword__type-label {
+  color: var(--color-gold);
+  background-color: rgba(196, 122, 44, 0.08);
+}
+
+.item-crossword__print-meta {
+  display: contents;
+}
+
+.item-crossword__print-icon {
+  font-size: 32px;
+  color: var(--color-gray-dark);
+  -webkit-transition: color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
+.item-crossword__print:hover .item-crossword__print-icon {
+  color: var(--color-gold);
+}
+
+.item-crossword__print-link {
+  font-size: 18px;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+.item-crossword__print-link i::before {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.2s ease 0s;
+  transition: -webkit-transform 0.2s ease 0s;
+  -o-transition: transform 0.2s ease 0s;
+  transition: transform 0.2s ease 0s;
+  transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+}
+
 p {
   margin-bottom: 24px;
 }
@@ -9385,6 +9651,7 @@ i {
 }
 
 .media-section .media-block {
+  position: relative;
   border-radius: 10px;
   border: 1px solid var(--color-gray);
   overflow: hidden;
@@ -9397,6 +9664,24 @@ i {
           flex-direction: row;
   width: 100%;
   color: var(--color-black);
+}
+
+.media-section .media-block__link {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.media-section .media-block__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.media-section .media-block .slider-tags a {
+  position: relative;
+  z-index: 1;
 }
 
 .media-section .media-block__img {
@@ -12392,6 +12677,22 @@ html {
     font-size: calc(16px + 2 * ((100vw - 320px) / 1200));
   }
 
+  .item-crossword__title {
+    font-size: calc(15px + 3 * ((100vw - 320px) / 1200));
+  }
+
+  .item-crossword__text {
+    font-size: calc(13px + 3 * ((100vw - 320px) / 1200));
+  }
+
+  .item-crossword__solve {
+    font-size: calc(14px + 4 * ((100vw - 320px) / 1200));
+  }
+
+  .item-crossword__print-link {
+    font-size: calc(14px + 4 * ((100vw - 320px) / 1200));
+  }
+
   .main-list-has ag__wrapper .button-hover {
     font-size: calc(12px + 2 * ((100vw - 320px) / 1200));
   }
@@ -12848,6 +13149,25 @@ html {
 }
 
 @media (max-width: 992px) {
+  .item-crossword__online {
+    gap: 16px;
+    padding: 18px 20px;
+  }
+
+  .item-crossword__img-wrap {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 140px;
+            flex: 0 0 140px;
+    height: 120px;
+  }
+
+  .item-crossword__print {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 140px;
+            flex: 0 0 140px;
+    padding: 18px 14px;
+  }
+
   .list {
     padding-left: 40px;
   }
@@ -13068,6 +13388,79 @@ html {
 
   .card-link__go {
     display: none;
+  }
+
+  .item-crossword {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .item-crossword__online {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .item-crossword__img-wrap {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 35%;
+    height: auto;
+    aspect-ratio: 1/0.88;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+
+  .item-crossword__progress-wrap {
+    max-width: 100%;
+  }
+
+  .item-crossword__print {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    border-left: none;
+    border-top: 1px solid var(--color-gray);
+    padding: 14px;
+  }
+
+  .item-crossword__print:hover {
+    border-left-color: transparent;
+    border-top-color: var(--color-gold);
+  }
+
+  .item-crossword__print-meta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    gap: 6px;
+  }
+
+  .item-crossword__print-link {
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 
   .paywall__benefits-card {
