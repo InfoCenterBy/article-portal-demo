@@ -11631,7 +11631,6 @@ html {
 
 .article-test {
   max-width: 860px;
-  margin: 0 auto;
 }
 
 .article-test__title {
@@ -11707,7 +11706,7 @@ html {
 
 .article-test__option.is-incorrect {
   border-color: var(--color-red);
-  background-color: var(--color-red-status-background);
+  background-color: #fde7e7;
 }
 
 .article-test__option.is-locked {
@@ -11728,7 +11727,7 @@ html {
 .article-test__explanation {
   padding: 12px 16px;
   border-radius: 0 0 10px 10px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   background-color: var(--color-white-gray);
   border: 1.5px solid var(--color-gray-stroke);
@@ -11739,11 +11738,19 @@ html {
 .article-test__explanation--correct {
   border-color: var(--color-green);
   background-color: var(--color-green-status-background);
+  color: var(--color-green-status);
 }
 
 .article-test__explanation--incorrect {
   border-color: var(--color-red);
-  background-color: var(--color-red-status-background);
+  background-color: #fde7e7;
+  color: var(--color-red-status);
+}
+
+.article-test__explanation-status {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .article-test__option.is-correct,
@@ -11831,7 +11838,7 @@ html {
 
 .article-test__result-option.is-selected.is-incorrect {
   border-color: var(--color-red);
-  background-color: var(--color-red-status-background);
+  background-color: #fde7e7;
 }
 
 .article-test__result-option.is-unselected {
@@ -11848,7 +11855,7 @@ html {
   border: 1.5px solid var(--color-gray-stroke);
   border-top: none;
   border-radius: 0 0 10px 10px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   background-color: var(--color-white-gray);
 }
@@ -11856,11 +11863,19 @@ html {
 .article-test__result-explanation--correct {
   border-color: var(--color-green);
   background-color: var(--color-green-status-background);
+  color: var(--color-green-status);
 }
 
 .article-test__result-explanation--incorrect {
   border-color: var(--color-red);
-  background-color: var(--color-red-status-background);
+  background-color: #fde7e7;
+  color: var(--color-red-status);
+}
+
+.article-test__result-explanation-status {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .search-clear {

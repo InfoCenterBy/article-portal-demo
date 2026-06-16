@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
+  <head>
 	<title>Тест</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
@@ -29,8 +29,8 @@
 	<link rel="stylesheet" href="css/style.min.css" />
 </head>
 
-<body>
-  <header class="new-header d-flex flex-row justify-content-between align-items-center">
+  <body>
+    <header class="new-header d-flex flex-row justify-content-between align-items-center">
      <div class="d-flex flex-row align-items-center">
           <div class="mobile-menu me-2">
                <button type="button" class="bi bi-list" id="mobile-button"></button>
@@ -204,8 +204,7 @@
           </div>
      </div>
      <div class="progress"></div>
-</header>
-  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+</header> <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
      <div class="modal-dialog">
           <div class="modal-content">
                <div class="modal-body d-flex flex-row align-items-center justify-content-between">
@@ -220,7 +219,7 @@
           </div>
      </div>
 </div>
-  <nav class="flex-column justify-content-start pb-140 overflow-auto side-navbar active-nav" id="sidebar">
+    <nav class="flex-column justify-content-start pb-140 overflow-auto side-navbar active-nav" id="sidebar">
 	<div class="flex-column w-100 nav main-nav">
 		<div href="#" class="nav-link">
 			<a href="" class="nav-link__icon">
@@ -353,43 +352,55 @@
 	</div>
 </nav>
 
-  <div class="nav-container active-container">
-    <a class="" id="menu-btn"><i class="bi bi-chevron-right"></i></a>
-    <div class="main-content">
-      <section class="main-section">
-        <div class="row">
-          <nav aria-label="breadcrumb" class="col-12">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="main.html"><i class="bi bi-house"></i></a></li>
-              <li class="breadcrumb-item active" aria-current="page">Тест</li>
-            </ol>
-          </nav>
-        </div>
-      </section>
+    <div class="nav-container active-container">
+      <a class="" id="menu-btn"><i class="bi bi-chevron-right"></i></a>
+      <div class="main-content">
+        <section class="main-section">
+          <div class="row">
+            <nav aria-label="breadcrumb" class="col-12">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="main.html"><i class="bi bi-house"></i></a>
+                </li>
+                <li class="breadcrumb-item"><a href="article-tests.html">Тесты</a></li>
 
-      <section class="main-section">
-        <div class="article-test" id="articleTest">
-          <h1 class="article-test__title" id="testTitle"></h1>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Налог на доходы при выходе иностранной организации из белорусского хозяйственного общества
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </section>
 
-          <div class="article-test__question-view" id="questionView">
-            <div class="article-test__progress" id="testProgress"></div>
-            <p class="article-test__question-text" id="questionText"></p>
-            <div class="article-test__options" id="optionsContainer"></div>
-            <div class="article-test__actions">
-              <button type="button" class="button article-test__action-btn" id="actionBtn" disabled>Проверить</button>
+        <section class="main-section">
+          <div class="article-test mt-4" id="articleTest">
+            <h1 class="article-test__title" id="testTitle"></h1>
+
+            <div class="article-test__question-view" id="questionView">
+              <div class="article-test__progress" id="testProgress"></div>
+              <p class="article-test__question-text" id="questionText"></p>
+              <div class="article-test__options" id="optionsContainer"></div>
+              <div class="article-test__actions">
+                <button
+                  type="button"
+                  class="button article-test__action-btn border-10 mobile-w-100"
+                  id="actionBtn"
+                  disabled>
+                  Проверить
+                </button>
+              </div>
+            </div>
+
+            <div class="article-test__results-view d-none" id="resultsView">
+              <h2 class="article-test__results-title">Результаты теста</h2>
+              <div id="resultsContainer"></div>
             </div>
           </div>
+        </section>
+      </div>
 
-          <div class="article-test__results-view d-none" id="resultsView">
-            <h2 class="article-test__results-title">Результаты теста</h2>
-            <div id="resultsContainer"></div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="my-5"></div>
-    <footer class="footer">
+      <div class="my-5"></div>
+      <footer class="footer">
      <div class="main-section">
           <div class="footer__body">
                <div class="row g-4">
@@ -553,9 +564,9 @@
           </div>
      </div>
 </footer>
-  </div>
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -574,376 +585,424 @@
 
 
 <script src="js/script.min.js"></script>
-  <script>
-    const testData = {
-      title: 'ТЕСТ\nНалог на доходы при выходе иностранной организации\nиз белорусского хозяйственного общества',
-      questions: [
-        {
-          text: '1. Входят ли в 2026 году доходы в виде действительной стоимости доли иностранной организации, выплачиваемые при ее выходе (исключении) из белорусского хозяйственного общества, в перечень объектов налогообложения налогом на доходы?',
-          options: [
-            {
-              id: 'a',
-              label: 'А. Да, так как входят в состав доходов от отчуждения долей в уставном фонде.',
-              explanation: 'До 2025 года доходы иностранной организации, возникающие при ее выходе из белорусской организации, действительно облагались налогом на доходы в рамках доходов от отчуждения долей в уставном фонде согласно подп. 1.11.4 п. 1 ст. 189 НК. Однако с 2026 года действительная стоимость доли в уставном фонде белорусского хозяйственного общества является самостоятельным объектом налогообложения.',
-              correct: false
-            },
-            {
-              id: 'b',
-              label: 'В. Да.',
-              explanation: 'Правильно! С 2026 года данный вид дохода подлежит налогообложению налогом на доходы в соответствии с подп. 1.16 п. 1 ст. 189 НК как самостоятельный объект налогообложения.',
-              correct: true
-            },
-            {
-              id: 'c',
-              label: 'С. Нет.',
-              explanation: 'В 2026 году данные доходы включены в перечень объектов налогообложения на основании подп. 1.16 п. 1 ст. 189 НК.',
-              correct: false
-            }
-          ]
-        },
-        {
-          text: '2. Облагались ли в 2025 году налогом на доходы иностранной организации доходы в виде действительной стоимости доли иностранного участника при его выходе из ООО?',
-          options: [
-            {
-              id: 'a',
-              label: 'А. Да.',
-              explanation: 'Данный вид дохода подлежал налогообложению налогом на доходы до и после 2025 года, а в течение 2025 года не облагался.',
-              correct: false
-            },
-            {
-              id: 'b',
-              label: 'В. Нет.',
-              explanation: 'Правильно! В 2025 году данные доходы не были включены в перечень объектов налогообложения согласно статье 189 НК.',
-              correct: true
-            },
-            {
-              id: 'c',
-              label: 'С. Да, но только при условии превышения доходов над суммами взносов.',
-              explanation: 'В 2025 году объект отсутствовал в принципе, независимо от размера дохода.',
-              correct: false
-            }
-          ]
-        },
-        {
-          text: '3. Как в целях налогообложения налогом на доходы классифицируется часть прибыли, выплачиваемая иностранному участнику за период с момента его выхода до момента окончательного расчета с ним?',
-          options: [
-            {
-              id: 'a',
-              label: 'А. Доходы, приравненные к дивидендам.',
-              explanation: 'Правильно! В соответствии с подп. 2.4 п. 2 ст. 13 НК такая часть прибыли приравнивается к дивидендам для целей налогообложения, в том числе для целей налога на доходы.',
-              correct: true
-            },
-            {
-              id: 'b',
-              label: 'В. Роялти.',
-              explanation: 'Для целей налога на доходы понятие «роялти» определено в подп. 1.3 п. 1 ст. 189 НК, но указанная часть прибыли не входит в это понятие.',
-              correct: false
-            },
-            {
-              id: 'c',
-              label: 'С. Доход от отчуждения имущества.',
-              explanation: 'Выплата части прибыли не связана с переходом прав собственности на имущество, а является распределением накопленного финансового результата.',
-              correct: false
-            }
-          ]
-        },
-        {
-          text: '4. Какая ставка налога на доходы установлена с 1 января 2026 года для доходов иностранной организации в виде действительной стоимости доли при выходе из белорусского хозяйственного общества?',
-          options: [
-            {
-              id: 'a',
-              label: 'А. 12 %.',
-              explanation: 'Данная ставка применялась к доходам от отчуждения долей, включая доходы иностранной организации при выходе (исключении) из белорусской организации, в периоды до 2025 года.',
-              correct: false
-            },
-            {
-              id: 'b',
-              label: 'В. 15 %.',
-              explanation: 'Правильно! Согласно подп. 1.5 п. 1 ст. 192 НК к данному виду дохода, выделенному в новый объект налогообложения, применяется ставка в размере 15 %.',
-              correct: true
-            },
-            {
-              id: 'c',
-              label: 'С. 25 %.',
-              explanation: 'Эта ставка применяется к части прибыли, полученной белорусской организацией с момента выхода (исключения) иностранного участника до момента расчета с ним, но не к действительной стоимости доли.',
-              correct: false
-            }
-          ]
-        },
-        {
-          text: '5. Какая промежуточная валюта используется для пересчета доходов и затрат иностранной организации при определении налоговой базы налога на доходы по доходам в виде действительной стоимости доли в уставном фонде?',
-          options: [
-            {
-              id: 'a',
-              label: 'А. Российский рубль (RUB).',
-              explanation: 'Российский рубль не является валютой, установленной НК для алгоритма пересчета налоговой базы в данном случае.',
-              correct: false
-            },
-            {
-              id: 'b',
-              label: 'В. Евро (EUR).',
-              explanation: 'Несмотря на то, что взнос мог быть внесен в евро, законодательство требует пересчета в иную мировую валюту.',
-              correct: false
-            },
-            {
-              id: 'c',
-              label: 'С. Доллар США (USD).',
-              explanation: 'Правильно! Согласно подп. 1.1.8 п. 1 ст. 190 НК сумма дохода и сумма затрат подлежат обязательному пересчету в доллары США по официальному курсу на соответствующие даты.',
-              correct: true
-            },
-            {
-              id: 'd',
-              label: 'D. Китайский юань (CNY).',
-              explanation: 'Налоговым законодательством не предусмотрен пересчет доходов и затрат в юани для целей определения налоговой базы налога на доходы при выходе участника.',
-              correct: false
-            }
-          ]
-        },
-        {
-          text: '6. Если белорусская организация ведет бухгалтерский учет, какой день признается датой начисления дохода (платежа) в отношении действительной стоимости доли в уставном фонде, подлежащей выплате иностранной организации при ее выходе из данной белорусской организации?',
-          options: [
-            {
-              id: 'a',
-              label: 'А. Дата фактической выплаты денежных средств.',
-              explanation: 'Дата выплаты является определяющей только для организаций, которые имеют право не вести бухгалтерский учет.',
-              correct: false
-            },
-            {
-              id: 'b',
-              label: 'В. Последний день финансового года.',
-              explanation: 'Расчет действительной стоимости доли зависит от размера чистых активов, но момент возникновения налогового обязательства привязан к юридическому факту перехода доли.',
-              correct: false
-            },
-            {
-              id: 'c',
-              label: 'С. Дата отражения в учете факта перехода доли.',
-              explanation: 'Правильно! Для организаций, ведущих бухгалтерский учет, днем начисления дохода признается дата отражения перехода доли к обществу (но не позднее законодательного срока, когда такой переход должен быть отражен в учете).',
-              correct: true
-            }
-          ]
-        }
-      ]
-    };
+    <script>
+      const testData = {
+        title: 'Налог на доходы при выходе иностранной организации\nиз белорусского хозяйственного общества',
+        questions: [
+          {
+            text: '1. Входят ли в 2026 году доходы в виде действительной стоимости доли иностранной организации, выплачиваемые при ее выходе (исключении) из белорусского хозяйственного общества, в перечень объектов налогообложения налогом на доходы?',
+            options: [
+              {
+                id: 'a',
+                label: 'А. Да, так как входят в состав доходов от отчуждения долей в уставном фонде.',
+                explanation:
+                  'До 2025 года доходы иностранной организации, возникающие при ее выходе из белорусской организации, действительно облагались налогом на доходы в рамках доходов от отчуждения долей в уставном фонде согласно подп. 1.11.4 п. 1 ст. 189 НК. Однако с 2026 года действительная стоимость доли в уставном фонде белорусского хозяйственного общества является самостоятельным объектом налогообложения.',
+                correct: false,
+              },
+              {
+                id: 'b',
+                label: 'В. Да.',
+                explanation:
+                  'Правильно! С 2026 года данный вид дохода подлежит налогообложению налогом на доходы в соответствии с подп. 1.16 п. 1 ст. 189 НК как самостоятельный объект налогообложения.',
+                correct: true,
+              },
+              {
+                id: 'c',
+                label: 'С. Нет.',
+                explanation:
+                  'В 2026 году данные доходы включены в перечень объектов налогообложения на основании подп. 1.16 п. 1 ст. 189 НК.',
+                correct: false,
+              },
+            ],
+          },
+          {
+            text: '2. Облагались ли в 2025 году налогом на доходы иностранной организации доходы в виде действительной стоимости доли иностранного участника при его выходе из ООО?',
+            options: [
+              {
+                id: 'a',
+                label: 'А. Да.',
+                explanation:
+                  'Данный вид дохода подлежал налогообложению налогом на доходы до и после 2025 года, а в течение 2025 года не облагался.',
+                correct: false,
+              },
+              {
+                id: 'b',
+                label: 'В. Нет.',
+                explanation:
+                  'Правильно! В 2025 году данные доходы не были включены в перечень объектов налогообложения согласно статье 189 НК.',
+                correct: true,
+              },
+              {
+                id: 'c',
+                label: 'С. Да, но только при условии превышения доходов над суммами взносов.',
+                explanation: 'В 2025 году объект отсутствовал в принципе, независимо от размера дохода.',
+                correct: false,
+              },
+            ],
+          },
+          {
+            text: '3. Как в целях налогообложения налогом на доходы классифицируется часть прибыли, выплачиваемая иностранному участнику за период с момента его выхода до момента окончательного расчета с ним?',
+            options: [
+              {
+                id: 'a',
+                label: 'А. Доходы, приравненные к дивидендам.',
+                explanation:
+                  'Правильно! В соответствии с подп. 2.4 п. 2 ст. 13 НК такая часть прибыли приравнивается к дивидендам для целей налогообложения, в том числе для целей налога на доходы.',
+                correct: true,
+              },
+              {
+                id: 'b',
+                label: 'В. Роялти.',
+                explanation:
+                  'Для целей налога на доходы понятие «роялти» определено в подп. 1.3 п. 1 ст. 189 НК, но указанная часть прибыли не входит в это понятие.',
+                correct: false,
+              },
+              {
+                id: 'c',
+                label: 'С. Доход от отчуждения имущества.',
+                explanation:
+                  'Выплата части прибыли не связана с переходом прав собственности на имущество, а является распределением накопленного финансового результата.',
+                correct: false,
+              },
+            ],
+          },
+          {
+            text: '4. Какая ставка налога на доходы установлена с 1 января 2026 года для доходов иностранной организации в виде действительной стоимости доли при выходе из белорусского хозяйственного общества?',
+            options: [
+              {
+                id: 'a',
+                label: 'А. 12 %.',
+                explanation:
+                  'Данная ставка применялась к доходам от отчуждения долей, включая доходы иностранной организации при выходе (исключении) из белорусской организации, в периоды до 2025 года.',
+                correct: false,
+              },
+              {
+                id: 'b',
+                label: 'В. 15 %.',
+                explanation:
+                  'Правильно! Согласно подп. 1.5 п. 1 ст. 192 НК к данному виду дохода, выделенному в новый объект налогообложения, применяется ставка в размере 15 %.',
+                correct: true,
+              },
+              {
+                id: 'c',
+                label: 'С. 25 %.',
+                explanation:
+                  'Эта ставка применяется к части прибыли, полученной белорусской организацией с момента выхода (исключения) иностранного участника до момента расчета с ним, но не к действительной стоимости доли.',
+                correct: false,
+              },
+            ],
+          },
+          {
+            text: '5. Какая промежуточная валюта используется для пересчета доходов и затрат иностранной организации при определении налоговой базы налога на доходы по доходам в виде действительной стоимости доли в уставном фонде?',
+            options: [
+              {
+                id: 'a',
+                label: 'А. Российский рубль (RUB).',
+                explanation:
+                  'Российский рубль не является валютой, установленной НК для алгоритма пересчета налоговой базы в данном случае.',
+                correct: false,
+              },
+              {
+                id: 'b',
+                label: 'В. Евро (EUR).',
+                explanation:
+                  'Несмотря на то, что взнос мог быть внесен в евро, законодательство требует пересчета в иную мировую валюту.',
+                correct: false,
+              },
+              {
+                id: 'c',
+                label: 'С. Доллар США (USD).',
+                explanation:
+                  'Правильно! Согласно подп. 1.1.8 п. 1 ст. 190 НК сумма дохода и сумма затрат подлежат обязательному пересчету в доллары США по официальному курсу на соответствующие даты.',
+                correct: true,
+              },
+              {
+                id: 'd',
+                label: 'D. Китайский юань (CNY).',
+                explanation:
+                  'Налоговым законодательством не предусмотрен пересчет доходов и затрат в юани для целей определения налоговой базы налога на доходы при выходе участника.',
+                correct: false,
+              },
+            ],
+          },
+          {
+            text: '6. Если белорусская организация ведет бухгалтерский учет, какой день признается датой начисления дохода (платежа) в отношении действительной стоимости доли в уставном фонде, подлежащей выплате иностранной организации при ее выходе из данной белорусской организации?',
+            options: [
+              {
+                id: 'a',
+                label: 'А. Дата фактической выплаты денежных средств.',
+                explanation:
+                  'Дата выплаты является определяющей только для организаций, которые имеют право не вести бухгалтерский учет.',
+                correct: false,
+              },
+              {
+                id: 'b',
+                label: 'В. Последний день финансового года.',
+                explanation:
+                  'Расчет действительной стоимости доли зависит от размера чистых активов, но момент возникновения налогового обязательства привязан к юридическому факту перехода доли.',
+                correct: false,
+              },
+              {
+                id: 'c',
+                label: 'С. Дата отражения в учете факта перехода доли.',
+                explanation:
+                  'Правильно! Для организаций, ведущих бухгалтерский учет, днем начисления дохода признается дата отражения перехода доли к обществу (но не позднее законодательного срока, когда такой переход должен быть отражен в учете).',
+                correct: true,
+              },
+            ],
+          },
+        ],
+      };
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const testTitle = document.getElementById('testTitle');
-      const questionView = document.getElementById('questionView');
-      const resultsView = document.getElementById('resultsView');
-      const testProgress = document.getElementById('testProgress');
-      const questionText = document.getElementById('questionText');
-      const optionsContainer = document.getElementById('optionsContainer');
-      const actionBtn = document.getElementById('actionBtn');
-      const resultsContainer = document.getElementById('resultsContainer');
+      document.addEventListener('DOMContentLoaded', function () {
+        const testTitle = document.getElementById('testTitle');
+        const questionView = document.getElementById('questionView');
+        const resultsView = document.getElementById('resultsView');
+        const testProgress = document.getElementById('testProgress');
+        const questionText = document.getElementById('questionText');
+        const optionsContainer = document.getElementById('optionsContainer');
+        const actionBtn = document.getElementById('actionBtn');
+        const resultsContainer = document.getElementById('resultsContainer');
 
-      const questions = testData.questions;
-      let currentIndex = 0;
-      let isChecked = false;
-      const userAnswers = new Array(questions.length).fill(null);
+        const questions = testData.questions;
+        let currentIndex = 0;
+        let isChecked = false;
+        const userAnswers = new Array(questions.length).fill(null);
 
-      testTitle.textContent = testData.title;
+        testTitle.textContent = testData.title;
 
-      actionBtn.addEventListener('click', handleActionClick);
+        actionBtn.addEventListener('click', handleActionClick);
 
-      renderQuestion();
+        renderQuestion();
 
-      function renderQuestion() {
-        const question = questions[currentIndex];
-        isChecked = false;
+        function renderQuestion() {
+          const question = questions[currentIndex];
+          isChecked = false;
 
-        testProgress.textContent = 'Вопрос ' + (currentIndex + 1) + ' из ' + questions.length;
-        questionText.textContent = question.text;
-        optionsContainer.innerHTML = '';
-
-        question.options.forEach(function (option) {
-          const optionItem = document.createElement('div');
-          optionItem.className = 'article-test__option-item';
-          optionItem.dataset.optionId = option.id;
-
-          const label = document.createElement('label');
-          label.className = 'article-test__option';
-
-          const input = document.createElement('input');
-          input.type = 'radio';
-          input.name = 'test-answer';
-          input.value = option.id;
-
-          const text = document.createElement('span');
-          text.className = 'article-test__option-label';
-          text.textContent = option.label;
-
-          const explanation = document.createElement('div');
-          explanation.className = 'article-test__explanation d-none';
-          explanation.textContent = option.explanation;
-
-          label.appendChild(input);
-          label.appendChild(text);
-          optionItem.appendChild(label);
-          optionItem.appendChild(explanation);
-
-          label.addEventListener('click', function (event) {
-            if (isChecked) {
-              event.preventDefault();
-              return;
-            }
-
-            optionsContainer.querySelectorAll('.article-test__option').forEach(function (item) {
-              item.classList.remove('is-selected');
-            });
-
-            label.classList.add('is-selected');
-            input.checked = true;
-            actionBtn.disabled = false;
-          });
-
-          optionsContainer.appendChild(optionItem);
-        });
-
-        if (userAnswers[currentIndex]) {
-          const savedAnswer = userAnswers[currentIndex];
-          const savedItem = optionsContainer.querySelector('[data-option-id="' + savedAnswer.optionId + '"]');
-          if (savedItem) {
-            const savedLabel = savedItem.querySelector('.article-test__option');
-            savedLabel.classList.add('is-selected');
-            savedLabel.querySelector('input').checked = true;
-            actionBtn.disabled = false;
-
-            if (savedAnswer.checked) {
-              optionsContainer.querySelectorAll('.article-test__option').forEach(function (item) {
-                item.classList.add('is-locked');
-              });
-              applyAnswerState(savedItem, savedAnswer.correct);
-              isChecked = true;
-              actionBtn.textContent = currentIndex < questions.length - 1 ? 'Далее' : 'Показать результаты';
-            }
-          }
-        } else {
-          actionBtn.disabled = true;
-        }
-
-        if (!isChecked) {
-          actionBtn.textContent = 'Проверить';
-          actionBtn.disabled = !getSelectedOptionId();
-        }
-      }
-
-      function applyAnswerState(optionItem, isCorrect) {
-        const label = optionItem.querySelector('.article-test__option');
-        const explanation = optionItem.querySelector('.article-test__explanation');
-
-        label.classList.add('is-locked');
-        label.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
-        explanation.classList.remove('d-none');
-        explanation.classList.add(isCorrect ? 'article-test__explanation--correct' : 'article-test__explanation--incorrect');
-      }
-
-      function getSelectedOptionId() {
-        const selected = optionsContainer.querySelector('input[name="test-answer"]:checked');
-        return selected ? selected.value : null;
-      }
-
-      function getSelectedOption() {
-        const optionId = getSelectedOptionId();
-        if (!optionId) {
-          return null;
-        }
-
-        return questions[currentIndex].options.find(function (option) {
-          return option.id === optionId;
-        });
-      }
-
-      function handleActionClick() {
-        if (!isChecked) {
-          checkAnswer();
-          return;
-        }
-
-        if (currentIndex < questions.length - 1) {
-          currentIndex++;
-          renderQuestion();
-          return;
-        }
-
-        showResults();
-      }
-
-      function checkAnswer() {
-        const selectedOption = getSelectedOption();
-        if (!selectedOption) {
-          return;
-        }
-
-        isChecked = true;
-        userAnswers[currentIndex] = {
-          optionId: selectedOption.id,
-          correct: selectedOption.correct,
-          checked: true
-        };
-
-        optionsContainer.querySelectorAll('.article-test__option').forEach(function (item) {
-          item.classList.add('is-locked');
-        });
-
-        const selectedItem = optionsContainer.querySelector('[data-option-id="' + selectedOption.id + '"]');
-        applyAnswerState(selectedItem, selectedOption.correct);
-
-        actionBtn.disabled = false;
-        actionBtn.textContent = currentIndex < questions.length - 1 ? 'Далее' : 'Показать результаты';
-      }
-
-      function showResults() {
-        questionView.classList.add('d-none');
-        resultsView.classList.remove('d-none');
-        resultsContainer.innerHTML = '';
-
-        questions.forEach(function (question, index) {
-          const userAnswer = userAnswers[index];
-          const item = document.createElement('div');
-          item.className = 'article-test__result-item';
-
-          const questionEl = document.createElement('p');
-          questionEl.className = 'article-test__result-question';
-          questionEl.textContent = question.text;
-          item.appendChild(questionEl);
-
-          const optionsEl = document.createElement('div');
-          optionsEl.className = 'article-test__result-options';
+          testProgress.textContent = 'Вопрос ' + (currentIndex + 1) + ' из ' + questions.length;
+          questionText.textContent = question.text;
+          optionsContainer.innerHTML = '';
 
           question.options.forEach(function (option) {
             const optionItem = document.createElement('div');
-            optionItem.className = 'article-test__result-option-item';
+            optionItem.className = 'article-test__option-item';
+            optionItem.dataset.optionId = option.id;
 
-            const optionEl = document.createElement('div');
-            optionEl.className = 'article-test__result-option';
+            const label = document.createElement('label');
+            label.className = 'article-test__option';
 
-            const isSelected = userAnswer && userAnswer.optionId === option.id;
-            if (isSelected) {
-              optionEl.classList.add('is-selected');
-              optionEl.classList.add(userAnswer.correct ? 'is-correct' : 'is-incorrect');
-            } else {
-              optionEl.classList.add('is-unselected');
-            }
+            const input = document.createElement('input');
+            input.type = 'radio';
+            input.name = 'test-answer';
+            input.value = option.id;
 
-            optionEl.textContent = option.label;
-            optionItem.appendChild(optionEl);
+            const text = document.createElement('span');
+            text.className = 'article-test__option-label';
+            text.textContent = option.label;
 
-            if (isSelected) {
-              const explanation = document.createElement('div');
-              explanation.className = 'article-test__result-explanation';
-              explanation.classList.add(userAnswer.correct ? 'article-test__result-explanation--correct' : 'article-test__result-explanation--incorrect');
-              explanation.textContent = option.explanation;
-              optionItem.appendChild(explanation);
-            }
+            const explanation = document.createElement('div');
+            explanation.className = 'article-test__explanation d-none';
 
-            optionsEl.appendChild(optionItem);
+            label.appendChild(input);
+            label.appendChild(text);
+            optionItem.appendChild(label);
+            optionItem.appendChild(explanation);
+
+            label.addEventListener('click', function (event) {
+              if (isChecked) {
+                event.preventDefault();
+                return;
+              }
+
+              optionsContainer.querySelectorAll('.article-test__option').forEach(function (item) {
+                item.classList.remove('is-selected');
+              });
+
+              label.classList.add('is-selected');
+              input.checked = true;
+              actionBtn.disabled = false;
+            });
+
+            optionsContainer.appendChild(optionItem);
           });
 
-          item.appendChild(optionsEl);
-          resultsContainer.appendChild(item);
-        });
-      }
-    });
-  </script>
-</body>
+          if (userAnswers[currentIndex]) {
+            const savedAnswer = userAnswers[currentIndex];
+            const savedItem = optionsContainer.querySelector('[data-option-id="' + savedAnswer.optionId + '"]');
+            if (savedItem) {
+              const savedLabel = savedItem.querySelector('.article-test__option');
+              savedLabel.classList.add('is-selected');
+              savedLabel.querySelector('input').checked = true;
+              actionBtn.disabled = false;
 
+              if (savedAnswer.checked) {
+                optionsContainer.querySelectorAll('.article-test__option').forEach(function (item) {
+                  item.classList.add('is-locked');
+                });
+                const savedOption = question.options.find(function (option) {
+                  return option.id === savedAnswer.optionId;
+                });
+                applyAnswerState(savedItem, savedAnswer.correct, savedOption ? savedOption.explanation : '');
+                isChecked = true;
+                actionBtn.textContent = currentIndex < questions.length - 1 ? 'Далее' : 'Показать результаты';
+              }
+            }
+          } else {
+            actionBtn.disabled = true;
+          }
+
+          if (!isChecked) {
+            actionBtn.textContent = 'Проверить';
+            actionBtn.disabled = !getSelectedOptionId();
+          }
+        }
+
+        function normalizeExplanationText(text) {
+          return text.replace(/^Правильно!\s*/i, '').trim();
+        }
+
+        function setExplanationContent(container, isCorrect, text, statusClass) {
+          container.innerHTML = '';
+          const status = document.createElement('strong');
+          status.className = statusClass;
+          status.textContent = isCorrect ? 'Правильно!' : 'Неправильно!';
+
+          const message = document.createElement('span');
+          message.textContent = normalizeExplanationText(text);
+
+          container.appendChild(status);
+          container.appendChild(message);
+        }
+
+        function applyAnswerState(optionItem, isCorrect, explanationText) {
+          const label = optionItem.querySelector('.article-test__option');
+          const explanation = optionItem.querySelector('.article-test__explanation');
+
+          label.classList.add('is-locked');
+          label.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+          explanation.classList.remove('d-none');
+          explanation.classList.add(
+            isCorrect ? 'article-test__explanation--correct' : 'article-test__explanation--incorrect',
+          );
+          setExplanationContent(explanation, isCorrect, explanationText, 'article-test__explanation-status');
+        }
+
+        function getSelectedOptionId() {
+          const selected = optionsContainer.querySelector('input[name="test-answer"]:checked');
+          return selected ? selected.value : null;
+        }
+
+        function getSelectedOption() {
+          const optionId = getSelectedOptionId();
+          if (!optionId) {
+            return null;
+          }
+
+          return questions[currentIndex].options.find(function (option) {
+            return option.id === optionId;
+          });
+        }
+
+        function handleActionClick() {
+          if (!isChecked) {
+            checkAnswer();
+            return;
+          }
+
+          if (currentIndex < questions.length - 1) {
+            currentIndex++;
+            renderQuestion();
+            return;
+          }
+
+          showResults();
+        }
+
+        function checkAnswer() {
+          const selectedOption = getSelectedOption();
+          if (!selectedOption) {
+            return;
+          }
+
+          isChecked = true;
+          userAnswers[currentIndex] = {
+            optionId: selectedOption.id,
+            correct: selectedOption.correct,
+            checked: true,
+          };
+
+          optionsContainer.querySelectorAll('.article-test__option').forEach(function (item) {
+            item.classList.add('is-locked');
+          });
+
+          const selectedItem = optionsContainer.querySelector('[data-option-id="' + selectedOption.id + '"]');
+          applyAnswerState(selectedItem, selectedOption.correct, selectedOption.explanation);
+
+          actionBtn.disabled = false;
+          actionBtn.textContent = currentIndex < questions.length - 1 ? 'Далее' : 'Показать результаты';
+        }
+
+        function showResults() {
+          questionView.classList.add('d-none');
+          resultsView.classList.remove('d-none');
+          resultsContainer.innerHTML = '';
+
+          questions.forEach(function (question, index) {
+            const userAnswer = userAnswers[index];
+            const item = document.createElement('div');
+            item.className = 'article-test__result-item';
+
+            const questionEl = document.createElement('p');
+            questionEl.className = 'article-test__result-question';
+            questionEl.textContent = question.text;
+            item.appendChild(questionEl);
+
+            const optionsEl = document.createElement('div');
+            optionsEl.className = 'article-test__result-options';
+
+            question.options.forEach(function (option) {
+              const optionItem = document.createElement('div');
+              optionItem.className = 'article-test__result-option-item';
+
+              const optionEl = document.createElement('div');
+              optionEl.className = 'article-test__result-option';
+
+              const isSelected = userAnswer && userAnswer.optionId === option.id;
+              if (isSelected) {
+                optionEl.classList.add('is-selected');
+                optionEl.classList.add(userAnswer.correct ? 'is-correct' : 'is-incorrect');
+              } else {
+                optionEl.classList.add('is-unselected');
+              }
+
+              optionEl.textContent = option.label;
+              optionItem.appendChild(optionEl);
+
+              if (isSelected) {
+                const explanation = document.createElement('div');
+                explanation.className = 'article-test__result-explanation';
+                explanation.classList.add(
+                  userAnswer.correct
+                    ? 'article-test__result-explanation--correct'
+                    : 'article-test__result-explanation--incorrect',
+                );
+                setExplanationContent(
+                  explanation,
+                  userAnswer.correct,
+                  option.explanation,
+                  'article-test__result-explanation-status',
+                );
+                optionItem.appendChild(explanation);
+              }
+
+              optionsEl.appendChild(optionItem);
+            });
+
+            item.appendChild(optionsEl);
+            resultsContainer.appendChild(item);
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
