@@ -11631,6 +11631,7 @@ html {
 
 .article-test {
   max-width: 860px;
+  margin: 0 auto;
 }
 
 .article-test__title {
@@ -11876,6 +11877,159 @@ html {
   display: block;
   margin-bottom: 6px;
   font-weight: 700;
+}
+
+.article-tests {
+  max-width: 1200px;
+}
+
+.article-tests__title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.article-tests__search {
+  margin-bottom: 26px;
+}
+
+.article-tests__search-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-nav-black);
+}
+
+.article-tests__search-input {
+  min-height: 56px;
+  border-radius: 10px;
+}
+
+.article-tests__search-button {
+  min-width: 190px;
+  min-height: 56px;
+  padding: 0 20px;
+  font-weight: 600;
+}
+
+.article-tests__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 14px;
+}
+
+.article-tests__card {
+  display: block;
+  padding: 18px 18px 16px;
+  border: 1.5px solid var(--color-gray-stroke);
+  border-radius: 20px;
+  color: var(--color-nav-black);
+  background-color: var(--color-white);
+  -webkit-transition: border-color 0.2s ease;
+  -o-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+
+.article-tests__card:has(.article-tests__card-link:hover) {
+  border-color: var(--color-gold);
+}
+
+.article-tests__card-tag {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--color-gray-dark);
+  background-color: var(--color-gray-light);
+  margin-bottom: 8px;
+  -webkit-transition: color 0.2s ease, background-color 0.2s ease;
+  -o-transition: color 0.2s ease, background-color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-tests__card:has(.article-tests__card-link:hover) .article-tests__card-tag {
+  color: var(--color-gold);
+  background-color: var(--color-white-gold);
+}
+
+.article-tests__card-content {
+  margin-bottom: 14px;
+}
+
+.article-tests__card-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  color: var(--color-nav-black);
+  text-decoration: none;
+  -webkit-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.article-tests__card-link:hover {
+  color: var(--color-gold);
+}
+
+.article-tests__card-link:hover .article-tests__card-action {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.article-tests__card-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: inherit;
+}
+
+.article-tests__card-action {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-gold);
+  opacity: 0;
+  -webkit-transform: translateX(-6px);
+      -ms-transform: translateX(-6px);
+          transform: translateX(-6px);
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
+  -o-transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
 .search-clear {
@@ -13496,6 +13650,10 @@ html {
   .contacts-map {
     padding: 50% 0px 0px 0px;
   }
+
+  .article-tests__card-title {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 960px) {
@@ -14091,6 +14249,46 @@ html {
 
   .mobile-menu {
     display: block;
+  }
+
+  .article-tests__title {
+    font-size: 24px;
+  }
+
+  .article-tests__search-button {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .article-tests__card-title {
+    font-size: 16px;
+  }
+
+  .article-tests__card-link {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .article-tests__card-content {
+    margin-bottom: 12px;
+  }
+
+  .article-tests__card-action {
+    opacity: 1;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    font-size: 18px;
+  }
+
+  .article-tests__meta {
+    font-size: 14px;
+    gap: 10px 14px;
   }
 }
 
