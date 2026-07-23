@@ -13605,6 +13605,12 @@ html {
   .section-accent-orange {
     padding: 16px;
   }
+
+  .sales-business-access .sba-hero__img-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media (max-width: 1400px) {
@@ -13675,14 +13681,6 @@ html {
 
   .prod-calendar-table td {
     padding: 0.25rem;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .sales-business-access .sba-hero__img-container {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 }
 
