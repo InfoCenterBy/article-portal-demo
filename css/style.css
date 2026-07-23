@@ -10227,6 +10227,10 @@ html {
   font-size: 40px;
 }
 
+.fs-66 {
+  font-size: 66px;
+}
+
 .bg-gold-light {
   background-color: var(--color-gold-light);
 }
@@ -12032,6 +12036,333 @@ html {
   transition: opacity 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
+.sales-business-access .sba-price-old {
+  text-decoration: line-through;
+}
+
+.sales-business-access .sba-hero__title {
+  color: var(--color-blue-light);
+  font-weight: 700;
+  font-size: 72px;
+}
+
+.sales-business-access .sba-hero__price {
+  line-height: 1.1;
+}
+
+.sales-business-access .sba-hero__text {
+  color: var(--color-gray-dark);
+  font-size: 20px;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+.sales-business-access .sba-hero__img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.sales-business-access .sba-hero__img-container img {
+  max-width: 610px;
+}
+
+.sales-business-access .sba-offer {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--color-gray);
+  background-color: var(--color-white);
+}
+
+.sales-business-access .sba-offer__header {
+  background-color: var(--color-blue-light);
+  color: var(--color-white);
+  text-align: center;
+  font-weight: 600;
+  padding: 14px 20px;
+  font-size: 18px;
+}
+
+.sales-business-access .sba-offer__body {
+  padding: 28px 24px 24px;
+}
+
+.sales-business-access .sba-offer__title {
+  color: var(--color-blue-light);
+  font-weight: 700;
+  font-size: 28px;
+  text-align: center;
+}
+
+.sales-business-access .sba-offer__flow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.sales-business-access .sba-offer__step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.sales-business-access .sba-offer__label {
+  background-color: var(--color-blue-light);
+  color: var(--color-white);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sales-business-access .sba-offer__price {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  min-width: 120px;
+}
+
+.sales-business-access .sba-offer__price--alt {
+  background-color: #a8651f;
+}
+
+.sales-business-access .sba-offer__arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 28px;
+  color: var(--color-blue-light);
+  font-size: 22px;
+  line-height: 1;
+  padding-top: 2px;
+}
+
+.sales-business-access .sba-offer__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.sales-business-access .sba-offer__icons img {
+  width: 44px;
+  height: 44px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+  background-color: rgba(211, 211, 211, 0.25);
+}
+
+.sales-business-access .sba-feature {
+  margin-top: 120px;
+}
+
+.sales-business-access .sba-feature__title {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.sales-business-access .sba-feature-card {
+  width: 100%;
+  border: 1px solid var(--color-gray);
+  border-radius: 16px;
+  padding: 24px 20px;
+  background-color: var(--color-white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sales-business-access .sba-feature-card--gold .sba-feature-card__title,
+.sales-business-access .sba-feature-card--gold .sba-feature-card__list .bi {
+  color: var(--color-gold);
+}
+
+.sales-business-access .sba-feature-card--blue .sba-feature-card__title,
+.sales-business-access .sba-feature-card--blue .sba-feature-card__subtitle,
+.sales-business-access .sba-feature-card--blue .sba-feature-card__list .bi {
+  color: var(--color-blue-light);
+}
+
+.sales-business-access .sba-feature-card__icon {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+  background-color: rgba(211, 211, 211, 0.25);
+}
+
+.sales-business-access .sba-feature-card__title {
+  font-weight: 500;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.sales-business-access .sba-feature-card__subtitle {
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.sales-business-access .sba-feature-card__text {
+  font-size: 16px;
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
+.sales-business-access .sba-feature-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sales-business-access .sba-feature-card__list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.sales-business-access .sba-feature-card__list li:not(:first-child) {
+  margin-top: 10px;
+}
+
+.sales-business-access .sba-feature-card__list li .bi {
+  font-size: 20px;
+  line-height: 1.2;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.sales-business-access .sba-also {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px 40px;
+  border: 1px solid var(--color-gray);
+  border-radius: 16px;
+  padding: 18px 24px;
+  background-color: var(--color-white);
+}
+
+.sales-business-access .sba-also__label {
+  color: var(--color-blue-light);
+  font-weight: 700;
+  font-size: 20px;
+  white-space: nowrap;
+  margin-right: 180px;
+}
+
+.sales-business-access .sba-also__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 12px 28px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.sales-business-access .sba-also__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  gap: 8px;
+  font-size: 16px;
+  max-width: 300px;
+}
+
+.sales-business-access .sba-also__item .bi {
+  color: var(--color-blue-light);
+  font-size: 20px;
+}
+
+.sales-business-access .sba-terms {
+  margin-top: 120px;
+  border-radius: 20px;
+  background-color: rgba(211, 211, 211, 0.2);
+  padding: 40px 36px;
+}
+
+.sales-business-access .sba-terms__heading {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--color-gold);
+}
+
+.sales-business-access .sba-terms__list {
+  list-style-type: disc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  padding-left: 34px;
+}
+
 .search-clear {
   position: absolute;
   right: 12px;
@@ -12093,6 +12424,10 @@ html {
 
 .card-media-library .item-article__bookmark:hover .bi-bookmark-check-fill::before {
   content: "\f197" !important;
+}
+
+.mt-120-80 {
+  margin-top: 120px;
 }
 
 @media screen and (min-width: 576px) {
@@ -13343,6 +13678,14 @@ html {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .sales-business-access .sba-hero__img-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 @media (max-width: 1140px) {
   .offer-block {
     height: auto;
@@ -14289,6 +14632,40 @@ html {
   .article-tests__meta {
     font-size: 14px;
     gap: 10px 14px;
+  }
+
+  .sales-business-access .sba-hero__text {
+    font-size: 16px;
+  }
+
+  .sales-business-access .sba-offer__title {
+    font-size: 22px;
+  }
+
+  .sales-business-access .sba-terms {
+    padding: 24px 16px;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sales-business-access .sba-hero__title {
+    font-size: 36px;
+  }
+
+  .sales-business-access .sba-feature {
+    margin-top: 80px;
+  }
+
+  .sales-business-access .sba-also__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .mt-120-80 {
+    margin-top: 80px;
   }
 }
 
