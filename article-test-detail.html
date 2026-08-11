@@ -16,7 +16,7 @@
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <link
@@ -407,6 +407,10 @@
 
             <div class="article-test__results-view d-none" id="resultsView">
               <h2 class="article-test__results-title">Результаты теста</h2>
+              <div class="article-test__results-summary" id="resultsSummary">
+                <i class="bi bi-check-circle color-gold fs-20"></i>
+                <span id="resultsSummaryText"></span>
+              </div>
               <div id="resultsContainer"></div>
             </div>
           </div>
@@ -777,6 +781,7 @@
         const optionsContainer = document.getElementById('optionsContainer');
         const actionBtn = document.getElementById('actionBtn');
         const resultsContainer = document.getElementById('resultsContainer');
+        const resultsSummaryText = document.getElementById('resultsSummaryText');
 
         const questions = testData.questions;
         let currentIndex = 0;
@@ -960,6 +965,13 @@
           questionView.classList.add('d-none');
           resultsView.classList.remove('d-none');
           resultsContainer.innerHTML = '';
+
+          const correctCount = userAnswers.filter(function (answer) {
+            return answer && answer.correct;
+          }).length;
+          const totalCount = questions.length;
+          resultsSummaryText.textContent =
+            'Вы ответили правильно на ' + correctCount + ' из ' + totalCount + ' вопросов';
 
           questions.forEach(function (question, index) {
             const userAnswer = userAnswers[index];

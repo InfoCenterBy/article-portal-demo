@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
+  <head>
   <title>Оформление подписки</title>
   <meta charset="UTF-8" />
   <meta name="format-detection" content="telephone=no" />
@@ -16,7 +16,7 @@
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <link
@@ -43,10 +43,9 @@
 </head>
 
 
-
-<body>
-     <div class="wrapper">
-          <header class="header">
+  <body>
+    <div class="wrapper">
+      <header class="header">
     <div class="header-top">
         <div class="header-top__body">
             <div class="header-top__burger"></div>
@@ -235,536 +234,854 @@
         </nav>
     </div>
 </header>
-          <main class="page">
-               <nav aria-label="breadcrumb">
-                    <div class='container'>
-                         <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="main.html"><i class="bi bi-house"></i></a></li>
-                              <li class="breadcrumb-item active" aria-current="page">Оформление подписки</li>
-                         </ol>
+      <main class="page">
+        <nav aria-label="breadcrumb">
+          <div class="container">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="main.html"><i class="bi bi-house"></i></a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Оформление подписки</li>
+            </ol>
+          </div>
+        </nav>
+        <section class="article mb-5 subscribe-tabs-section">
+          <div class="container">
+            <div class="pt-4 pb-5">
+              <h1 class="h1">Оформление подписки</h1>
+              <span class="color-gray-dark">Заполните данную форму, чтобы оформить подписку</span>
+              <nav class="nav-step nav-step_step mt-5">
+                <div
+                  class="d-flex flex-md-row justify-content-center flex-sm-row flex-column"
+                  id="nav-tab"
+                  role="tablist">
+                  <button
+                    class="nav-step nav-step__button active"
+                    id="subscribe-step-1-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#subscribe-step-1"
+                    type="button"
+                    role="tab"
+                    aria-controls="subscribe-step-1"
+                    aria-selected="true">
+                    <div class="nav-step nav-step__content">
+                      <p>
+                        <span class="title">Выберите период</span>
+                      </p>
                     </div>
-               </nav>
-               <section class="article mb-5 subscribe-tabs-section">
-                    <div class='container'>
-                         <div class="pt-4 pb-5">
-                              <h1 class="h1">Оформление подписки</h1>
-                              <span class="color-gray-dark">Заполните данную форму, чтобы оформить подписку</span>
-                              <nav class="nav-step nav-step_step mt-5">
-                                   <div class="d-flex flex-md-row justify-content-center flex-sm-row flex-column" id="nav-tab" role="tablist">
-                                        <button class="nav-step nav-step__button active" id="subscribe-step-1-tab" data-bs-toggle="tab"
-                                             data-bs-target="#subscribe-step-1" type="button" role="tab" aria-controls="subscribe-step-1" aria-selected="true">
-                                             <div class="nav-step nav-step__content">
-                                                  <p>
-                                                       <span class="title">Выберите период</span>
-                                                  </p>
-                                             </div>
-                                        </button>
-                                        <button class="nav-step nav-step__button" id="subscribe-step-2-tab" data-bs-toggle="tab"
-                                             data-bs-target="#subscribe-step-2" type="button" role="tab" aria-controls="subscribe-step-2" aria-selected="false">
-                                             <div class="nav-step nav-step__content">
-                                                  <p>
-                                                       <span class="title">Введите данные</span>
-                                                  </p>
-                                             </div>
-                                        </button>
+                  </button>
+                  <button
+                    class="nav-step nav-step__button"
+                    id="subscribe-step-2-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#subscribe-step-2"
+                    type="button"
+                    role="tab"
+                    aria-controls="subscribe-step-2"
+                    aria-selected="false">
+                    <div class="nav-step nav-step__content">
+                      <p>
+                        <span class="title">Введите данные</span>
+                      </p>
+                    </div>
+                  </button>
 
-                                        <button class="nav-step nav-step__button" id="subscribe-step-3-tab" data-bs-toggle="tab"
-                                             data-bs-target="#subscribe-step-3" type="button" role="tab" aria-controls="subscribe-step-3" aria-selected="false">
-                                             <div class="nav-step nav-step__content">
-                                                  <p>
-                                                       <span class="title">Подтвердите заказ</span>
-                                                  </p>
-                                             </div>
-                                        </button>
-                                   </div>
-                              </nav>
+                  <button
+                    class="nav-step nav-step__button"
+                    id="subscribe-step-3-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#subscribe-step-3"
+                    type="button"
+                    role="tab"
+                    aria-controls="subscribe-step-3"
+                    aria-selected="false">
+                    <div class="nav-step nav-step__content">
+                      <p>
+                        <span class="title">Подтвердите заказ</span>
+                      </p>
+                    </div>
+                  </button>
+                </div>
+              </nav>
 
-                              <div class="tab-content" id="nav-tabContent">
-                                   <div class="tab-pane fade show active" id="subscribe-step-1" role="tabpanel" aria-labelledby="subscribe-step-1-tab"
-                                        tabindex="0">
-                                        <div class="mt-5 tab-content-step">
-                                             <h5 class="h5 mb-3">Выберите период</h5>
-                                             <p class="color-gray-dark">Выберите из предложенных ниже нужный Вам период
-                                                  предоставления доступа к интернет-ресурсу padatak.by</p>
-                                             <hr>
-                                             <div class="row">
-                                                  <div class="form-group col-md-6 subscribe-date my-2 my-md-0">
-                                                       <label for="date">Ваша подписка заканчивается</label>
-                                                       <div class="input-group date mt-1" id="dateEnd" data-target-input="nearest">
-                                                            <input type="text" class="form-control datetimepicker-input border-right-0" data-target="#dateEnd"
-                                                                 disabled value="03.05.2023" />
-                                                            <div class="input-group-text" data-target="#dateEnd" data-toggle="dateEnd">
-                                                                 <i class="bi bi-calendar"></i>
-                                                            </div>
-                                                       </div>
-                                                  </div>
-                                                  <div class="form-group col-md-6 subscribe-date  my-2 my-md-0">
-                                                       <label for="date">Продлить подписку с</label>
-                                                       <div class="input-group date mt-1 datetimepicker-wrapper datetimepicker-cont" id="datetimepicker"
-                                                            data-target-input="nearest">
-                                                            <input type="text" class="form-control datetimepicker-input border-right-0"
-                                                                 data-target="#datetimepicker" />
-                                                            <div class="input-group-text" data-target="#datetimepicker" data-toggle="datetimepicker">
-                                                                 <i class="bi bi-calendar"></i>
-                                                            </div>
-                                                       </div>
-                                                  </div>
-                                             </div>
-                                             <div class="subsribe-wrapper mt-5">
-                                                  <div class="subsribe-card">
-                                                       <div class="subsribe-card__title">30 дней</div>
-                                                       <hr class="subsribe-card__hr-gold">
-                                                       <div class="subsribe-card__list">
-                                                            <div class="d-flex flex-column">
-                                                                 <div class="d-flex align-items-start">
-                                                                      <i class="bi bi-check"></i>
-                                                                      <span>Доступ к разделу
-                                                                           «Медиатека»
-                                                                      </span>
+              <div class="access-banner mt-4 mb-2">
+                <div class="access-banner__media">
+                  <img src="./img/subscribe/banner-access-img.png" alt="" width="280" height="140" loading="lazy" />
+                </div>
+                <div class="access-banner__body">
+                  <p class="access-banner__text">
+                    <span class="access-banner__accent access-banner__accent_days">14 дней</span>
+                    доступа <br />
+                    <span class="access-banner__line"
+                      >по&nbsp;тарифу «Бизнес» за&nbsp;<span class="access-banner__accent"
+                        >9,00&nbsp;<span class="ff-inter">ƃ</span></span
+                      ></span
+                    >
+                  </p>
+                  <div class="access-banner__actions">
+                    <a class="access-banner__btn access-banner__btn_outline" href="sales-business-access.html"
+                      >Подробнее</a
+                    >
+                    <a class="access-banner__btn access-banner__btn_primary" href="sales-business-access.html"
+                      >Оформить доступ</a
+                    >
+                  </div>
+                </div>
+              </div>
 
-                                                                      <i class="bi bi-question-circle" tabindex="0" role="button" data-bs-toggle="popover"
-                                                                           data-bs-trigger="focus" data-bs-placement="top"
-                                                                           data-bs-content="Доступ к разделу «Медиатека» с записями вебинаров, конференций, актуальных прямых эфиров для индивидуальных предпринимателей"></i>
-                                                                 </div>
-                                                                 <div class="d-flex align-items-start">
-                                                                      <i class="bi bi-check"></i>
-                                                                      <span>Доступ к полным
-                                                                           текстам
-                                                                           статей
-                                                                      </span>
-                                                                      <i class="bi bi-question-circle" tabindex="0" role="button" data-bs-toggle="popover"
-                                                                           data-bs-trigger="focus" data-bs-placement="top"
-                                                                           data-bs-content="Доступ к постоянно обновляемой базе статей журналов «Налоги Беларуси»и «Консультант предпринимателя», включая архив за 2021 и 2022 годы"></i>
-                                                                 </div>
-                                                                 <div class="d-flex align-items-start">
-                                                                      <i class="bi bi-check"></i>
-                                                                      <span>Доступ к рубрике
-                                                                           «Вопрос–ответ»
-                                                                      </span>
-                                                                      <i class="bi bi-question-circle" tabindex="0" role="button" data-bs-toggle="popover"
-                                                                           data-bs-trigger="focus" data-bs-placement="top"
-                                                                           data-bs-content="Доступ к разделу «Доступ к рубрике «Вопрос–ответ» с анализом актуальных теми практических ситуаций нашими экспертами"></i>
-                                                                 </div>
-                                                            </div>
-                                                       </div>
-                                                       <hr>
-                                                       <div class="subsribe-card__cost">
-                                                            <span id="highlight-tour">48,60 BYN</span>
-                                                            <p>за 30 дней, 1 пользователь, 1 услуга</p>
-                                                       </div>
-                                                       <hr>
-                                                       <div class="text-center mt-3 w-100">
-                                                            <button class="button w-100" type="button">Оформить
-                                                                 подписку</button>
-                                                       </div>
-                                                  </div>
-                                                  <div class="subsribe-card">
-                                                       <div class="subsribe-card__title">60 дней</div>
-                                                       <hr class="subsribe-card__hr-gold">
-                                                       <div class="subsribe-card__list">
-                                                            <div class="d-flex flex-column">
-                                                                 <div class="d-flex align-items-start">
-                                                                      <i class="bi bi-check"></i>
-                                                                      <span>Доступ к разделу
-                                                                           «Медиатека»
-                                                                      </span>
-
-                                                                      <i class="bi bi-question-circle" tabindex="0" role="button" data-bs-toggle="popover"
-                                                                           data-bs-trigger="focus" data-bs-placement="top"
-                                                                           data-bs-content="Доступ к разделу «Медиатека» с записями вебинаров, конференций, актуальных прямых эфиров для индивидуальных предпринимателей"></i>
-                                                                 </div>
-                                                                 <div class="d-flex align-items-start">
-                                                                      <i class="bi bi-check"></i>
-                                                                      <span>Доступ к полным
-                                                                           текстам
-                                                                           статей
-                                                                      </span>
-                                                                      <i class="bi bi-question-circle" tabindex="0" role="button" data-bs-toggle="popover"
-                                                                           data-bs-trigger="focus" data-bs-placement="top"
-                                                                           data-bs-content="Доступ к постоянно обновляемой базе статей журналов «Налоги Беларуси»и «Консультант предпринимателя», включая архив за 2021 и 2022 годы"></i>
-                                                                 </div>
-                                                                 <div class="d-flex align-items-start">
-                                                                      <i class="bi bi-check"></i>
-                                                                      <span>Доступ к рубрике
-                                                                           «Вопрос–ответ»
-                                                                      </span>
-                                                                      <i class="bi bi-question-circle" tabindex="0" role="button" data-bs-toggle="popover"
-                                                                           data-bs-trigger="focus" data-bs-placement="top"
-                                                                           data-bs-content="Доступ к рубрике «Вопрос–ответ» с анализом актуальных теми практических ситуаций нашими экспертами"></i>
-                                                                 </div>
-                                                            </div>
-                                                       </div>
-                                                       <hr>
-                                                       <div class="subsribe-card__cost">
-                                                            <span>97,20 BYN</span>
-                                                            <p>за 60 дней, 1 пользователь, 2 услуги</p>
-                                                       </div>
-                                                       <hr>
-                                                       <div class="text-center mt-3 w-100">
-                                                            <button class="button w-100" type="button">Оформить
-                                                                 подписку</button>
-                                                       </div>
-                                                  </div>
-                                                  <div class="subsribe-card">
-                                                       <div class="subsribe-card__title">90 дней</div>
-                                                       <hr class="subsribe-card__hr-gold">
-                                                       <div class="subsribe-card__list">
-                                                            <div class="d-flex flex-column">
-                                                                 <div class="d-flex align-items-start">
-                                                                      <i class="bi bi-check"></i>
-                                                                      <span>Доступ к разделу
-                                                                           «Медиатека»
-                                                                      </span>
-
-                                                                      <i class="bi bi-question-circle" tabindex="0" role="button" data-bs-toggle="popover"
-                                                                           data-bs-trigger="focus" data-bs-placement="top"
-                                                                           data-bs-content="Доступ к разделу «Медиатека» с записями вебинаров, конференций, актуальных прямых эфиров для индивидуальных предпринимателей"></i>
-                                                                 </div>
-                                                                 <div class="d-flex align-items-start">
-                                                                      <i class="bi bi-check"></i>
-                                                                      <span>Доступ к полным
-                                                                           текстам
-                                                                           статей
-                                                                      </span>
-                                                                      <i class="bi bi-question-circle" tabindex="0" role="button" data-bs-toggle="popover"
-                                                                           data-bs-trigger="focus" data-bs-placement="top"
-                                                                           data-bs-content="Доступ к постоянно обновляемой базе статей журналов «Налоги Беларуси»и «Консультант предпринимателя», включая архив за 2021 и 2022 годы"></i>
-                                                                 </div>
-                                                                 <div class="d-flex align-items-start">
-                                                                      <i class="bi bi-check"></i>
-                                                                      <span>Доступ к рубрике
-                                                                           «Вопрос–ответ»
-                                                                      </span>
-                                                                      <i class="bi bi-question-circle" tabindex="0" role="button" data-bs-toggle="popover"
-                                                                           data-bs-trigger="focus" data-bs-placement="top"
-                                                                           data-bs-content="Доступ к рубрике «Вопрос–ответ» с анализом актуальных теми практических ситуаций нашими экспертами"></i>
-                                                                 </div>
-                                                            </div>
-                                                       </div>
-                                                       <hr>
-                                                       <div class="subsribe-card__cost">
-                                                            <span>145,80 BYN</span>
-                                                            <p>за 90 дней, 1 пользователь, 3 услуги</p>
-                                                       </div>
-                                                       <hr>
-                                                       <div class="text-center mt-3 w-100">
-                                                            <button class="button w-100" type="button">Оформить
-                                                                 подписку</button>
-                                                       </div>
-                                                  </div>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="tab-pane fade" id="subscribe-step-2" role="tabpanel" aria-labelledby="subscribe-step-2-tab" tabindex="0">
-                                        <div class="mt-5 tab-content-step">
-                                             <div class="">
-                                                  <h5 class="h5 mb-3">Заполните форму для открытия демо-доступа к
-                                                       платформе</h5>
-                                                  <p class="color-gray-dark">Введите ваши данные, чтобы наши менеджеры
-                                                       открыли вам
-                                                       демо-доступ к полному функционалу портала, доступному по подписке
-                                                  </p>
-                                                  <hr>
-                                                  <div class="tab-content-step__wrapper">
-                                                       <form action="/" class="mt-4">
-                                                            <div class="input mb-4">
-                                                                 <label for="unp-registration">УНП
-                                                                      <span>*</span></label>
-                                                                 <input type="phone" id="unp-registration" class="_required" placeholder="Введите ваш УНП">
-                                                                 <div class="input__text-error"><i class="bi bi-exclamation-triangle me-2"></i>Поле
-                                                                      не может
-                                                                      быть пустым</div>
-                                                            </div>
-                                                            <div class="input mb-4">
-                                                                 <label for="email-login">Ваш логин или e-mail с портала
-                                                                      info-center.by</label>
-                                                                 <input type="text" id="email-login" class="_email _required" placeholder="Ваш email">
-                                                            </div>
-                                                            <div class="input mb-4">
-                                                                 <label for="phone-registration">Телефон</label>
-                                                                 <input type="phone" id="phone-registration" placeholder="+375 (**) ***-**-**">
-                                                            </div>
-                                                       </form>
-                                                  </div>
-                                             </div>
-                                             <div class="">
-                                                  <div class="row g-4">
-                                                       <div class="col-md-6">
-                                                            <div class="tab-content-step__wrapper tab-content-step__wrapper_small text-center">
-                                                                 <div class="mb-4">
-                                                                      <i class="bi bi-lock-fill tab-content-step__lock-icon me-2"></i>
-                                                                 </div>
-                                                                 <h5 class="h5">Чтобы получить доступ к оформлению
-                                                                      подписки -
-                                                                      авторизуйтесь или зарегистрируйтесь!</h5>
-                                                            </div>
-                                                       </div>
-                                                       <div class="col-md-6">
-                                                            <div class="tab-content-step__wrapper tab-content-step__wrapper_small text-center">
-                                                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                                                      <div class="mb-5 w-100">
-                                                                           <div class="color-gray-dark mb-3">Если у вас
-                                                                                уже есть
-                                                                                аккаунт - авторизуйтесь</div>
-                                                                           <a href="login.html" class="button d-block w-100">Войти</a>
-                                                                      </div>
-                                                                      <div class="mb-3 w-100">
-                                                                           <div class="color-gray-dark mb-3">Если у вас
-                                                                                еще нет
-                                                                                аккаунта - зарегистрируйтесь</div>
-                                                                           <a href="login.html"
-                                                                                class="button button_blue-light d-block w-100">Зарегистрироваться</a>
-                                                                      </div>
-                                                                 </div>
-                                                            </div>
-                                                       </div>
-                                                  </div>
-                                             </div>
-                                             <div class="d-flex justify-content-center align-items-center mt-5">
-                                                  <button type="button" class="button button_empty">Назад</button>
-                                                  <button type="button" class="ms-3 button">Дальше</button>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="tab-pane fade" id="subscribe-step-3" role="tabpanel" aria-labelledby="subscribe-step-3-tab" tabindex="0">
-                                        <div class="mt-5 tab-content-step">
-                                             <h5 class="h5 mb-3">Подтвердите заказ</h5>
-                                             <p class="color-gray-dark">Проверьте ваши данные и подтвердите оформление
-                                                  заказа</p>
-                                             <hr class="mb-4">
-                                             <h5 class="h5 color-gold">Данные пользователя</h5>
-                                             <div class="subscribe-full-info mb-5">
-                                                  <div class="subscribe-full-info__text w-100">
-                                                       <div class="d-flex justify-content-between">
-                                                            <span>
-                                                                 Тип плательщика:
-                                                            </span>
-                                                            <span>
-                                                                 Физическое лицо
-                                                            </span>
-                                                       </div>
-                                                       <div class="mt-2 d-flex justify-content-between">
-                                                            <span>
-                                                                 E-mail:
-                                                            </span>
-                                                            <span>
-                                                                 dariab.nobody@gmail.com
-                                                            </span>
-                                                       </div>
-                                                  </div>
-                                                  <div class="subscribe-full-info__text w-100">
-                                                       <div class="d-flex justify-content-between">
-                                                            <span>
-                                                                 Номер телефона:
-                                                            </span>
-                                                            <span class="color-gray-dark">не заполнен</span>
-                                                       </div>
-                                                       <div class="mt-2 d-flex justify-content-between">
-                                                            <span>
-                                                                 ФИО:
-                                                            </span>
-                                                            <span class="color-gray-dark">не заполнен</span>
-                                                       </div>
-                                                  </div>
-                                             </div>
-                                             <h5 class="h5 color-gold mt-4">Состав заказа</h5>
-                                             <div id="table-4">
-                                                  <div class="table-4">
-                                                       <table>
-                                                            <thead>
-                                                                 <tr>
-                                                                      <td>
-                                                                           Наименование
-                                                                      </td>
-                                                                      <td>
-                                                                           Количество услуг
-                                                                      </td>
-                                                                      <td>
-                                                                           Стоимость 1 услуги<br>(без НДС)
-                                                                      </td>
-                                                                      <td>
-                                                                           НДС
-                                                                      </td>
-                                                                      <td>
-                                                                           Стоимость, всего<br>(c НДС)
-                                                                      </td>
-                                                                 </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                 <tr>
-                                                                      <td>
-                                                                           Предоставление доступа к Цифровой платформе о
-                                                                           налогах и бухгалтерском учете Padatak.by на
-                                                                           30 дней
-                                                                      </td>
-                                                                      <td>
-                                                                           1 услуга
-                                                                      </td>
-                                                                      <td>
-                                                                           40,5 BYN
-                                                                      </td>
-                                                                      <td>
-                                                                           8,1 BYN
-                                                                      </td>
-                                                                      <td>
-                                                                           48,6 BYN
-                                                                      </td>
-                                                                 </tr>
-                                                                 <tr>
-                                                                      <td colspan="4">
-                                                                           <strong>Итого</strong>
-                                                                      </td>
-                                                                      <td>
-                                                                           <strong class="color-gold">48,6 BYN</strong>
-                                                                      </td>
-                                                                 </tr>
-                                                            </tbody>
-                                                       </table>
-                                                  </div>
-                                             </div>
-                                             <div class="d-flex justify-content-center align-items-center mt-5">
-                                                  <button class="ms-3 button" type="button" data-bs-toggle="modal" data-bs-target="#makeOrder">Оформить
-                                                       заказ</button>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="modal fade modal-order" id="makeOrder" tabindex="-1" aria-labelledby="makeOrderLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                             <div class="modal-content">
-                                                  <div class="modal-header">
-                                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                  </div>
-                                                  <div class="modal-body d-flex flex-column justify-content-center align-items-center">
-                                                       <div class="d-flex flex-column w-100">
-                                                            <i class="bi bi-check2-circle color-gold"></i>
-                                                            <p class="mt-3">
-                                                                 Ваш заказ <span class="color-gold">№ХХХ</span> успешно
-                                                                 сформирован!
-                                                            </p>
-                                                            <p>Счет-фактура для оплаты создана и отправлена Вам на почту
-                                                                 <span class="color-gold">dariab.nobody@gmail.com</span>.
-                                                                 Также Вы можете скачать счет в
-                                                                 Личном кабинете в разделе «<a href="" class="color-gold">Управление подпиской</a>».
-                                                            </p>
-                                                       </div>
-                                                       <div class="w-100">
-                                                            <span>Выберите способ оплаты:</span>
-                                                            <div class="modal-order-card-wrapper mt-3">
-                                                                 <div
-                                                                      class="modal-order__card d-flex flex-column justify-content-center align-items-center card-disabled">
-                                                                      <div class="modal-order__card-header">
-                                                                           <span>в разработке</span>
-                                                                      </div>
-                                                                      <img src="./img/subscribe/padatak-order-cards.svg" alt="padatak-order-cards">
-                                                                      <span>Оплата картой<br>онлайн</span>
-                                                                 </div>
-                                                                 <div class="modal-order__card d-flex flex-column justify-content-center align-items-center">
-                                                                      <div class="modal-order__card-header">
-                                                                           <span>в разработке</span>
-                                                                      </div>
-                                                                      <img src="./img/subscribe/padatak-order-check.svg" alt="padatak-order-check">
-                                                                      <span>Оплата по<br>счет-фактуре</span>
-                                                                 </div>
-                                                                 <div class="modal-order__card d-flex flex-column justify-content-center align-items-center"
-                                                                      type="button" data-bs-toggle="modal" data-bs-target="#orderErip">
-                                                                      <div class="modal-order__card-header">
-                                                                           <span>в разработке</span>
-                                                                      </div>
-                                                                      <img src="./img/subscribe/padatak-order-erip.svg" alt="padatak-order-erip">
-                                                                      <span>Оплата через<br>систему ЕРИП</span>
-                                                                 </div>
-                                                            </div>
-                                                       </div>
-                                                  </div>
-                                                  <div class="modal-footer d-flex flex-column justify-content-center align-items-center">
-                                                  </div>
-                                             </div>
-                                        </div>
-                                   </div>
-
-                                   <div class="modal fade modal-order" id="orderErip" tabindex="-1" aria-labelledby="orderErip" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                             <div class="modal-content">
-                                                  <div class="modal-header">
-                                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                  </div>
-                                                  <div class="modal-body d-flex flex-column justify-content-center align-items-center">
-                                                       <span class="fw-bold">Оплата через систему ЕРИП</span>
-                                                       <p class="w-100 text-left mt-5">Ваш код платежа для оплаты через
-                                                            систему ЕРИП: <span class="color-gold">123456789</span></p>
-                                                       <hr>
-                                                       <div>
-                                                            <span class="fw-bold">По дереву ЕРИП:</span>
-                                                            <ol class="mt-3 erip-list w-100">
-                                                                 <li>Выберите пункт ЕРИП в интернет-банкинге, мобильном
-                                                                      приложении или терминале</li>
-                                                                 <li>Далее выберите последовательно пункты:
-                                                                      <ul>
-                                                                           <li><i class="bi bi-arrow-right me-2"></i>Система
-                                                                                «Расчет» (ЕРИП)</li>
-                                                                           <ul>
-                                                                                <li><i class="bi bi-arrow-right me-2"></i>Информационные
-                                                                                     услуги</li>
-                                                                                <ul>
-                                                                                     <li><i class="bi bi-arrow-right me-2"></i>Деловая
-                                                                                          информация</li>
-                                                                                     <ul>
-                                                                                          <li><i class="bi bi-arrow-right me-2"></i>Инфо-центр
-                                                                                               по налогам и
-                                                                                               сборам</li>
-                                                                                          <ul>
-                                                                                               <li class="color-gold"><i
-                                                                                                         class="bi bi-arrow-right me-2"></i>Доступ
-                                                                                                    к&nbsp;Padatak.by
-                                                                                               </li>
-                                                                                          </ul>
-                                                                                     </ul>
-                                                                                </ul>
-                                                                           </ul>
-                                                                      </ul>
-                                                                 </li>
-                                                                 <li>Введите код платежа для оплаты в ЕРИП: <span class="color-gold fw-bold">123456789</span>
-                                                                 </li>
-                                                                 <li>Проверьте корректность информации</li>
-                                                                 <li>Совершите платеж</li>
-                                                            </ol>
-                                                       </div>
-                                                       <hr>
-                                                       <div class="d-flex flex-column w-100">
-                                                            <span class="fw-bold">
-                                                                 По QR-коду:
-                                                            </span>
-                                                            <div class="erip-qr-container">
-                                                                 <div class="erip-qr">
-                                                                      <img src="./img/subscribe/qr-prev.png" alt="qr-prev">
-                                                                 </div>
-                                                                 <div class="ms-3 d-flex flex-column">
-                                                                      <p class="">Для оплаты отсканируйте QR-код в
-                                                                           мобильном
-                                                                           приложении Вашего банка.
-                                                                      </p>
-                                                                      <p class="mt-2">
-                                                                           Код платежа для оплаты в ЕРИП: <span class="color-gold fw-bold">123456789</span>
-                                                                      </p>
-                                                                 </div>
-                                                            </div>
-                                                       </div>
-                                                  </div>
-                                                  <div class="modal-footer d-flex flex-column justify-content-center align-items-center">
-                                                  </div>
-                                             </div>
-                                        </div>
-                                   </div>
-
+              <div class="tab-content" id="nav-tabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="subscribe-step-1"
+                  role="tabpanel"
+                  aria-labelledby="subscribe-step-1-tab"
+                  tabindex="0">
+                  <div class="mt-5 tab-content-step">
+                    <h5 class="h5 mb-3">Выберите период</h5>
+                    <p class="color-gray-dark">
+                      Выберите из предложенных ниже нужный Вам период предоставления доступа к интернет-ресурсу
+                      padatak.by
+                    </p>
+                    <hr />
+                    <div class="row">
+                      <div class="form-group col-md-6 subscribe-date my-2 my-md-0">
+                        <label for="date">Ваша подписка заканчивается</label>
+                        <div class="input-group date mt-1" id="dateEnd" data-target-input="nearest">
+                          <input
+                            type="text"
+                            class="form-control datetimepicker-input border-right-0"
+                            data-target="#dateEnd"
+                            disabled
+                            value="03.05.2023" />
+                          <div class="input-group-text" data-target="#dateEnd" data-toggle="dateEnd">
+                            <i class="bi bi-calendar"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6 subscribe-date my-2 my-md-0">
+                        <label for="date">Продлить подписку с</label>
+                        <div
+                          class="input-group date mt-1 datetimepicker-wrapper datetimepicker-cont"
+                          id="datetimepicker"
+                          data-target-input="nearest">
+                          <input
+                            type="text"
+                            class="form-control datetimepicker-input border-right-0"
+                            data-target="#datetimepicker" />
+                          <div class="input-group-text" data-target="#datetimepicker" data-toggle="datetimepicker">
+                            <i class="bi bi-calendar"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-64">
+                      <div class="col-xxl-4 d-flex">
+                        <div
+                          class="product border bg-blue-light border-color-blue-light px-2 py-5 px-4 border-10 d-flex flex-column align-items-center justify-content-between w-100 text-white">
+                          <div class="d-flex flex-column w-100">
+                            <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+                              <div class="fs-2 color-white text-center fw-600 product__name mb-0">Бизнес</div>
+                              <span class="bg-gold-light color-nav-black px-3 py-2 border-10 fw-600"
+                                >Для новых пользователей</span
+                              >
+                            </div>
+                            <hr class="subsribe-card__hr border-color-white opacity-100" />
+                            <div class="subsribe-card__select">
+                              <label for="tarifSelect" class="mb-2 fw-600 color-white">Период</label>
+                              <div class="position-relative">
+                                <div class="bg-color-white border border-10 px-3 py-3 color-nav-black">14 дней</div>
                               </div>
-                         </div>
+                            </div>
+                            <hr class="border-color-white opacity-100" />
+                            <div class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-end w-100">
+                              <span class="subscribe-price lh-1 color-gold-light fs-32">9,00 ƃ</span>
+                              <p class="mb-0 color-white">9 ƃ / 14 ДНЕЙ</p>
+                            </div>
+                            <hr class="border-color-white opacity-100" />
+                            <a
+                              class="product-promo-link d-flex align-items-center justify-content-between w-100 bg-color-white color-blue-light border border-10 px-3 py-2 text-decoration-none fw-600"
+                              href="sales-business-access.html">
+                              <span>Подробнее об акции</span>
+                              <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                            <div class="text-left my-2 py-2 w-100">
+                              <div class="subsribe-card__list">
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold-light"></i
+                                  ><span class="mw-100 color-white">Еженедельная рассылка</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold-light"></i
+                                  ><span class="mw-100 color-white">Добавление понравившихся материалов в закладки</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold-light"></i
+                                  ><span class="mw-100 color-white">Сохранение истории просмотров материалов</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold-light"></i
+                                  ><span class="mw-100 color-white">Форум</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold-light"></i
+                                  ><span class="mw-100 color-white"
+                                    >Доступ к полным текстам аналитических материалов</span
+                                  ><i
+                                    class="bi bi-question-circle color-white"
+                                    tabindex="0"
+                                    role="button"
+                                    data-bs-toggle="popover"
+                                    data-bs-trigger="focus"
+                                    data-bs-placement="top"
+                                    data-bs-content="Доступ к постоянно обновляемой базе статей журналов «Налоги Беларуси» и «Консультант предпринимателя», включая архив материалов с 2019 года"></i>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold-light"></i
+                                  ><span class="mw-100 color-gold-light">Доступ к сервису «Медиатека»</span
+                                  ><i
+                                    class="bi bi-question-circle color-gold-light"
+                                    tabindex="0"
+                                    role="button"
+                                    data-bs-toggle="popover"
+                                    data-bs-trigger="focus"
+                                    data-bs-placement="top"
+                                    data-bs-content="Доступ к разделу «Медиатека» с записями вебинаров, конференций и прямых эфиров"></i>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold-light"></i
+                                  ><span class="mw-100 color-gold-light">Доступ к сервису «Вопрос-ответ»</span
+                                  ><i
+                                    class="bi bi-question-circle color-gold-light"
+                                    tabindex="0"
+                                    role="button"
+                                    data-bs-toggle="popover"
+                                    data-bs-trigger="focus"
+                                    data-bs-placement="top"
+                                    data-bs-content="Доступ к сервису «Вопрос-ответ» с практическими разъяснениями и ответами экспертов"></i>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold-light"></i
+                                  ><span class="mw-100 color-gold-light">Доступ к сервису «Налоговый календарь»</span
+                                  ><i
+                                    class="bi bi-question-circle color-gold-light"
+                                    tabindex="0"
+                                    role="button"
+                                    data-bs-toggle="popover"
+                                    data-bs-trigger="focus"
+                                    data-bs-placement="top"
+                                    data-bs-content="Доступ к налоговому календарю со сроками отчётности и уплаты платежей"></i>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold-light"></i
+                                  ><span class="mw-100 color-gold-light"
+                                    >Доступ к сервису «Производственный календарь»</span
+                                  ><i
+                                    class="bi bi-question-circle color-gold-light"
+                                    tabindex="0"
+                                    role="button"
+                                    data-bs-toggle="popover"
+                                    data-bs-trigger="focus"
+                                    data-bs-placement="top"
+                                    data-bs-content="Доступ к производственному календарю с нормами рабочего времени"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column w-100">
+                            <div class="text-center mt-3 mt-auto w-100">
+                              <button
+                                class="button button-gold-light w-100 sbs border-10 product-disabled"
+                                data-term="1"
+                                type="button"
+                                tabindex="0"
+                                data-bs-toggle="popover"
+                                data-bs-trigger="focus"
+                                data-bs-placement="top"
+                                data-bs-content="Акция доступна новым пользователям: ранее не зарегистрированным на padatak.by или зарегистрированным не более 5 рабочих дней назад и ранее не приобретавшим тарифные планы.">
+                                Оформить доступ
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xxl-4">
+                        <div
+                          class="product product-disabled border px-2 py-5 px-4 border-10 d-flex flex-column align-items-center justify-content-between w-100">
+                          <div class="d-flex flex-column w-100">
+                            <div class="fs-2 color-gold text-center w-100 fw-600 product__name">Стандарт</div>
+                            <hr class="subsribe-card__hr-gold" />
+                            <div class="subsribe-card__select">
+                              <label for="tarifSelect " class="mb-2 fw-600">Выберите период</label
+                              ><select class="select border-10 offer-select">
+                                <option value="[object Object]">Период доступа: 30 дней</option>
+                                <option value="[object Object]">Период доступа: 90 дней</option>
+                              </select>
+                            </div>
+                            <hr class="border-top-0" />
+                            <div
+                              class="subsribe-card__cost d-flex flex-row flex-wrap gap-2 justify-content-center align-items-end w-100">
+                              <span class="subscribe-price lh-1">43.2 ƃ</span>
+                              <p class="subscribe-info mb-0">43.2 ƃ / 30 ДНЕЙ</p>
+                            </div>
+                            <hr class="border-top-0" />
+                            <div class="text-left my-2 py-2 w-100">
+                              <div class="subsribe-card__list">
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i><span class="mw-100">Еженедельная рассылка</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i
+                                  ><span class="mw-100">Добавление понравившихся материалов в закладки</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i
+                                  ><span class="mw-100">Сохранение истории просмотров материалов</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i><span class="mw-100">Форум</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i
+                                  ><span class="mw-100">Доступ к полным текстам аналитических материалов</span
+                                  ><i
+                                    class="bi bi-question-circle"
+                                    tabindex="0"
+                                    role="button"
+                                    data-bs-toggle="popover"
+                                    data-bs-trigger="focus"
+                                    data-bs-placement="top"
+                                    data-bs-content="Доступ к постоянно обновляемой базе статей журналов «Налоги Беларуси» и «Консультант предпринимателя», включая архив материалов с 2019 года"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column w-100">
+                            <div class="text-center mt-3 mt-auto w-100">
+                              <button class="button w-100 sbs border-10" data-term="1" type="button">
+                                Оформить доступ
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xxl-4">
+                        <div
+                          class="product border px-2 py-5 px-4 border-10 d-flex flex-column align-items-center justify-content-between w-100">
+                          <div class="d-flex flex-column w-100">
+                            <div class="fs-2 color-gold text-center w-100 fw-600 product__name">Стандарт</div>
+                            <hr class="subsribe-card__hr-gold" />
+                            <div class="subsribe-card__select">
+                              <label for="tarifSelect " class="mb-2 fw-600">Выберите период</label
+                              ><select class="select border-10 offer-select">
+                                <option value="[object Object]">Период доступа: 30 дней</option>
+                                <option value="[object Object]">Период доступа: 90 дней</option>
+                              </select>
+                            </div>
+                            <hr class="border-top-0" />
+                            <div
+                              class="subsribe-card__cost d-flex flex-row flex-wrap gap-2 justify-content-center align-items-end w-100">
+                              <span class="subscribe-price lh-1">43.2 ƃ</span>
+                              <p class="subscribe-info mb-0">43.2 ƃ / 30 ДНЕЙ</p>
+                            </div>
+                            <hr class="border-top-0" />
+                            <div class="text-left my-2 py-2 w-100">
+                              <div class="subsribe-card__list">
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i><span class="mw-100">Еженедельная рассылка</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i
+                                  ><span class="mw-100">Добавление понравившихся материалов в закладки</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i
+                                  ><span class="mw-100">Сохранение истории просмотров материалов</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i><span class="mw-100">Форум</span
+                                  >
+                                </div>
+                                <div class="d-flex align-items-start">
+                                  <i class="bi bi-check color-gold"></i
+                                  ><span class="mw-100">Доступ к полным текстам аналитических материалов</span
+                                  ><i
+                                    class="bi bi-question-circle"
+                                    tabindex="0"
+                                    role="button"
+                                    data-bs-toggle="popover"
+                                    data-bs-trigger="focus"
+                                    data-bs-placement="top"
+                                    data-bs-content="Доступ к постоянно обновляемой базе статей журналов «Налоги Беларуси» и «Консультант предпринимателя», включая архив материалов с 2019 года"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column w-100">
+                            <div class="text-center mt-3 mt-auto w-100">
+                              <button class="button w-100 sbs border-10" data-term="1" type="button">
+                                Оформить доступ
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="subsribe-wrapper mt-5">
+                        <div class="subsribe-card">
+                          <div class="subsribe-card__title">30 дней</div>
+                          <hr class="subsribe-card__hr-gold" />
+                          <div class="subsribe-card__list">
+                            <div class="d-flex flex-column">
+                              <div class="d-flex align-items-start">
+                                <i class="bi bi-check"></i>
+                                <span>Доступ к разделу «Медиатека» </span>
+
+                                <i
+                                  class="bi bi-question-circle"
+                                  tabindex="0"
+                                  role="button"
+                                  data-bs-toggle="popover"
+                                  data-bs-trigger="focus"
+                                  data-bs-placement="top"
+                                  data-bs-content="Доступ к разделу «Медиатека» с записями вебинаров, конференций, актуальных прямых эфиров для индивидуальных предпринимателей"></i>
+                              </div>
+                              <div class="d-flex align-items-start">
+                                <i class="bi bi-check"></i>
+                                <span>Доступ к полным текстам статей </span>
+                                <i
+                                  class="bi bi-question-circle"
+                                  tabindex="0"
+                                  role="button"
+                                  data-bs-toggle="popover"
+                                  data-bs-trigger="focus"
+                                  data-bs-placement="top"
+                                  data-bs-content="Доступ к постоянно обновляемой базе статей журналов «Налоги Беларуси»и «Консультант предпринимателя», включая архив за 2021 и 2022 годы"></i>
+                              </div>
+                              <div class="d-flex align-items-start">
+                                <i class="bi bi-check"></i>
+                                <span>Доступ к рубрике «Вопрос–ответ» </span>
+                                <i
+                                  class="bi bi-question-circle"
+                                  tabindex="0"
+                                  role="button"
+                                  data-bs-toggle="popover"
+                                  data-bs-trigger="focus"
+                                  data-bs-placement="top"
+                                  data-bs-content="Доступ к разделу «Доступ к рубрике «Вопрос–ответ» с анализом актуальных теми практических ситуаций нашими экспертами"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <hr />
+                          <div class="subsribe-card__cost">
+                            <span id="highlight-tour">48,60 BYN</span>
+                            <p>за 30 дней, 1 пользователь, 1 услуга</p>
+                          </div>
+                          <hr />
+                          <div class="text-center mt-3 w-100">
+                            <button class="button w-100" type="button">Оформить подписку</button>
+                          </div>
+                        </div>
+                        <div class="subsribe-card">
+                          <div class="subsribe-card__title">60 дней</div>
+                          <hr class="subsribe-card__hr-gold" />
+                          <div class="subsribe-card__list">
+                            <div class="d-flex flex-column">
+                              <div class="d-flex align-items-start">
+                                <i class="bi bi-check"></i>
+                                <span>Доступ к разделу «Медиатека» </span>
+
+                                <i
+                                  class="bi bi-question-circle"
+                                  tabindex="0"
+                                  role="button"
+                                  data-bs-toggle="popover"
+                                  data-bs-trigger="focus"
+                                  data-bs-placement="top"
+                                  data-bs-content="Доступ к разделу «Медиатека» с записями вебинаров, конференций, актуальных прямых эфиров для индивидуальных предпринимателей"></i>
+                              </div>
+                              <div class="d-flex align-items-start">
+                                <i class="bi bi-check"></i>
+                                <span>Доступ к полным текстам статей </span>
+                                <i
+                                  class="bi bi-question-circle"
+                                  tabindex="0"
+                                  role="button"
+                                  data-bs-toggle="popover"
+                                  data-bs-trigger="focus"
+                                  data-bs-placement="top"
+                                  data-bs-content="Доступ к постоянно обновляемой базе статей журналов «Налоги Беларуси»и «Консультант предпринимателя», включая архив за 2021 и 2022 годы"></i>
+                              </div>
+                              <div class="d-flex align-items-start">
+                                <i class="bi bi-check"></i>
+                                <span>Доступ к рубрике «Вопрос–ответ» </span>
+                                <i
+                                  class="bi bi-question-circle"
+                                  tabindex="0"
+                                  role="button"
+                                  data-bs-toggle="popover"
+                                  data-bs-trigger="focus"
+                                  data-bs-placement="top"
+                                  data-bs-content="Доступ к рубрике «Вопрос–ответ» с анализом актуальных теми практических ситуаций нашими экспертами"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <hr />
+                          <div class="subsribe-card__cost">
+                            <span>97,20 BYN</span>
+                            <p>за 60 дней, 1 пользователь, 2 услуги</p>
+                          </div>
+                          <hr />
+                          <div class="text-center mt-3 w-100">
+                            <button class="button w-100" type="button">Оформить подписку</button>
+                          </div>
+                        </div>
+                        <div class="subsribe-card">
+                          <div class="subsribe-card__title">90 дней</div>
+                          <hr class="subsribe-card__hr-gold" />
+                          <div class="subsribe-card__list">
+                            <div class="d-flex flex-column">
+                              <div class="d-flex align-items-start">
+                                <i class="bi bi-check"></i>
+                                <span>Доступ к разделу «Медиатека» </span>
+
+                                <i
+                                  class="bi bi-question-circle"
+                                  tabindex="0"
+                                  role="button"
+                                  data-bs-toggle="popover"
+                                  data-bs-trigger="focus"
+                                  data-bs-placement="top"
+                                  data-bs-content="Доступ к разделу «Медиатека» с записями вебинаров, конференций, актуальных прямых эфиров для индивидуальных предпринимателей"></i>
+                              </div>
+                              <div class="d-flex align-items-start">
+                                <i class="bi bi-check"></i>
+                                <span>Доступ к полным текстам статей </span>
+                                <i
+                                  class="bi bi-question-circle"
+                                  tabindex="0"
+                                  role="button"
+                                  data-bs-toggle="popover"
+                                  data-bs-trigger="focus"
+                                  data-bs-placement="top"
+                                  data-bs-content="Доступ к постоянно обновляемой базе статей журналов «Налоги Беларуси»и «Консультант предпринимателя», включая архив за 2021 и 2022 годы"></i>
+                              </div>
+                              <div class="d-flex align-items-start">
+                                <i class="bi bi-check"></i>
+                                <span>Доступ к рубрике «Вопрос–ответ» </span>
+                                <i
+                                  class="bi bi-question-circle"
+                                  tabindex="0"
+                                  role="button"
+                                  data-bs-toggle="popover"
+                                  data-bs-trigger="focus"
+                                  data-bs-placement="top"
+                                  data-bs-content="Доступ к рубрике «Вопрос–ответ» с анализом актуальных теми практических ситуаций нашими экспертами"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <hr />
+                          <div class="subsribe-card__cost">
+                            <span>145,80 BYN</span>
+                            <p>за 90 дней, 1 пользователь, 3 услуги</p>
+                          </div>
+                          <hr />
+                          <div class="text-center mt-3 w-100">
+                            <button class="button w-100" type="button">Оформить подписку</button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="subscribe-step-2"
+                  role="tabpanel"
+                  aria-labelledby="subscribe-step-2-tab"
+                  tabindex="0">
+                  <div class="mt-5 tab-content-step">
+                    <div class="">
+                      <h5 class="h5 mb-3">Заполните форму для открытия демо-доступа к платформе</h5>
+                      <p class="color-gray-dark">
+                        Введите ваши данные, чтобы наши менеджеры открыли вам демо-доступ к полному функционалу портала,
+                        доступному по подписке
+                      </p>
+                      <hr />
+                      <div class="tab-content-step__wrapper">
+                        <form action="/" class="mt-4">
+                          <div class="input mb-4">
+                            <label for="unp-registration">УНП <span>*</span></label>
+                            <input type="phone" id="unp-registration" class="_required" placeholder="Введите ваш УНП" />
+                            <div class="input__text-error">
+                              <i class="bi bi-exclamation-triangle me-2"></i>Поле не может быть пустым
+                            </div>
+                          </div>
+                          <div class="input mb-4">
+                            <label for="email-login">Ваш логин или e-mail с портала info-center.by</label>
+                            <input type="text" id="email-login" class="_email _required" placeholder="Ваш email" />
+                          </div>
+                          <div class="input mb-4">
+                            <label for="phone-registration">Телефон</label>
+                            <input type="phone" id="phone-registration" placeholder="+375 (**) ***-**-**" />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="row g-4">
+                        <div class="col-md-6">
+                          <div class="tab-content-step__wrapper tab-content-step__wrapper_small text-center">
+                            <div class="mb-4">
+                              <i class="bi bi-lock-fill tab-content-step__lock-icon me-2"></i>
+                            </div>
+                            <h5 class="h5">
+                              Чтобы получить доступ к оформлению подписки - авторизуйтесь или зарегистрируйтесь!
+                            </h5>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="tab-content-step__wrapper tab-content-step__wrapper_small text-center">
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                              <div class="mb-5 w-100">
+                                <div class="color-gray-dark mb-3">Если у вас уже есть аккаунт - авторизуйтесь</div>
+                                <a href="login.html" class="button d-block w-100">Войти</a>
+                              </div>
+                              <div class="mb-3 w-100">
+                                <div class="color-gray-dark mb-3">Если у вас еще нет аккаунта - зарегистрируйтесь</div>
+                                <a href="login.html" class="button button_blue-light d-block w-100"
+                                  >Зарегистрироваться</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center mt-5">
+                      <button type="button" class="button button_empty">Назад</button>
+                      <button type="button" class="ms-3 button">Дальше</button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="subscribe-step-3"
+                  role="tabpanel"
+                  aria-labelledby="subscribe-step-3-tab"
+                  tabindex="0">
+                  <div class="mt-5 tab-content-step">
+                    <h5 class="h5 mb-3">Подтвердите заказ</h5>
+                    <p class="color-gray-dark">Проверьте ваши данные и подтвердите оформление заказа</p>
+                    <hr class="mb-4" />
+                    <h5 class="h5 color-gold">Данные пользователя</h5>
+                    <div class="subscribe-full-info mb-5">
+                      <div class="subscribe-full-info__text w-100">
+                        <div class="d-flex justify-content-between">
+                          <span> Тип плательщика: </span>
+                          <span> Физическое лицо </span>
+                        </div>
+                        <div class="mt-2 d-flex justify-content-between">
+                          <span> E-mail: </span>
+                          <span> dariab.nobody@gmail.com </span>
+                        </div>
+                      </div>
+                      <div class="subscribe-full-info__text w-100">
+                        <div class="d-flex justify-content-between">
+                          <span> Номер телефона: </span>
+                          <span class="color-gray-dark">не заполнен</span>
+                        </div>
+                        <div class="mt-2 d-flex justify-content-between">
+                          <span> ФИО: </span>
+                          <span class="color-gray-dark">не заполнен</span>
+                        </div>
+                      </div>
+                    </div>
+                    <h5 class="h5 color-gold mt-4">Состав заказа</h5>
+                    <div id="table-4">
+                      <div class="table-4">
+                        <table>
+                          <thead>
+                            <tr>
+                              <td>Наименование</td>
+                              <td>Количество услуг</td>
+                              <td>Стоимость 1 услуги<br />(без НДС)</td>
+                              <td>НДС</td>
+                              <td>Стоимость, всего<br />(c НДС)</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                Предоставление доступа к Цифровой платформе о налогах и бухгалтерском учете Padatak.by
+                                на 30 дней
+                              </td>
+                              <td>1 услуга</td>
+                              <td>40,5 BYN</td>
+                              <td>8,1 BYN</td>
+                              <td>48,6 BYN</td>
+                            </tr>
+                            <tr>
+                              <td colspan="4">
+                                <strong>Итого</strong>
+                              </td>
+                              <td>
+                                <strong class="color-gold">48,6 BYN</strong>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center mt-5">
+                      <button class="ms-3 button" type="button" data-bs-toggle="modal" data-bs-target="#makeOrder">
+                        Оформить заказ
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="modal fade modal-order"
+                  id="makeOrder"
+                  tabindex="-1"
+                  aria-labelledby="makeOrderLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                        <div class="d-flex flex-column w-100">
+                          <i class="bi bi-check2-circle color-gold"></i>
+                          <p class="mt-3">Ваш заказ <span class="color-gold">№ХХХ</span> успешно сформирован!</p>
+                          <p>
+                            Счет-фактура для оплаты создана и отправлена Вам на почту
+                            <span class="color-gold">dariab.nobody@gmail.com</span>. Также Вы можете скачать счет в
+                            Личном кабинете в разделе «<a href="" class="color-gold">Управление подпиской</a>».
+                          </p>
+                        </div>
+                        <div class="w-100">
+                          <span>Выберите способ оплаты:</span>
+                          <div class="modal-order-card-wrapper mt-3">
+                            <div
+                              class="modal-order__card d-flex flex-column justify-content-center align-items-center card-disabled">
+                              <div class="modal-order__card-header">
+                                <span>в разработке</span>
+                              </div>
+                              <img src="./img/subscribe/padatak-order-cards.svg" alt="padatak-order-cards" />
+                              <span>Оплата картой<br />онлайн</span>
+                            </div>
+                            <div class="modal-order__card d-flex flex-column justify-content-center align-items-center">
+                              <div class="modal-order__card-header">
+                                <span>в разработке</span>
+                              </div>
+                              <img src="./img/subscribe/padatak-order-check.svg" alt="padatak-order-check" />
+                              <span>Оплата по<br />счет-фактуре</span>
+                            </div>
+                            <div
+                              class="modal-order__card d-flex flex-column justify-content-center align-items-center"
+                              type="button"
+                              data-bs-toggle="modal"
+                              data-bs-target="#orderErip">
+                              <div class="modal-order__card-header">
+                                <span>в разработке</span>
+                              </div>
+                              <img src="./img/subscribe/padatak-order-erip.svg" alt="padatak-order-erip" />
+                              <span>Оплата через<br />систему ЕРИП</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer d-flex flex-column justify-content-center align-items-center"></div>
+                    </div>
+                  </div>
+                </div>
 
-               </section>
+                <div
+                  class="modal fade modal-order"
+                  id="orderErip"
+                  tabindex="-1"
+                  aria-labelledby="orderErip"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                        <span class="fw-bold">Оплата через систему ЕРИП</span>
+                        <p class="w-100 text-left mt-5">
+                          Ваш код платежа для оплаты через систему ЕРИП: <span class="color-gold">123456789</span>
+                        </p>
+                        <hr />
+                        <div>
+                          <span class="fw-bold">По дереву ЕРИП:</span>
+                          <ol class="mt-3 erip-list w-100">
+                            <li>Выберите пункт ЕРИП в интернет-банкинге, мобильном приложении или терминале</li>
+                            <li>
+                              Далее выберите последовательно пункты:
+                              <ul>
+                                <li><i class="bi bi-arrow-right me-2"></i>Система «Расчет» (ЕРИП)</li>
+                                <ul>
+                                  <li><i class="bi bi-arrow-right me-2"></i>Информационные услуги</li>
+                                  <ul>
+                                    <li><i class="bi bi-arrow-right me-2"></i>Деловая информация</li>
+                                    <ul>
+                                      <li><i class="bi bi-arrow-right me-2"></i>Инфо-центр по налогам и сборам</li>
+                                      <ul>
+                                        <li class="color-gold">
+                                          <i class="bi bi-arrow-right me-2"></i>Доступ к&nbsp;Padatak.by
+                                        </li>
+                                      </ul>
+                                    </ul>
+                                  </ul>
+                                </ul>
+                              </ul>
+                            </li>
+                            <li>
+                              Введите код платежа для оплаты в ЕРИП: <span class="color-gold fw-bold">123456789</span>
+                            </li>
+                            <li>Проверьте корректность информации</li>
+                            <li>Совершите платеж</li>
+                          </ol>
+                        </div>
+                        <hr />
+                        <div class="d-flex flex-column w-100">
+                          <span class="fw-bold"> По QR-коду: </span>
+                          <div class="erip-qr-container">
+                            <div class="erip-qr">
+                              <img src="./img/subscribe/qr-prev.png" alt="qr-prev" />
+                            </div>
+                            <div class="ms-3 d-flex flex-column">
+                              <p class="">Для оплаты отсканируйте QR-код в мобильном приложении Вашего банка.</p>
+                              <p class="mt-2">
+                                Код платежа для оплаты в ЕРИП: <span class="color-gold fw-bold">123456789</span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer d-flex flex-column justify-content-center align-items-center"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
-          </main>
-
-          <footer class="footer">
+      <footer class="footer">
     <div class="container">
         <div class="footer__body">
             <div class="row g-4">
@@ -856,8 +1173,8 @@
         </div>
     </div>
 </footer>
-     </div>
-     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -876,33 +1193,32 @@
 
 
 <script src="js/script.min.js"></script>
-     <script>
-          const tourShown = localStorage.getItem('tour_highlight_shown');
+    <script>
+      const tourShown = localStorage.getItem('tour_highlight_shown');
 
-          if (!tourShown) {
-               const driver = window.driver.js.driver
-               const driverObj = driver({
-                    animate: false,
-                    showProgress: false,
-                    showButtons: ['close'],
-                    steps: [
-                         {
-                              element: '#highlight-tour', popover: {
-                                   title: "Новое обозначение валюты",
-                                   description: "Знакомьтесь, это новый символ белорусского рубля. Он заменяет привычное «руб.»",
-                                   side: "top",
-                                   align: "center",
-                                   showButtons: ["close"],
-                                   allowClose: true
-                              },
-                         },
-                    ]
-               });
-               localStorage.setItem('tour_highlight_shown', 'true');
-               driverObj.drive();
-          }
-
-     </script>
-</body>
-
+      if (!tourShown) {
+        const driver = window.driver.js.driver;
+        const driverObj = driver({
+          animate: false,
+          showProgress: false,
+          showButtons: ['close'],
+          steps: [
+            {
+              element: '#highlight-tour',
+              popover: {
+                title: 'Новое обозначение валюты',
+                description: 'Знакомьтесь, это новый символ белорусского рубля. Он заменяет привычное «руб.»',
+                side: 'top',
+                align: 'center',
+                showButtons: ['close'],
+                allowClose: true,
+              },
+            },
+          ],
+        });
+        localStorage.setItem('tour_highlight_shown', 'true');
+        driverObj.drive();
+      }
+    </script>
+  </body>
 </html>
