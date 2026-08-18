@@ -2,381 +2,417 @@
 <html lang="ru">
 <head>
   <title>Архив налоговых календарей</title>
-  <meta charset="UTF-8" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css">
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+  <!--Range silder CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css">
 
+  <!--Range slider JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.2/css/bootstrap-multiselect.min.css"
-    integrity="sha512-fZNmykQ6RlCyzGl9he+ScLrlU0LWeaR6MO/Kq9lelfXOw54O63gizFMSD5fVgZvU1YfDIc6mxom5n60qJ1nCrQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css">
+  <!-- multiple-select -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.2/css/bootstrap-multiselect.min.css" integrity="sha512-fZNmykQ6RlCyzGl9he+ScLrlU0LWeaR6MO/Kq9lelfXOw54O63gizFMSD5fVgZvU1YfDIc6mxom5n60qJ1nCrQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- multiple-select -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+  <!-- main style -->
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 
 <body>
      <header class="new-header d-flex flex-row justify-content-between align-items-center">
-     <div class="d-flex flex-row align-items-center">
-          <div class="mobile-menu me-2">
-               <button type="button" class="bi bi-list" id="mobile-button"></button>
-               <div class="mobile-nav">
-     <div class="mobile-nav-block  d-flex flex-row">
-          <div class="mobile-nav-block__icon">
-               <i class="icon-ballot"></i>
-          </div>
-          <div class="mobile-nav-block__text">
-               <a href="">
-                    <strong>Аналитические материалы</strong>
-               </a>
-               <div class="mobile-nav-block__sub-text d-flex flex-column">
-                    <a href="">Организациям</a>
-                    <a href="">Индивидуальным предпринимателям</a>
-                    <a href="">Физическим лицам</a>
+          <div class="d-flex flex-row align-items-center">
+               <div class="mobile-menu me-2">
+                    <button type="button" class="bi bi-list" id="mobile-button"></button>
+                    <div class="mobile-nav">
+                         <div class="mobile-nav-block  d-flex flex-row">
+                              <div class="mobile-nav-block__icon">
+                                   <i class="icon-ballot"></i>
+                              </div>
+                              <div class="mobile-nav-block__text">
+                                   <a href>
+                                        <strong>Lorem ipsum dolor sit a</strong>
+                                   </a>
+                                   <div class="mobile-nav-block__sub-text d-flex flex-column">
+                                        <a href>Lorem ipsum </a>
+                                        <a href>Lorem ipsum dolor sit amet cons</a>
+                                        <a href>Lorem ipsum dolo</a>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="mobile-nav-block  d-flex flex-row">
+                              <div class="mobile-nav-block__icon">
+                                   <i class="icon-ballot"></i>
+                              </div>
+                              <div class="mobile-nav-block__text">
+                                   <a href>
+                                        <strong>Lorem i</strong>
+                                   </a>
+                                   <div class="mobile-nav-block__sub-text d-flex flex-column">
+                                        <a href>Lorem ipsum </a>
+                                        <a href>Lorem ips</a>
+                                        <a href>Lorem ipsum dolor</a>
+                                        <a href>Lorem ipsum dolor sit</a>
+                                        <a href>Lorem</a>
+                                        <a href>Lorem ipsum dolor sit amet con</a>
+                                        <a href>
+                                             Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequ
+                                        </a>
+                                        <a href>
+                                             Lorem ipsum 
+                                        </a>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="mobile-nav-block  d-flex flex-row">
+                              <div class="mobile-nav-block__icon">
+                                   <i class="icon-envelope-open-text"></i>
+                              </div>
+                              <div class="mobile-nav-block__text">
+                                   <a href>
+                                        <strong>Lorem i</strong>
+                                   </a>
+                                   <!-- <div class="mobile-nav-block__sub-text d-flex flex-column">
+                                        <a href="">Организациям</a>
+                                        <a href="">Индивидуальным предпринимателям</a>
+                                        <a href="">Физическим лицам</a>
+                                   </div> -->
+                              </div>
+                         </div>
+                         <div class="mobile-nav-block  d-flex flex-row">
+                              <div class="mobile-nav-block__icon">
+                                   <i class="icon-file-invoice"></i>
+                              </div>
+                              <div class="mobile-nav-block__text">
+                                   <a href>
+                                        <strong>Lorem ipsum dolor s</strong>
+                                   </a>
+                                   <!-- <div class="mobile-nav-block__sub-text d-flex flex-column">
+                                        <a href="">Организациям</a>
+                                        <a href="">Индивидуальным предпринимателям</a>
+                                        <a href="">Физическим лицам</a>
+                                   </div> -->
+                              </div>
+                         </div>
+                         <a class="subcribe-btn mt-5" href="#">
+                              Lorem ipsum dol
+                         </a>
+                         <div class="d-flex flex-column justify-content-center text-center mt-2">
+                              <span class="d-block">Lorem ipsum dolor sit ame</span>
+                              <a class="color-gold d-block ff-pt-serif" href="tel:+375172691903">Lorem ipsum dolor s</a>
+                         </div>
+                    </div>
+               </div>
+               <picture>
+                    <source media="(min-width: 960px)" srcset="./img/padatak-logo.png">
+                    <img src="./img/padatak-logo-mobile.png" alt="padatak-logo">
+               </picture>
+               <div class="ms-2">
+                    <span class="color-gray fs-20">
+                         Lor
+                    </span>
                </div>
           </div>
-     </div>
-     <div class="mobile-nav-block  d-flex flex-row">
-          <div class="mobile-nav-block__icon">
-               <i class="icon-ballot"></i>
+          <div class="header-hide">
+               <form class="new-header-search w-100 mx-2">
+                    <input type="text" name="searchBar" id="searchBar" placeholder="Поиск">
+                    <button type="submit">
+                         <i class="bi bi-search"></i>
+                    </button>
+               </form>
           </div>
-          <div class="mobile-nav-block__text">
-               <a href="">
-                    <strong>Сервисы</strong>
-               </a>
-               <div class="mobile-nav-block__sub-text d-flex flex-column">
-                    <a href="">Вопрос-ответ</a>
-                    <a href="">Медиатека</a>
-                    <a href="">Семинары/вебинары</a>
-                    <a href="">Режим налогообложения</a>
-                    <a href="">Форум</a>
-                    <a href="">Реестр налоговых консультантов</a>
-                    <a href="">
-                         Перечень моделей (модификации) КСА, которые могут быть (не могут быть) доработаны заявителями до
-                         соответствия новым
-                         требованиям к КСА
-                    </a>
-                    <a href="">
-                         Инфорграфика
-                    </a>
+          <div class="header-tel">
+               <span>Lorem ipsum dolor sit ame</span> <br>
+               <span class="color-gold ff-pt-serif">Lorem ipsum dolor s</span>
+          </div>
+          <div class="d-flex flex-row header-mobile-menu justify-content-center">
+               <div class="d-flex flex-row">
+                    <button class="modal-mobile-button mx-2" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+                         <i class="bi bi-search"></i>
+                    </button>
+                    <button class="modal-mobile-button btn-dropdown show mx-2" type="button" data-bs-toggle="dropdown" aria-expanded="true" data-bs-auto-close="outside">
+                         <i class="icon-circle-user"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-login dropdown-menu-end p-3" data-popper-placement="bottom-end">
+                         <div class="dropdown-menu-wrapper">
+                              <!-- <div class="dropdown-arrow"></div> -->
+                              <form id="form-login">
+                                   <div class="input mb-3">
+                                        <label for="email-login">Lorem <span>L</span></label>
+                                        <input type="text" id="email-login" class="_email _required" placeholder="Ваш email">
+                                        <div class="input__text-error"><i class="bi bi-exclamation-triangle me-2"></i>Lorem ipsum dolor sit amet consectetur</div>
+                                        <div class="input__text-error-email"><i class="bi bi-exclamation-triangle me-2"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+                                   </div>
+                                   <div class="input mb-3">
+                                        <label for="password-login">Lorem  <span>L</span></label>
+                                        <div class="input__password">
+                                             <input type="password" id="password-login" class="_required" placeholder="Введите пароль">
+                                             <i class="icon-password bi bi-eye-slash"></i>
+                                        </div>
+                                        <div class="input__text-error"><i class="bi bi-exclamation-triangle me-2"></i>Lorem ipsum dolor sit amet </div>
+                                   </div>
+                                   <div class="d-flex justify-content-between align-items-center mb-4">
+                                        <div class="checkbox">
+                                             <input type="checkbox" id="remember-me">
+                                             <label class="checkbox__label" for="remember-me">
+                                                  <span class="checkbox__label_text">Lorem ipsum do</span>
+                                             </label>
+                                        </div>
+                                        <a href="#" class="link link_blue-light">Lorem ipsum do</a>
+                                   </div>
+                                   <div class="mb-2">
+                                        <a href="main-login.html" class="button w-100">Lorem</a>
+                                   </div>
+                                   <div>
+                                        <a href="login.html" class="button button_empty w-100">Lorem ipsum dolor </a>
+                                   </div>
+                              </form>
+                         </div>
+                    </div>
                </div>
-          </div>
-     </div>
-     <div class="mobile-nav-block  d-flex flex-row">
-          <div class="mobile-nav-block__icon">
-               <i class="icon-envelope-open-text"></i>
-          </div>
-          <div class="mobile-nav-block__text">
-               <a href="">
-                    <strong>Новости</strong>
-               </a>
-          </div>
-     </div>
-     <div class="mobile-nav-block  d-flex flex-row">
-          <div class="mobile-nav-block__icon">
-               <i class="icon-file-invoice"></i>
-          </div>
-          <div class="mobile-nav-block__text">
-               <a href="">
-                    <strong>Налоговый календарь</strong>
-               </a>
-          </div>
-     </div>
-     <a class="subcribe-btn mt-5" href="#">
-          Оформить доступ
-     </a>
-     <div class="d-flex flex-column justify-content-center text-center mt-2">
-          <span class="d-block">Телефон для консультации:</span>
-          <a class="color-gold d-block ff-pt-serif" href="tel:+375172691903">+375 (17) 269-19-03</a>
-     </div>
-</div>
-          </div>
-          <picture>
-               <source media="(min-width: 960px)" srcset="./img/padatak-logo.png">
-               <img src="./img/padatak-logo-mobile.png" alt="padatak-logo">
-          </picture>
-          <div class="ms-2">
-               <span class="color-gray fs-20">
-                    12+
-               </span>
-          </div>
-     </div>
-     <div class="header-hide">
-          <form class="new-header-search w-100 mx-2">
-     <input type="text" name="searchBar" id="searchBar" placeholder="Поиск">
-     <button type="submit">
-          <i class="bi bi-search"></i>
-     </button>
-</form>
-     </div>
-     <div class="header-tel">
-          <span>Телефон для консультации:</span> <br>
-          <span class="color-gold ff-pt-serif">+375 (17) 269-19-03</span>
-     </div>
-     <div class="d-flex flex-row header-mobile-menu justify-content-center">
-          <div class="d-flex flex-row">
-               <button class="modal-mobile-button mx-2" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
-                    <i class="bi bi-search"></i>
-               </button>
-               <button class="modal-mobile-button btn-dropdown show mx-2" type="button" data-bs-toggle="dropdown" aria-expanded="true"
+               <!-- <div class="header-button header-button-enter flex-row align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="true"
                     data-bs-auto-close="outside">
+                    <span class="header-login-name">Вход и регистрация</span>
+                    <div class="header-button__hr"></div>
                     <i class="icon-circle-user"></i>
-               </button>
-               <div class="dropdown-menu dropdown-menu-login dropdown-menu-end p-3" data-popper-placement="bottom-end" >
-     <div class="dropdown-menu-wrapper">
-          <form id="form-login">
-               <div class="input mb-3">
-                    <label for="email-login">Email <span>*</span></label>
-                    <input type="text" id="email-login" class="_email _required" placeholder="Ваш email">
-                    <div class="input__text-error"><i class="bi bi-exclamation-triangle me-2"></i>Электронная почта не может быть пустой</div>
-                    <div class="input__text-error-email"><i class="bi bi-exclamation-triangle me-2"></i>Адрес электоронной почты должен заканчиваться на @**.**</div>
+               </div> -->
+               <div class="header-notification-btn header-button-notification header-button-new-label flex-row align-items-center">
+                    <i class="bi bi-megaphone"></i>
                </div>
-               <div class="input mb-3">
-                    <label for="password-login">Пароль <span>*</span></label>
-                    <div class="input__password">
-                         <input type="password" id="password-login" class="_required" placeholder="Введите пароль">
-                         <i class="icon-password bi bi-eye-slash"></i>
+               <a href="personal-area.html" class="header-button header-button-enter header-button-notification flex-row align-items-center" type="button">
+                    <span class="header-login-name">Lorem ipsum </span>
+                    <div class="header-button__hr"></div>
+                    <i class="icon-circle-user"></i>
+               </a>
+               <div class="dropdown-menu dropdown-menu-user dropdown-menu-end py-2 border-10" data-popper-placement="bottom-end">
+                    <div class="dropdown-menu-wrapper">
+                         <div class="dropdown-arrow"></div>
+                         <ul class="ps-0 mb-0">
+                              <li><a href="profile.html" class="py-2 px-3 d-block"><i class="bi bi-person me-3"></i>Lorem i</a></li>
+                              <li><a href="favorites.html" class="py-2 px-3 d-block"><i class="bi bi-bookmark me-3"></i>Lorem ips</a></li>
+                              <li><a href="browsing-history.html" class="py-2 px-3 d-block"><i class="bi bi-clock me-3"></i>Lorem ipsum dolor </a></li>
+                              <li><a href="subscription.html" class="py-2 px-3 d-block d-flex flex-row align-items-center"><i class="bi bi-unlock me-3"></i>Lorem ipsum dolor si <span class="notification-circle notification-circle-active ms-1">Lor</span></a></li>
+                              <li><a href="settings.html" class="py-2 px-3 d-block"><i class="bi bi-gear me-3"></i>Lorem ips</a></li>
+                         </ul>
+                         <hr class="my-2">
+                         <a href="new-main.html" class="py-2 px-3 d-block"><i class="bi bi-box-arrow-right me-3"></i>Lorem</a>
                     </div>
-                    <div class="input__text-error"><i class="bi bi-exclamation-triangle me-2"></i>Пароль не может быть пустым</div>
                </div>
-               <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div class="checkbox">
-                         <input type="checkbox" id="remember-me">
-                         <label class="checkbox__label" for="remember-me">
-                              <span class="checkbox__label_text">Запомнить меня</span>
-                         </label>
-                    </div>
-                    <a href="#" class="link link_blue-light">Забыли пароль?</a>
-               </div>
-               <div class="mb-2">
-                    <a href="main-login.html" class="button w-100">Войти</a>
-               </div>
-               <div>
-                    <a href="login.html" class="button button_empty w-100">Зарегистрироваться</a>
-               </div>
-          </form>
-     </div>
-</div>
-          </div>
-          <div class="header-notification-btn header-button-notification header-button-new-label flex-row align-items-center">
-               <i class="bi bi-megaphone"></i>
-          </div>
-          <a href="personal-area.html" class="header-button header-button-enter header-button-notification flex-row align-items-center" type="button">
-               <span class="header-login-name">Иванова И.И.</span>
-               <div class="header-button__hr"></div>
-               <i class="icon-circle-user"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-user dropdown-menu-end py-2 border-10" data-popper-placement="bottom-end">
-               <div class="dropdown-menu-wrapper">
-                    <div class="dropdown-arrow"></div>
-                    <ul class="ps-0 mb-0">
-                         <li><a href="profile.html" class="py-2 px-3 d-block"><i class="bi bi-person me-3"></i>Профиль</a></li>
-                         <li><a href="favorites.html" class="py-2 px-3 d-block"><i class="bi bi-bookmark me-3"></i>Избранное</a></li>
-                         <li><a href="browsing-history.html" class="py-2 px-3 d-block"><i class="bi bi-clock me-3"></i>История просмотров</a></li>
-                         <li><a href="subscription.html" class="py-2 px-3 d-block d-flex flex-row align-items-center"><i
-                                        class="bi bi-unlock me-3"></i>Управление подпиской <span
-                                        class="notification-circle notification-circle-active ms-1">10+</span></a></li>
-                         <li><a href="settings.html" class="py-2 px-3 d-block"><i class="bi bi-gear me-3"></i>Настройки</a></li>
-                    </ul>
-                    <hr class="my-2">
-                    <a href="new-main.html" class="py-2 px-3 d-block"><i class="bi bi-box-arrow-right me-3"></i>Выйти</a>
-               </div>
-          </div>
 
-          <div class="header-button header-button-subscribe flex-row align-items-center">
-               <span>Оформить доступ</span>
-               <div class="header-button__hr"></div>
-               <i class="icon-gem"></i>
+               <div class="header-button header-button-subscribe flex-row align-items-center">
+                    <span>Lorem ipsum dol</span>
+                    <div class="header-button__hr"></div>
+                    <i class="icon-gem"></i>
+               </div>
           </div>
-     </div>
-     <div class="progress"></div>
-</header>
+          <div class="progress"></div>
+     </header>
      <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-     <div class="modal-dialog">
-          <div class="modal-content">
-               <div class="modal-body d-flex flex-row align-items-center justify-content-between">
-                    <form class="new-header-search w-100 mx-2">
-                         <input type="text" name="searchBar" id="searchBar" placeholder="Поиск">
-                         <button type="submit">
-                              <i class="bi bi-search"></i>
-                         </button>
-                    </form>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-dialog">
+               <div class="modal-content">
+                    <div class="modal-body d-flex flex-row align-items-center justify-content-between">
+                         <form class="new-header-search w-100 mx-2">
+                              <input type="text" name="searchBar" id="searchBar" placeholder="Поиск">
+                              <button type="submit">
+                                   <i class="bi bi-search"></i>
+                              </button>
+                         </form>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                </div>
           </div>
      </div>
-</div>
      <nav class="flex-column justify-content-start pb-140 overflow-auto side-navbar active-nav" id="sidebar">
-	<div class="flex-column w-100 nav main-nav">
-		<div href="#" class="nav-link">
-			<a href="" class="nav-link__icon">
-				<i class="icon-ballot"></i>
-			</a>
-			<div class="nav-link__text">
-				<a href="" class="d-flex nav-link__text-sub">Аналитические материалы</a>
-				<div class="d-flex flex-column nav-link__list">
-					<a href="">Организациям</a>
-					<a href="">Индивидуальным предпринимателям</a>
-					<a href="">Физическим лицам</a>
-				</div>
-			</div>
-		</div>
-		<div href="#" class="nav-link">
-			<a href="" class="nav-link__icon">
-				<i class="icon-table-layout"></i>
-			</a>
-			<div class="nav-link__text">
-				<a href="" class="d-flex nav-link__text-sub">Сервисы</a>
-				<div class="d-flex flex-column nav-link__list">
-					<a href="">Вопрос-ответ</a>
-					<a href="">Медиатека</a>
-					<a href="" class="d-flex flex-row align-items-center color-gold">
-						<span>Еще</span>
-						<i class="bi-chevron-right ms-1 bi hover-gold" style="font-size: 14px; line-height: 14px; margin-top: 2px"></i>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div href="#" class="nav-link">
-			<a href="" class="nav-link__icon">
-				<i class="icon-envelope-open-text"></i>
-			</a>
-			<div class="nav-link__text">
-				<a href="" class="nav-link__text-sub">Новости</a>
-			</div>
-		</div>
-		<div href="#" class="nav-link">
-			<a href="" class="nav-link__icon">
-				<i class="icon-file-invoice"></i>
-			</a>
-			<div class="nav-link__text">
-				<a href="" class="nav-link__text-sub">Налоговый календарь</a>
-			</div>
-		</div>
-		<div href="#" class="nav-link">
-			<a href="" class="nav-link__icon">
-				<i class="icon-calendar-lines"></i>
-			</a>
-			<div class="nav-link__text">
-				<a href="" class="nav-link__text-sub">Справочная информация</a>
-			</div>
-		</div>
-		<div href="#" class="nav-link">
-			<a href="" class="nav-link__icon">
-				<i class="icon-calculator"></i>
-			</a>
-			<div class="nav-link__text">
-				<a href="" class="nav-link__text-sub">Формы документов</a>
-			</div>
-		</div>
-	</div>
-	<hr />
-	<div class="nav-link" title="Авторам">
-		<a href="/about.html" class="nav-link__icon-simple">
-			<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path
-					d="M15.7972 17.8432C12.152 18.3454 8.47156 15.7446 8.11936 12.0138C7.80239 8.6417 7.9961 1.44912 7.9961 1.3415C7.9961 0.659909 8.542 0.0859375 9.22877 0.0859375C9.91555 0.0859375 10.4615 0.641973 10.4615 1.3415C10.4615 1.48499 10.4262 9.09012 10.4791 10.5968C10.5847 13.377 12.5218 15.3859 14.9695 15.3321C17.294 15.2783 19.2839 13.2155 19.2663 10.83C19.2663 8.28297 17.3116 6.41756 14.5645 6.39963C14.5469 6.39963 14.2828 6.4355 14.1771 6.4355C13.4727 6.4355 12.8916 5.84359 12.8916 5.12613C12.8916 4.40866 13.4551 3.83469 14.1771 3.79882C14.2651 3.79882 14.5997 3.76294 14.7054 3.76294C18.333 3.61945 21.4323 6.45344 21.7493 10.1663C22.0486 14.0586 19.4952 17.341 15.7972 17.8432Z"
-					fill="#C47A2C" />
-				<path
-					d="M4.26216 6.68633C5.00131 6.68633 5.6005 6.07601 5.6005 5.32314C5.6005 4.57028 5.00131 3.95996 4.26216 3.95996C3.52302 3.95996 2.92383 4.57028 2.92383 5.32314C2.92383 6.07601 3.52302 6.68633 4.26216 6.68633Z"
-					fill="#C47A2C" />
-				<path
-					d="M10.387 6.32865C6.74183 5.82643 3.0614 8.42724 2.70921 12.1581C2.39223 15.5301 2.58594 22.7227 2.58594 22.8303C2.58594 23.5299 3.13184 24.0859 3.81862 24.0859C4.5054 24.0859 5.0513 23.5299 5.0513 22.8303C5.0513 22.6868 5.01608 15.0817 5.06891 13.575C5.17456 10.7949 7.11163 8.78597 9.55938 8.83978C11.8839 8.89359 13.8737 10.9563 13.8561 13.3419C13.8561 15.8889 11.9015 17.7543 9.15435 17.7722C9.13674 17.7722 8.8726 17.7363 8.76694 17.7363C8.06255 17.7363 7.48143 18.3283 7.48143 19.0457C7.48143 19.7632 8.04494 20.3372 8.76694 20.373C8.85499 20.373 9.18957 20.391 9.29523 20.4089C12.9228 20.5524 16.0221 17.7184 16.3391 14.0055C16.6385 10.1312 14.0851 6.83088 10.387 6.32865Z"
-					fill="#034A66" />
-				<path
-					d="M10.4631 10.6149C10.5688 13.3951 12.5059 15.404 14.9536 15.3502C17.2781 15.2964 19.268 13.2337 19.2504 10.8481C19.2504 9.73603 21.5396 8.08587 21.7157 10.1845C22.0327 14.0588 19.4793 17.3412 15.7813 17.8613C12.1361 18.3636 8.45563 15.7627 8.10343 12.0319C7.96255 10.3459 10.4455 9.86159 10.4631 10.6149Z"
-					fill="#C47A2C" />
-			</svg>
-		</a>
-		<div class="nav-link__text">
-			<a href="/about.html">О padatak</a>
-		</div>
-	</div>
-	<div class="nav-link" title="Авторам">
-		<a href="/authors/" class="nav-link__icon-simple">
-			<i class="icon-attribution-pen"></i>
-		</a>
-		<div class="nav-link__text">
-			<a href="/authors/">Авторам</a>
-		</div>
-	</div>
-	<div class="nav-link" title="Рекламодателям">
-		<a href="/advertisers/" class="nav-link__icon-simple">
-			<i class="icon-megaphone"></i>
-		</a>
-		<div class="nav-link__text">
-			<a href="/advertisers/">Рекламодателям</a>
-		</div>
-	</div>
-	<div class="nav-link" title="Документы">
-		<a href="/padatak-documents/" class="nav-link__icon-simple">
-			<i class="bi bi-file-earmark-text"></i>
-		</a>
-		<div class="nav-link__text">
-			<a href="/padatak-documents/">Документы</a>
-		</div>
-	</div>
-	<div class="nav-link" title="Оплата доступа">
-		<a href="/payment/" class="nav-link__icon-simple">
-			<i class="icon-money-bill-wave"></i>
-		</a>
-		<div class="nav-link__text">
-			<a href="/payment/">Оплата доступа</a>
-		</div>
-	</div>
-	<div class="nav-link" title="Оплата доступа">
-		<a href="support.html" class="nav-link__icon-simple">
-			<i class="bi bi-gear"></i>
-		</a>
-		<div class="nav-link__text">
-			<a href="support.html">Техническая поддержка</a>
-		</div>
-	</div>
-	<a class="nav-hidden mt-3 subcribe-btn" href="#"> Оформить доступ </a>
-	<div class="nav-hidden mt-2 text-center">
-		<span class="d-block">Телефон для консультации:</span>
-		<a class="d-block ff-pt-serif color-gold" href="tel:+375172691903">+375 (17) 269-19-03</a>
-	</div>
-</nav>
+     	<div class="flex-column w-100 nav main-nav">
+     		<div href="#" class="nav-link">
+     			<a href class="nav-link__icon">
+     				<i class="icon-ballot"></i>
+     			</a>
+     			<div class="nav-link__text">
+     				<a href class="d-flex nav-link__text-sub">Lorem ipsum dolor sit a</a>
+     				<div class="d-flex flex-column nav-link__list">
+     					<a href>Lorem ipsum </a>
+     					<a href>Lorem ipsum dolor sit amet cons</a>
+     					<a href>Lorem ipsum dolo</a>
+     				</div>
+     			</div>
+     		</div>
+     		<!-- <div href="#" class="nav-link">
+                    <a href="" class="nav-link__icon">
+                         <i class="icon-table-layout"></i>
+                    </a>
+                    <div class="nav-link__text">
+                         <a href="" class="d-flex nav-link__text-sub">Сервисы</a>
+                         <div class="d-flex flex-column nav-link__list">
+                              <a href="">Вопрос-ответ</a>
+                              <a href="">Медиатека</a>
+                              <a href="">Семинары/вебинары</a>
+                              <a href="">Режим налогообложения</a>
+                              <a href="">Форум</a>
+                              <a href="">Реестр налоговых консультантов</a>
+                              <a href="">
+                                   Перечень моделей (модификации) КСА, которые могут быть (не могут быть) доработаны заявителями до
+                                   соответствия новым
+                                   требованиям к КСА
+                              </a>
+                              <a href="">
+                                   Инфорграфика
+                              </a>
+                         </div>
+                    </div>
+               </div> -->
+     		<div href="#" class="nav-link">
+     			<a href class="nav-link__icon">
+     				<i class="icon-table-layout"></i>
+     			</a>
+     			<div class="nav-link__text">
+     				<a href class="d-flex nav-link__text-sub">Lorem i</a>
+     				<div class="d-flex flex-column nav-link__list">
+     					<a href>Lorem ipsum </a>
+     					<a href>Lorem ips</a>
+     					<a href class="d-flex flex-row align-items-center color-gold">
+     						<span>Lor</span>
+     						<i class="bi-chevron-right ms-1 bi hover-gold" style="font-size: 14px; line-height: 14px; margin-top: 2px"></i>
+     					</a>
+     				</div>
+     			</div>
+     		</div>
+     		<!-- <div href="#" class="nav-link">
+                    <a href="" class="nav-link__icon">
+                         <i class="bi bi-question-square"></i>
+                    </a>
+                    <div class="nav-link__text">
+                         <a href="" class="d-flex nav-link__text-sub">Вопрос-ответ</a>
+                    </div>
+               </div>
+               <div href="#" class="nav-link">
+                    <a href="" class="nav-link__icon">
+                         <i class="bi bi-disc"></i>
+                    </a>
+                    <div class="nav-link__text">
+                         <a href="" class="d-flex nav-link__text-sub">Медиатека</a>
+                    </div>
+               </div> -->
+     		<div href="#" class="nav-link">
+     			<a href class="nav-link__icon">
+     				<i class="icon-envelope-open-text"></i>
+     			</a>
+     			<div class="nav-link__text">
+     				<a href class="nav-link__text-sub">Lorem i</a>
+     			</div>
+     		</div>
+     		<div href="#" class="nav-link">
+     			<a href class="nav-link__icon">
+     				<i class="icon-file-invoice"></i>
+     			</a>
+     			<div class="nav-link__text">
+     				<a href class="nav-link__text-sub">Lorem ipsum dolor s</a>
+     			</div>
+     		</div>
+     		<div href="#" class="nav-link">
+     			<a href class="nav-link__icon">
+     				<i class="icon-calendar-lines"></i>
+     			</a>
+     			<div class="nav-link__text">
+     				<a href class="nav-link__text-sub">Lorem ipsum dolor sit</a>
+     			</div>
+     		</div>
+     		<div href="#" class="nav-link">
+     			<a href class="nav-link__icon">
+     				<i class="icon-calculator"></i>
+     			</a>
+     			<div class="nav-link__text">
+     				<a href class="nav-link__text-sub">Lorem ipsum dolo</a>
+     			</div>
+     		</div>
+     	</div>
+     	<hr>
+     	<div class="nav-link" title="Авторам">
+     		<a href="/about.html" class="nav-link__icon-simple">
+     			<svg width="24" height="25" viewbox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+     				<path d="M15.7972 17.8432C12.152 18.3454 8.47156 15.7446 8.11936 12.0138C7.80239 8.6417 7.9961 1.44912 7.9961 1.3415C7.9961 0.659909 8.542 0.0859375 9.22877 0.0859375C9.91555 0.0859375 10.4615 0.641973 10.4615 1.3415C10.4615 1.48499 10.4262 9.09012 10.4791 10.5968C10.5847 13.377 12.5218 15.3859 14.9695 15.3321C17.294 15.2783 19.2839 13.2155 19.2663 10.83C19.2663 8.28297 17.3116 6.41756 14.5645 6.39963C14.5469 6.39963 14.2828 6.4355 14.1771 6.4355C13.4727 6.4355 12.8916 5.84359 12.8916 5.12613C12.8916 4.40866 13.4551 3.83469 14.1771 3.79882C14.2651 3.79882 14.5997 3.76294 14.7054 3.76294C18.333 3.61945 21.4323 6.45344 21.7493 10.1663C22.0486 14.0586 19.4952 17.341 15.7972 17.8432Z" fill="#C47A2C"/>
+     				<path d="M4.26216 6.68633C5.00131 6.68633 5.6005 6.07601 5.6005 5.32314C5.6005 4.57028 5.00131 3.95996 4.26216 3.95996C3.52302 3.95996 2.92383 4.57028 2.92383 5.32314C2.92383 6.07601 3.52302 6.68633 4.26216 6.68633Z" fill="#C47A2C"/>
+     				<path d="M10.387 6.32865C6.74183 5.82643 3.0614 8.42724 2.70921 12.1581C2.39223 15.5301 2.58594 22.7227 2.58594 22.8303C2.58594 23.5299 3.13184 24.0859 3.81862 24.0859C4.5054 24.0859 5.0513 23.5299 5.0513 22.8303C5.0513 22.6868 5.01608 15.0817 5.06891 13.575C5.17456 10.7949 7.11163 8.78597 9.55938 8.83978C11.8839 8.89359 13.8737 10.9563 13.8561 13.3419C13.8561 15.8889 11.9015 17.7543 9.15435 17.7722C9.13674 17.7722 8.8726 17.7363 8.76694 17.7363C8.06255 17.7363 7.48143 18.3283 7.48143 19.0457C7.48143 19.7632 8.04494 20.3372 8.76694 20.373C8.85499 20.373 9.18957 20.391 9.29523 20.4089C12.9228 20.5524 16.0221 17.7184 16.3391 14.0055C16.6385 10.1312 14.0851 6.83088 10.387 6.32865Z" fill="#034A66"/>
+     				<path d="M10.4631 10.6149C10.5688 13.3951 12.5059 15.404 14.9536 15.3502C17.2781 15.2964 19.268 13.2337 19.2504 10.8481C19.2504 9.73603 21.5396 8.08587 21.7157 10.1845C22.0327 14.0588 19.4793 17.3412 15.7813 17.8613C12.1361 18.3636 8.45563 15.7627 8.10343 12.0319C7.96255 10.3459 10.4455 9.86159 10.4631 10.6149Z" fill="#C47A2C"/>
+     			</svg>
+     		</a>
+     		<div class="nav-link__text">
+     			<a href="/about.html">Lorem ips</a>
+     		</div>
+     	</div>
+     	<div class="nav-link" title="Авторам">
+     		<a href="/authors/" class="nav-link__icon-simple">
+     			<i class="icon-attribution-pen"></i>
+     		</a>
+     		<div class="nav-link__text">
+     			<a href="/authors/">Lorem i</a>
+     		</div>
+     	</div>
+     	<div class="nav-link" title="Рекламодателям">
+     		<a href="/advertisers/" class="nav-link__icon-simple">
+     			<i class="icon-megaphone"></i>
+     		</a>
+     		<div class="nav-link__text">
+     			<a href="/advertisers/">Lorem ipsum do</a>
+     		</div>
+     	</div>
+     	<div class="nav-link" title="Документы">
+     		<a href="/padatak-documents/" class="nav-link__icon-simple">
+     			<i class="bi bi-file-earmark-text"></i>
+     		</a>
+     		<div class="nav-link__text">
+     			<a href="/padatak-documents/">Lorem ips</a>
+     		</div>
+     	</div>
+     	<div class="nav-link" title="Оплата доступа">
+     		<a href="/payment/" class="nav-link__icon-simple">
+     			<i class="icon-money-bill-wave"></i>
+     		</a>
+     		<div class="nav-link__text">
+     			<a href="/payment/">Lorem ipsum do</a>
+     		</div>
+     	</div>
+     	<div class="nav-link" title="Оплата доступа">
+     		<a href="support.html" class="nav-link__icon-simple">
+     			<i class="bi bi-gear"></i>
+     		</a>
+     		<div class="nav-link__text">
+     			<a href="support.html">Lorem ipsum dolor sit</a>
+     		</div>
+     	</div>
+     	<a class="nav-hidden mt-3 subcribe-btn" href="#"> Lorem ipsum dol </a>
+     	<div class="nav-hidden mt-2 text-center">
+     		<span class="d-block">Lorem ipsum dolor sit ame</span>
+     		<a class="d-block ff-pt-serif color-gold" href="tel:+375172691903">Lorem ipsum dolor s</a>
+     	</div>
+     </nav>
 
      <div class="nav-container active-container">
-
-          <a class="" id="menu-btn"><i class="bi bi-chevron-right"></i></a>
+          
+          <!-- Nav Button -->
+          <a class id="menu-btn"><i class="bi bi-chevron-right"></i></a>
+          <!--Nav Button -->
           <div class="main-content">
                <section class="main-section">
                     <div class="row">
                          <nav aria-label="breadcrumb" class="col-12">
                               <ol class="breadcrumb">
                                    <li class="breadcrumb-item"><a href="main.html"><i class="bi bi-house"></i></a></li>
-                                   <li class="breadcrumb-item active" aria-current="page"><a href="topic-list.html">Подборки по темам</a></li>
+                                   <li class="breadcrumb-item active" aria-current="page"><a href="topic-list.html">Lorem ipsum dolor</a></li>
                               </ol>
                          </nav>
                     </div>
@@ -385,9 +421,9 @@
                <div class="main-section">
                     <div class="row">
                          <div class="col-12">
-                              <div class="">
+                              <div class>
                                    <strong class="ff-inter fs-32">
-                                        Подборки по темам
+                                        Lorem ipsum dolor
                                    </strong>
                               </div>
                          </div>
@@ -396,61 +432,61 @@
                                    <div class="col-xl-4 col-md-6 my-2">
                                         <div class="d-flex h-100 justify-content-center">
                                              <a href="./topic-selection.html" target="_blank" rel="noopener noreferrer" class="topic-link-block d-flex flex-column align-items-center text-center p-xl-5 p-3 w-100">
-                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                        <path d="M11.696 11.718L9.834 13.523C9.68112 13.6753 9.4997 13.7959 9.30013 13.8779C9.10056 13.9599 8.88677 14.0017 8.671 14.001C8.244 14.001 7.815 13.838 7.488 13.512L6.807 12.858C6.61578 12.6742 6.5054 12.422 6.50015 12.1568C6.4949 11.8916 6.59521 11.6352 6.779 11.444C6.9628 11.2528 7.21503 11.1424 7.4802 11.1372C7.74538 11.1319 8.00178 11.2322 8.193 11.416L8.666 11.871L10.304 10.283C10.4949 10.1008 10.75 10.0015 11.0139 10.0066C11.2777 10.0117 11.5288 10.1209 11.7125 10.3104C11.8961 10.4998 11.9975 10.7542 11.9944 11.0181C11.9913 11.2819 11.884 11.5329 11.696 11.718ZM16 17H13C12.7348 17 12.4804 17.1054 12.2929 17.2929C12.1054 17.4804 12 17.7348 12 18C12 18.2652 12.1054 18.5196 12.2929 18.7071C12.4804 18.8946 12.7348 19 13 19H16C16.2652 19 16.5196 18.8946 16.7071 18.7071C16.8946 18.5196 17 18.2652 17 18C17 17.7348 16.8946 17.4804 16.7071 17.2929C16.5196 17.1054 16.2652 17 16 17ZM16 5H13C12.7348 5 12.4804 5.10536 12.2929 5.29289C12.1054 5.48043 12 5.73478 12 6C12 6.26522 12.1054 6.51957 12.2929 6.70711C12.4804 6.89464 12.7348 7 13 7H16C16.2652 7 16.5196 6.89464 16.7071 6.70711C16.8946 6.51957 17 6.26522 17 6C17 5.73478 16.8946 5.48043 16.7071 5.29289C16.5196 5.10536 16.2652 5 16 5ZM16 11H14C13.7348 11 13.4804 11.1054 13.2929 11.2929C13.1054 11.4804 13 11.7348 13 12C13 12.2652 13.1054 12.5196 13.2929 12.7071C13.4804 12.8946 13.7348 13 14 13H16C16.2652 13 16.5196 12.8946 16.7071 12.7071C16.8946 12.5196 17 12.2652 17 12C17 11.7348 16.8946 11.4804 16.7071 11.2929C16.5196 11.1054 16.2652 11 16 11ZM8.5 16.5C8.30295 16.5001 8.10785 16.5389 7.92582 16.6144C7.7438 16.6899 7.57842 16.8005 7.43913 16.9398C7.29985 17.0792 7.18937 17.2447 7.11403 17.4267C7.03868 17.6088 6.99994 17.804 7 18.001C7.00007 18.198 7.03894 18.3932 7.11441 18.5752C7.18988 18.7572 7.30046 18.9226 7.43984 19.0619C7.57922 19.2012 7.74467 19.3116 7.92675 19.387C8.10882 19.4623 8.30395 19.5011 8.501 19.501C8.89896 19.5009 9.28056 19.3427 9.56187 19.0612C9.84317 18.7797 10.0011 18.398 10.001 18C10.0009 17.602 9.84265 17.2204 9.56116 16.9391C9.27967 16.6578 8.89796 16.4999 8.5 16.5ZM8.5 7.5C8.69705 7.49993 8.89216 7.46106 9.07418 7.38559C9.2562 7.31012 9.42158 7.19954 9.56087 7.06016C9.70016 6.92078 9.81063 6.75533 9.88597 6.57325C9.96132 6.39118 10.0001 6.19605 10 5.999C9.99994 5.80195 9.96106 5.60685 9.88559 5.42482C9.81012 5.2428 9.69954 5.07742 9.56016 4.93813C9.42078 4.79884 9.25533 4.68837 9.07326 4.61303C8.89118 4.53768 8.69605 4.49893 8.499 4.499C8.10104 4.49913 7.71944 4.65735 7.43813 4.93884C7.15683 5.22033 6.99887 5.60204 6.999 6C6.99913 6.39796 7.15735 6.77956 7.43884 7.06087C7.72033 7.34217 8.10204 7.50013 8.5 7.5ZM22 5V19C22 21.757 19.757 24 17 24H7C4.243 24 2 21.757 2 19V5C2 2.243 4.243 0 7 0H17C19.757 0 22 2.243 22 5ZM20 5C20 3.346 18.654 2 17 2H7C5.346 2 4 3.346 4 5V19C4 20.654 5.346 22 7 22H17C18.654 22 20 20.654 20 19V5Z" fill="#C47A2C"/>
                                                   </svg>
-                                                  <span class="mt-12">Инвентаризация (112)</span>
+                                                  <span class="mt-12">Lorem ipsum dolor si</span>
                                              </a>
                                         </div>
                                    </div>
                                    <div class="col-xl-4 col-md-6 my-2">
                                         <div class="d-flex h-100 justify-content-center">
                                              <a href="./topic-selection.html" target="_blank" rel="noopener noreferrer" class="topic-link-block d-flex flex-column align-items-center text-center p-xl-5 p-3 w-100">
-                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                        <g clip-path="url(#clip0_9963_65719)">
                                                        <path d="M23.001 22.0009C22.586 22.0009 22.081 21.7939 21.546 21.5749C20.888 21.3059 20.142 21.0009 19.334 21.0009C18.526 21.0009 17.78 21.3059 17.122 21.5749C16.587 21.7939 16.081 22.0009 15.667 22.0009C15.253 22.0009 14.747 21.7939 14.212 21.5749C13.554 21.3059 12.808 21.0009 12 21.0009C11.192 21.0009 10.446 21.3059 9.788 21.5749C9.4 21.7339 9.028 21.8859 8.695 21.9579L12.447 13.4869L19.633 16.7629C20.0391 16.9495 20.4825 17.0408 20.9293 17.0299C21.3761 17.019 21.8145 16.9061 22.211 16.6999C22.6123 16.4942 22.9614 16.1996 23.2317 15.8387C23.5021 15.4777 23.6865 15.0599 23.771 14.6169C24.879 8.92188 22.171 3.35588 17.184 1.08188C12.05 -1.25912 5.914 0.356884 2.593 4.92688C2.32189 5.29941 2.13731 5.72773 2.05271 6.18064C1.96812 6.63354 1.98564 7.09961 2.104 7.54488C2.21528 7.97789 2.42189 8.38056 2.70875 8.72348C2.99561 9.06639 3.35545 9.34088 3.762 9.52689L10.627 12.6569L6.708 21.5059C6.093 21.2569 5.406 21.0009 4.667 21.0009C3.859 21.0009 3.113 21.3059 2.455 21.5749C1.92 21.7939 1.415 22.0009 1 22.0009C0.734784 22.0009 0.48043 22.1062 0.292893 22.2938C0.105357 22.4813 0 22.7357 0 23.0009C0 23.2661 0.105357 23.5205 0.292893 23.708C0.48043 23.8955 0.734784 24.0009 1 24.0009C1.808 24.0009 2.554 23.6959 3.212 23.4269C3.747 23.2079 4.252 23.0009 4.667 23.0009C5.082 23.0009 5.587 23.2079 6.122 23.4269C6.78 23.6959 7.526 24.0009 8.334 24.0009C9.142 24.0009 9.888 23.6959 10.546 23.4269C11.081 23.2079 11.586 23.0009 12.001 23.0009C12.416 23.0009 12.921 23.2079 13.456 23.4269C14.114 23.6959 14.86 24.0009 15.668 24.0009C16.476 24.0009 17.222 23.6959 17.88 23.4269C18.415 23.2079 18.921 23.0009 19.335 23.0009C19.749 23.0009 20.255 23.2079 20.79 23.4269C21.448 23.6959 22.194 24.0009 23.002 24.0009C23.2672 24.0009 23.5216 23.8955 23.7091 23.708C23.8966 23.5205 24.002 23.2661 24.002 23.0009C24.002 22.7357 23.8966 22.4813 23.7091 22.2938C23.5216 22.1062 23.2662 22.0009 23.001 22.0009ZM4.038 7.03488C3.99573 6.87628 3.98933 6.71026 4.01925 6.54887C4.04918 6.38748 4.11468 6.23479 4.211 6.10188C6.93 2.36088 12.151 0.983885 16.355 2.90088C20.497 4.78989 22.74 9.44988 21.809 14.2339C21.7822 14.3799 21.722 14.5178 21.6332 14.6368C21.5444 14.7557 21.4294 14.8526 21.297 14.9199C21.1691 14.9872 21.0275 15.0242 20.8831 15.028C20.7386 15.0318 20.5952 15.0024 20.464 14.9419L4.592 7.70788C4.45525 7.64448 4.33448 7.55118 4.23859 7.43487C4.14271 7.31857 4.07416 7.18122 4.038 7.03488Z" fill="#C47A2C"/>
                                                        </g>
                                                        <defs>
-                                                       <clipPath id="clip0_9963_65719">
+                                                       <clippath id="clip0_9963_65719">
                                                        <rect width="24" height="24" fill="white"/>
-                                                       </clipPath>
+                                                       </clippath>
                                                        </defs>
                                                   </svg>
-                                                  <span class="mt-12">Отпускные (80)</span>
+                                                  <span class="mt-12">Lorem ipsum do</span>
                                              </a>
                                         </div>
                                    </div>
                                    <div class="col-xl-4 col-md-6 my-2">
                                         <div class="d-flex h-100 justify-content-center">
                                              <a href="./topic-selection.html" target="_blank" rel="noopener noreferrer" class="topic-link-block d-flex flex-column align-items-center text-center p-xl-5 p-3 w-100">
-                                                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <svg width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                        <path d="M20.45 5.535L16.965 2.05C15.643 0.728 13.885 3.34244e-07 12.015 3.34244e-07H7.5C4.743 -0.000999666 2.5 2.242 2.5 4.999V18.999C2.5 21.756 4.743 23.999 7.5 23.999H17.5C20.257 23.999 22.5 21.756 22.5 18.999V10.484C22.5 8.614 21.772 6.858 20.45 5.535ZM19.036 6.949C19.354 7.267 19.623 7.62 19.841 7.999H15.5C14.949 7.999 14.5 7.55 14.5 6.999V2.658C14.879 2.876 15.233 3.145 15.55 3.463L19.035 6.948L19.036 6.949ZM20.5 18.999C20.5 20.653 19.154 21.999 17.5 21.999H7.5C5.846 21.999 4.5 20.653 4.5 18.999V4.999C4.5 3.345 5.846 1.999 7.5 1.999H12.015C12.178 1.999 12.34 2.007 12.5 2.022V6.999C12.5 8.653 13.846 9.999 15.5 9.999H20.477C20.492 10.159 20.5 10.321 20.5 10.484V18.999ZM16 12.999H9C7.622 12.999 6.5 14.121 6.5 15.499V17.499C6.5 18.877 7.622 19.999 9 19.999H16C17.378 19.999 18.5 18.877 18.5 17.499V15.499C18.5 14.121 17.378 12.999 16 12.999ZM16.5 17.499C16.5 17.775 16.276 17.999 16 17.999H9C8.724 17.999 8.5 17.775 8.5 17.499V15.499C8.5 15.223 8.724 14.999 9 14.999H16C16.276 14.999 16.5 15.223 16.5 15.499V17.499ZM6.5 9.999C6.5 9.447 6.948 8.999 7.5 8.999H9.5C10.052 8.999 10.5 9.447 10.5 9.999C10.5 10.551 10.052 10.999 9.5 10.999H7.5C6.948 10.999 6.5 10.551 6.5 9.999ZM6.5 5.999C6.5 5.447 6.948 4.999 7.5 4.999H9.5C10.052 4.999 10.5 5.447 10.5 5.999C10.5 6.551 10.052 6.999 9.5 6.999H7.5C6.948 6.999 6.5 6.551 6.5 5.999Z" fill="#C47A2C"/>
                                                   </svg>
-                                                  <span class="mt-12">Учетная политика (32)</span>
+                                                  <span class="mt-12">Lorem ipsum dolor sit</span>
                                              </a>
                                         </div>
                                    </div>
                                    <div class="col-xl-4 col-md-6 my-2">
                                         <div class="d-flex h-100 justify-content-center">
                                              <a href="./topic-selection.html" target="_blank" rel="noopener noreferrer" class="topic-link-block d-flex flex-column align-items-center text-center p-xl-5 p-3 w-100">
-                                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                        <g clip-path="url(#clip0_9961_65694)">
                                                        <path d="M19 2H18V1C18 0.734784 17.8946 0.48043 17.7071 0.292893C17.5196 0.105357 17.2652 0 17 0C16.7348 0 16.4804 0.105357 16.2929 0.292893C16.1054 0.48043 16 0.734784 16 1V2H8V1C8 0.734784 7.89464 0.48043 7.70711 0.292893C7.51957 0.105357 7.26522 0 7 0C6.73478 0 6.48043 0.105357 6.29289 0.292893C6.10536 0.48043 6 0.734784 6 1V2H5C2.243 2 0 4.243 0 7V19C0 21.757 2.243 24 5 24H19C21.757 24 24 21.757 24 19V7C24 4.243 21.757 2 19 2ZM5 4H19C20.654 4 22 5.346 22 7V8H2V7C2 5.346 3.346 4 5 4ZM19 22H5C3.346 22 2 20.654 2 19V10H22V19C22 20.654 20.654 22 19 22ZM17.832 13.152C17.9232 13.2465 17.9949 13.358 18.043 13.4802C18.0911 13.6024 18.1147 13.7329 18.1124 13.8642C18.11 13.9955 18.0819 14.125 18.0295 14.2455C17.9771 14.3659 17.9015 14.4748 17.807 14.566L13.067 19.134C12.514 19.687 11.76 20 10.959 20C10.158 20 9.404 19.688 8.838 19.121L6.586 17.029C6.39755 16.8471 6.28798 16.5985 6.28084 16.3367C6.2737 16.0749 6.36957 15.8207 6.54783 15.6289C6.7261 15.437 6.97253 15.3227 7.23417 15.3105C7.4958 15.2984 7.75175 15.3894 7.947 15.564L10.225 17.681C10.658 18.111 11.288 18.083 11.664 17.707L16.418 13.125C16.5126 13.0339 16.6241 12.9622 16.7464 12.9142C16.8686 12.8662 16.9991 12.8427 17.1304 12.8451C17.2617 12.8476 17.3912 12.8758 17.5116 12.9283C17.632 12.9808 17.7409 13.0564 17.832 13.151V13.152Z" fill="#C47A2C"/>
                                                        </g>
                                                        <defs>
-                                                       <clipPath id="clip0_9961_65694">
+                                                       <clippath id="clip0_9961_65694">
                                                        <rect width="24" height="24" fill="white"/>
-                                                       </clipPath>
+                                                       </clippath>
                                                        </defs>
                                                   </svg>
-                                                  <span class="mt-12">Годовая отчетность (23)</span>
+                                                  <span class="mt-12">Lorem ipsum dolor sit a</span>
                                              </a>
                                         </div>
                                    </div>
                               </div>
                          </div>
                          <div class="col-xxl-3 col-xl-4 d-xl-flex d-none order-xl-2 order-1 my-3">
-                              Place banner here
+                              Lorem ipsum dolor
                          </div>
                     </div>
                </div>
@@ -459,189 +495,179 @@
           <div class="my-4"></div>
           <div class="my-5"></div>
           <footer class="footer">
-     <div class="main-section">
-          <div class="footer__body">
-               <div class="row g-4">
-                    <div class="col-xl-3 col-md-6">
-                         <nav class="menu-footer">
-                              <div class="menu-footer__collapse">
-                                   <a href="forms-of-documents.html" class="menu-footer__link">Аналитические материалы</a>
-                                   <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-forms-doc-collapse"
-                                        aria-expanded="false" aria-current="true">
-                                        <i class="bi bi-chevron-down"></i>
-                                   </button>
+               <div class="main-section">
+                    <!-- container deleted -->
+                    <div class="footer__body">
+                         <div class="row g-4">
+                              <div class="col-xl-3 col-md-6">
+                                   <nav class="menu-footer">
+                                        <div class="menu-footer__collapse">
+                                             <a href="forms-of-documents.html" class="menu-footer__link">Lorem ipsum dolor sit a</a>
+                                             <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-forms-doc-collapse" aria-expanded="false" aria-current="true">
+                                                  <i class="bi bi-chevron-down"></i>
+                                             </button>
+                                        </div>
+                                        <ul class="submenu-footer collapse" id="footer-forms-doc-collapse">
+                                             <li><a href="#" class="submenu-footer__link">Lorem ipsum </a></li>
+                                             <li><a href="#" class="submenu-footer__link">Lorem ipsum dolor sit amet cons</a></li>
+                                             <li><a href="#" class="submenu-footer__link">Lorem ipsum dolo</a></li>
+                                        </ul>
+                                   </nav>
                               </div>
-                              <ul class="submenu-footer collapse" id="footer-forms-doc-collapse">
-                                   <li><a href="#" class="submenu-footer__link">Организациям</a></li>
-                                   <li><a href="#" class="submenu-footer__link">Индивидуальным предпринимателям</a></li>
-                                   <li><a href="#" class="submenu-footer__link">Физическим лицам</a></li>
-                              </ul>
-                         </nav>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                         <nav class="menu-footer">
-                              <div class="menu-footer__collapse">
-                                   <a href="articles.html" class="menu-footer__link">Сервисы</a>
+                              <div class="col-xl-3 col-md-6">
+                                   <nav class="menu-footer">
+                                        <div class="menu-footer__collapse">
+                                             <a href="articles.html" class="menu-footer__link">Lorem i</a>
+                                        </div>
+                                   </nav>
+                                   <nav class="menu-footer mt-4 mt-xl-0">
+                                        <div class="menu-footer__collapse">
+                                             <a href="articles.html" class="menu-footer__link">Lorem ipsum dolo</a>
+                                        </div>
+                                   </nav>
+                                   <nav class="menu-footer mt-4 mt-xl-0">
+                                        <div class="menu-footer__collapse">
+                                             <a href="articles.html" class="menu-footer__link">Lorem ipsum dolor sit</a>
+                                        </div>
+                                   </nav>
                               </div>
-                         </nav>
-                         <nav class="menu-footer mt-4 mt-xl-0">
-                              <div class="menu-footer__collapse">
-                                   <a href="articles.html" class="menu-footer__link">Формы документов</a>
+                              <div class="col-xl-3 col-md-6">
+                                   <nav class="menu-footer">
+                                        <div class="menu-footer__collapse">
+                                             <a href="#" class="menu-footer__link">Lorem ipsum dolor sit </a>
+                                             <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-ref-info-collapse" aria-expanded="false" aria-current="true">
+                                                  <i class="bi bi-chevron-down"></i>
+                                             </button>
+                                        </div>
+                                        <ul class="submenu-footer collapse" id="footer-ref-info-collapse">
+                                             <li><a href="#" class="submenu-footer__link">Lorem ipsum dolor</a></li>
+                                             <li><a href="#" class="submenu-footer__link">Lorem ipsum dolor sit amet</a></li>
+                                             <li><a href="#" class="submenu-footer__link">Lorem ipsum dolor sit amet consectetur</a></li>
+                                             <li><a href="#" class="submenu-footer__link">Lorem ipsum dolor sit amet </a></li>
+                                             <li><a href="#" class="submenu-footer__link">Lorem ipsum do</a></li>
+                                             <li><a href="support.html" class="submenu-footer__link">Lorem ipsum dolor sit</a></li>
+                                        </ul>
+                                   </nav>
                               </div>
-                         </nav>
-                         <nav class="menu-footer mt-4 mt-xl-0">
-                              <div class="menu-footer__collapse">
-                                   <a href="articles.html" class="menu-footer__link">Справочная информация</a>
+                              <div class="col-xl-3 col-md-6">
+                                   <nav class="menu-footer">
+                                        <div class="menu-footer__collapse">
+                                             <div class="menu-footer__title">Lorem ip</div>
+                                             <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-contacts-collapse" aria-expanded="false" aria-current="true">
+                                                  <i class="bi bi-chevron-down"></i>
+                                             </button>
+                                        </div>
+                                        <ul class="submenu-footer collapse" id="footer-contacts-collapse">
+                                             <li>
+                                                  <a href="https://yandex.by/maps/157/minsk/?from=api-maps&amp;ll=27.574767%2C53.913305&amp;mode=poi&amp;poi%5Bpoint%5D=27.574228%2C53.913730&amp;poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D76571038512&amp;utm_source=api-maps&amp;z=18.18" class="submenu-footer__link d-flex flex-row" target="_blank">
+                                                       <i class="bi bi-geo-alt me-2"></i>
+                                                       <span>
+                                                            Lorem ipsum dolor sit amet
+                                                       </span>
+                                                  </a>
+                                             </li>
+                                             <li>
+                                                  <a href="mailto:info@info-center.by" class="submenu-footer__link">
+                                                       <i class="bi bi-envelope me-2"></i>
+                                                       Lorem ipsum dolor s
+                                                  </a>
+                                             </li>
+                                             <li>
+                                                  <a href="tel:375172691903" class="submenu-footer__link">
+                                                       <i class="bi bi-telephone me-2"></i>
+                                                       Lorem ipsum dolor s
+                                                  </a>
+                                             </li>
+                                             <li>
+                                                  <div class="d-flex flex-row">
+                                                       <i class="bi bi-clock me-2"></i>
+                                                       <span>
+                                                            Lorem ipsum dolor sit amet <br>
+                                                            Lorem ipsum dolor si
+                                                       </span>
+                                                  </div>
+                                             </li>
+                                             <li>
+                                                  <div class="d-flex flex-row">
+                                                       <i class="bi bi-list-ol me-2"></i>
+                                                       <span>
+                                                            Lorem ipsum dolor sit  <br>
+                                                            Lorem ipsum dolor sit amet consecte
+                                                       </span>
+                                                  </div>
+                                             </li>
+                                        </ul>
+                                   </nav>
                               </div>
-                         </nav>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                         <nav class="menu-footer">
-                              <div class="menu-footer__collapse">
-                                   <a href="#" class="menu-footer__link">Информация о платформе</a>
-                                   <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-ref-info-collapse"
-                                        aria-expanded="false" aria-current="true">
-                                        <i class="bi bi-chevron-down"></i>
-                                   </button>
-                              </div>
-                              <ul class="submenu-footer collapse" id="footer-ref-info-collapse">
-                                   <li><a href="#" class="submenu-footer__link">Публичный договор</a></li>
-                                   <li><a href="#" class="submenu-footer__link">Политика обработки cookies</a></li>
-                                   <li><a href="#" class="submenu-footer__link">Политика обработки персональных данных</a></li>
-                                   <li><a href="#" class="submenu-footer__link">Пользовательское соглашение</a></li>
-                                   <li><a href="#" class="submenu-footer__link">Оплата доступа</a></li>
-                                   <li><a href="support.html" class="submenu-footer__link">Техническая поддержка</a></li>
-                              </ul>
-                         </nav>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                         <nav class="menu-footer">
-                              <div class="menu-footer__collapse">
-                                   <div class="menu-footer__title">Контакты</div>
-                                   <button class="menu-footer__button collapsed" data-bs-toggle="collapse" data-bs-target="#footer-contacts-collapse"
-                                        aria-expanded="false" aria-current="true">
-                                        <i class="bi bi-chevron-down"></i>
-                                   </button>
-                              </div>
-                              <ul class="submenu-footer collapse" id="footer-contacts-collapse">
-                                   <li>
-                                        <a href="https://yandex.by/maps/157/minsk/?from=api-maps&amp;ll=27.574767%2C53.913305&amp;mode=poi&amp;poi%5Bpoint%5D=27.574228%2C53.913730&amp;poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D76571038512&amp;utm_source=api-maps&amp;z=18.18"
-                                             class="submenu-footer__link d-flex flex-row" target="_blank">
-                                             <i class="bi bi-geo-alt me-2"></i>
-                                             <span>
-                                                  г.Минск, пр-т. Машерова, 7
-                                             </span>
-                                        </a>
-                                   </li>
-                                   <li>
-                                        <a href="mailto:info@info-center.by" class="submenu-footer__link">
-                                             <i class="bi bi-envelope me-2"></i>
-                                             info@info-center.by
-                                        </a>
-                                   </li>
-                                   <li>
-                                        <a href="tel:375172691903" class="submenu-footer__link">
-                                             <i class="bi bi-telephone me-2"></i>
-                                             +375 (17) 269 19 03
-                                        </a>
-                                   </li>
-                                   <li>
-                                        <div class="d-flex flex-row">
-                                             <i class="bi bi-clock me-2"></i>
-                                             <span>
-                                                  Пн. – Чт.: с 8:45 до 18:00 <br>
-                                                  Пт.: с 8:45 до 16:45
-                                             </span>
+                              <div class="col-12">
+                                   <div class="footer__payments d-flex flex-row flex-wrap justify-content-between align-items-center">
+                                        <div class="footer__subscribe d-flex align-items-center my-2">
+                                             <a href="#">Lorem ipsum dolor sit amet consectet<i class="bi bi-box-arrow-up-right ms-2"></i></a>
                                         </div>
-                                   </li>
-                                   <li>
-                                        <div class="d-flex flex-row">
-                                             <i class="bi bi-list-ol me-2"></i>
-                                             <span>
-                                                  Регистрация №190819036 <br>
-                                                  от 29.03.2007 Минским горисполкомом
-                                             </span>
-                                        </div>
-                                   </li>
-                              </ul>
-                         </nav>
-                    </div>
-                    <div class="col-12">
-                         <div class="footer__payments d-flex flex-row flex-wrap justify-content-between align-items-center">
-                              <div class="footer__subscribe d-flex align-items-center my-2">
-                                   <a href="#">ОФОРМИТЬ ДОСТУП К ЦИФРОВОЙ ПЛАТФОРМЕ<i class="bi bi-box-arrow-up-right ms-2"></i></a>
-                              </div>
-                              <div class="d-flex flex-row flex-wrap flex-md-wrap-no my-2">
-                                   <span>Принимаем <br class="d-none d-md-block my-1"> к оплате:</span>
-                                   <div class="row g-2 ms-lg-2 justify-content-start my-1">
-                                        <div class="col-md col-3 d-flex my-1">
-                                             <div class="footer__payments-item">
-                                                  <img src="./img/pay-logos/pay-logo-1.png" alt="ipay">
-                                             </div>
-                                        </div>
-                                        <div class="col-md col-3 d-flex my-1">
-                                             <div class="footer__payments-item">
-                                                  <img src="./img/pay-logos/pay-logo-2.png" alt="erip">
-                                             </div>
-                                        </div>
-                                        <div class="col-md col-3 d-flex my-1">
-                                             <div class="footer__payments-item">
-                                                  <img src="./img/pay-logos/pay-logo-3.png" alt="mir">
-                                             </div>
-                                        </div>
-                                        <div class="col-md col-3 d-flex my-1">
-                                             <div class="footer__payments-item">
-                                                  <img src="./img/pay-logos/pay-logo-4.png" alt="mastercard">
-                                             </div>
-                                        </div>
-                                        <div class="col-md col-3 d-flex my-1">
-                                             <div class="footer__payments-item">
-                                                  <img src="./img/pay-logos/pay-logo-5.png" alt="visa">
-                                             </div>
-                                        </div>
-                                        <div class="col-md col-3 d-flex my-1">
-                                             <div class="footer__payments-item">
-                                                  <img src="./img/pay-logos/pay-logo-6.png" alt="assist">
-                                             </div>
-                                        </div>
-                                        <div class="col-md col-3 d-flex my-1">
-                                             <div class="footer__payments-item">
-                                                  <img src="./img/pay-logos/pay-logo-7.png" alt="belcart">
+                                        <div class="d-flex flex-row flex-wrap flex-md-wrap-no my-2">
+                                             <span>Lorem ips <br class="d-none d-md-block my-1"> Lorem ips</span>
+                                             <div class="row g-2 ms-lg-2 justify-content-start my-1">
+                                                  <div class="col-md col-3 d-flex my-1">
+                                                       <div class="footer__payments-item">
+                                                            <img src="./img/pay-logos/pay-logo-1.png" alt="ipay">
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md col-3 d-flex my-1">
+                                                       <div class="footer__payments-item">
+                                                            <img src="./img/pay-logos/pay-logo-2.png" alt="erip">
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md col-3 d-flex my-1">
+                                                       <div class="footer__payments-item">
+                                                            <img src="./img/pay-logos/pay-logo-3.png" alt="mir">
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md col-3 d-flex my-1">
+                                                       <div class="footer__payments-item">
+                                                            <img src="./img/pay-logos/pay-logo-4.png" alt="mastercard">
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md col-3 d-flex my-1">
+                                                       <div class="footer__payments-item">
+                                                            <img src="./img/pay-logos/pay-logo-5.png" alt="visa">
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md col-3 d-flex my-1">
+                                                       <div class="footer__payments-item">
+                                                            <img src="./img/pay-logos/pay-logo-6.png" alt="assist">
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md col-3 d-flex my-1">
+                                                       <div class="footer__payments-item">
+                                                            <img src="./img/pay-logos/pay-logo-7.png" alt="belcart">
+                                                       </div>
+                                                  </div>
                                              </div>
                                         </div>
                                    </div>
                               </div>
                          </div>
                     </div>
+                    <div class="footer-bottom border-0">
+                         <a href="main.html" class="footer-bottom__logo">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua U</a>
+                         <div class="footer-bottom__copyright">Lorem ipsum dolor sit ame</div>
+                    </div>
                </div>
-          </div>
-          <div class="footer-bottom border-0">
-               <a href="main.html" class="footer-bottom__logo">Республиканское унитарное предприятие
-                    «Информационно-издательский центр по налогам и сборам»</a>
-               <div class="footer-bottom__copyright">© 2023 Все права защищены</div>
-          </div>
+          </footer>
      </div>
-</footer>
-     </div>
-     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 
-<script
-        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
 
 
-<script src="js/script.min.js"></script>
+     <script src="js/script.min.js"></script>
 </body>
 
 </html>

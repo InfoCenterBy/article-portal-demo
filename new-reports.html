@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 	<head>
-	  <title>Плеер</title>
+	  <title>Сформировать отчет</title>
 	  <meta charset="UTF-8">
 	  <meta name="format-detection" content="telephone=no">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,10 +32,32 @@
 	  <link rel="stylesheet" href="css/style.min.css">
 	</head>
 
-	<head>
-		<link rel="stylesheet" href="https://cdn.vidstack.io/player/theme.css">
-		<link rel="stylesheet" href="https://cdn.vidstack.io/player/video.css">
-	</head>
+	<style>
+		.height-56 {
+			height: 3.5rem;
+		}
+		.bg-blue-transparent {
+			background-color: #eff6ff !important;
+		}
+		.color-light-blue {
+			color: #2563eb !important;
+		}
+		.circle-48 {
+			min-height: 3rem;
+			min-width: 3rem;
+			height: 3rem;
+			width: 3rem;
+		}
+		.bg-green-transparent {
+			background-color: #d8fce3 !important;
+		}
+		.color-light-green {
+			color: #16a34a !important;
+		}
+		#reportChart {
+			width: auto !important;
+		}
+	</style>
 	<body>
 		<header class="new-header d-flex flex-row justify-content-between align-items-center">
 		     <div class="d-flex flex-row align-items-center">
@@ -403,743 +425,182 @@
 	</div>
 </nav>
 
-		<div class="nav-container active-container">
+		<div class="justify-content-between nav-container active-container">
 			<!-- Nav Button -->
 			<a class id="menu-btn"><i class="bi-chevron-right bi"></i></a>
 			<!--Nav Button -->
 			<div class="main-content">
-				<section class="main-section">
+				<div class="mt-32"></div>
+				<div class="main-section">
+					<nav aria-label="breadcrumb" class="mx-3 w-100">
+						<ol class="border-0 breadcrumb">
+							<li class="breadcrumb-item" id="bx_breadcrumb_0">
+								<a href="/"> <i class="bi bi-house"></i> </a>
+								<a href="/" title itemprop="item">
+									<span itemprop="name"></span>
+								</a>
+								<meta itemprop="position" content="1">
+							</li>
+							<li class="breadcrumb-item" id="bx_breadcrumb_1">
+								<i class="fa-angle-right mx-1 fa"></i>
+								<a href title="Личный кабинет" itemprop="item">
+									<span itemprop="name">Lorem i</span>
+								</a>
+								<meta itemprop="position" content="2">
+							</li>
+							<li class="breadcrumb-item" id="bx_breadcrumb_1">
+								<i class="fa-angle-right mx-1 fa"></i>
+								<a href title="Личный кабинет" itemprop="item">
+									<span itemprop="name">Lorem ipsum dolor </span>
+								</a>
+								<meta itemprop="position" content="2">
+							</li>
+							<li class="breadcrumb-item">
+								<i class="fa-angle-right mx-1 fa"></i>
+								<span>Lorem ipsum dolor </span>
+							</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="border-1 border-bottom border-bottom-gray w-100"></div>
+				<div class="mt-4 main-section">
 					<div class="row">
-						<nav aria-label="breadcrumb" class="col-12">
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item">
-									<a href="main.html"><i class="bi bi-house"></i></a>
-								</li>
-								<li class="breadcrumb-item active" aria-current="page">Lorem</li>
-							</ol>
-						</nav>
-					</div>
-				</section>
-				<div class="mt-4"></div>
-				<section class="main-section"><script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<style>
-	.chapter-block::-webkit-scrollbar {
-		width: 3px;
-		height: 3px;
-	}
-
-	.chapter-block::-webkit-scrollbar-thumb {
-		background: oklch(75% 0.00006 271.152);
-	}
-
-	.chapter-block::-webkit-scrollbar-track {
-		background: transparent;
-		border-radius: 4px;
-	}
-
-	.chapter-block {
-		scrollbar-face-color: #d9d9d9;
-		scrollbar-track-color: transparent;
-	}
-
-	.player-container {
-		position: relative;
-		overflow: hidden;
-		isolation: isolate;
-	}
-
-	.player-container>* {
-		display: block;
-		width: 100%;
-		height: 100%;
-		max-height: 100%;
-		min-height: 0;
-	}
-
-	.video-lock-overlay {
-		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		max-height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 24px;
-		background: rgba(0, 0, 0, 0.35);
-		z-index: 10;
-		box-sizing: border-box;
-	}
-
-	.video-lock-card {
-		width: min(260px, 100%);
-		background: var(--color-white);
-		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
-		text-align: center;
-	}
-
-	@media screen and (min-width: 1200px) {
-		.video-lock-card {
-			width: min(530px, 100%);
-		}
-	}
-</style>
-<script>
-	function calcHeighChapterBlock() {
-		let player = document.querySelector('.player-block media-player');
-		let chapterBlock = document.querySelectorAll('.chapter-block');
-		if (chapterBlock && player) {
-			chapterBlock.forEach((element) => {
-				element.style.setProperty('--max-height', player.offsetHeight - '75' + 'px');
-			});
-			if (window.innerWidth < 1200) {
-				chapterBlock.forEach((element) => {
-					element.style.setProperty('--max-height', 'auto');
-				});
-			}
-		}
-	}
-	window.addEventListener('resize', () => {
-		calcHeighChapterBlock();
-	});
-
-	window.addEventListener('load', () => {
-		setTimeout(calcHeighChapterBlock, 2000);
-	});
-</script>
-<div id="app">
-	<template id="player-template">
-		<div class="row">
-			<!-- <div class="d-flex justify-content-center mt-5 col-12" :class="[loading ? 'd-block' : 'd-none']">
-				<div
-					class="spinner-border"
-					role="status"
-					style="border-color: #b9b9b9; border-right-color: var(--color-gold); width: 3rem; height: 3rem"
-				>
-					<span class="visually-hidden">Loading...</span>
-				</div>
-			</div> -->
-			<div class="col-12">
-				<h2 class="h2" :class="[loading ? 'placeholder placeholder-wave border-20' : '']">Lorem ips</h2>
-			</div>
-			<div class="d-flex align-items-start col-xl-8 col-12">
-				<div class="player-block border-20 w-100 overflow-hidden player-container" style="z-index: 3" :class="[loading ? 'placeholder placeholder-wave' : '']">
-					<div ref="target" class="w-100 h-100"></div>
-
-					<div v-if="locked && !authorized" class="video-lock-overlay" @click.stop>
-						<div class="video-lock-card d-flex flex-column justify-content-center gap-3 gap-lg-4 align-items-center border-10 p-xl-4 p-lg-2 p-2">
-							<div class="video-lock-icon d-xl-block d-none" aria-hidden="true">
-								<svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M39.5 6.8125C42.0527 6.8125 44.5009 7.82656 46.3059 9.6316C48.1109 11.4366 49.125 13.8848 49.125 16.4375V35.6875H29.875V16.4375C29.875 13.8848 30.8891 11.4366 32.6941 9.6316C34.4991 7.82656 36.9473 6.8125 39.5 6.8125ZM53.9375 35.6875V16.4375C53.9375 12.6084 52.4164 8.9362 49.7089 6.22865C47.0013 3.52109 43.3291 2 39.5 2C35.6709 2 31.9987 3.52109 29.2911 6.22865C26.5836 8.9362 25.0625 12.6084 25.0625 16.4375V35.6875C22.5098 35.6875 20.0616 36.7016 18.2566 38.5066C16.4516 40.3116 15.4375 42.7598 15.4375 45.3125V69.375C15.4375 71.9277 16.4516 74.3759 18.2566 76.1809C20.0616 77.9859 22.5098 79 25.0625 79H53.9375C56.4902 79 58.9384 77.9859 60.7434 76.1809C62.5484 74.3759 63.5625 71.9277 63.5625 69.375V45.3125C63.5625 42.7598 62.5484 40.3116 60.7434 38.5066C58.9384 36.7016 56.4902 35.6875 53.9375 35.6875ZM25.0625 40.5H53.9375C55.2139 40.5 56.4379 41.007 57.3405 41.9095C58.243 42.8121 58.75 44.0361 58.75 45.3125V69.375C58.75 70.6514 58.243 71.8754 57.3405 72.778C56.4379 73.6805 55.2139 74.1875 53.9375 74.1875H25.0625C23.7861 74.1875 22.5621 73.6805 21.6595 72.778C20.757 71.8754 20.25 70.6514 20.25 69.375V45.3125C20.25 44.0361 20.757 42.8121 21.6595 41.9095C22.5621 41.007 23.7861 40.5 25.0625 40.5Z" fill="#C47A2C"/>
-									<circle cx="39.5" cy="58" r="10.5" stroke="#C47A2C" stroke-width="4"/>
-									<path d="M44.167 58.0002L37.167 62.0416L37.167 53.9587L44.167 58.0002Z" fill="#C47A2C"/>
-								</svg>
+						<div class="d-flex flex-column col-xl-7">
+							<div class>
+								<h1 class="mb-0 h1 fs-32 fw-600 ff-inter">Lorem ipsum dolor </h1>
 							</div>
-							<div class="d-lg-block d-none">
-								<h4 class="h4 mb-0 ff-inter fw-600 fs-20">
-									Lorem ipsum dolor sit amet 
-								</h4>
+						</div>
+						<div class="mt-40 col-xxl-10 col-xl-12">
+							<div class="align-items-end g-4 row">
+								<div class="d-flex col-xl-3 col-md-6">
+									<div class="w-100 input">
+										<label for="DATE_FROM">L</label>
+										<input class="p-12 border-10 w-100 height-56" type="date" name="DATE_FROM" value>
+									</div>
+								</div>
+								<div class="d-flex col-xl-3 col-md-6">
+									<div class="w-100 input">
+										<label for="DATE_TO">Lo</label>
+										<input class="p-12 border-10 w-100 height-56" type="date" name="DATE_TO" value>
+									</div>
+								</div>
+								<div class="d-flex col-xl-3 col-md-6">
+									<div class="w-100 input">
+										<div class="border-10 w-100 button height-56" type="button">
+											Lorem ips
+										</div>
+									</div>
+								</div>
+								<div class="d-flex col-xl-3 col-md-6">
+									<div class="w-100 input">
+										<div class="border-10 w-100 button button_empty height-56" type="button">
+											Lorem ip
+										</div>
+									</div>
+								</div>
 							</div>
-							<p class="mb-0 ff-inter fs-lg-16 fs-14">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut 
-							</p>
-							<a class="button border-10 d-flex justify-content-center flex-column align-items-center p-lg-3 p-2 fs-lg-16 fs-14 w-fit-content" href="./login.html">Lorem ipsum do</a>
+						</div>
+						<div class="mt-40 col-xxl-9 col-12">
+							<div class="row g-4">
+								<div class="d-flex col-xl-6">
+									<div class="d-flex flex-row align-items-center gap-3 p-4 border border-1 border-20 w-100">
+										<div class="d-flex">
+											<div class="d-flex align-items-center justify-content-center bg-blue-transparent p-12 rounded-circle circle-48">
+												<i class="bi bi-file-earmark-plus color-blue fs-24"></i>
+											</div>
+										</div>
+										<div class="d-flex flex-row align-items-center justify-content-between gap-3 w-100">
+											<div class="d-flex flex-column gap-1">
+												<span>Lorem </span>
+												<h3 class="mb-0 text-nowrap h3 fw-semibold fs-24">Lorem</h3>
+											</div>
+											<div class>
+												<h1 class="mb-0 h1 fw-semibold">Lo</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="d-flex col-xl-6">
+									<div class="d-flex flex-row align-items-center gap-3 p-4 border border-1 border-20 w-100">
+										<div class="d-flex">
+											<div class="d-flex align-items-center justify-content-center bg-green-transparent p-12 rounded-circle circle-48">
+												<i class="bi bi-pencil-square color-light-green fs-24"></i>
+											</div>
+										</div>
+										<div class="d-flex flex-row align-items-center justify-content-between gap-3 w-100">
+											<div class="d-flex flex-column gap-1">
+												<span>Lorem </span>
+												<h3 class="mb-0 text-nowrap h3 fw-semibold fs-24">
+													Lorem ip
+												</h3>
+											</div>
+											<div class>
+												<h1 class="mb-0 h1 fw-semibold">Lor</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex mt-40 col-12">
+							<div class="d-flex flex-column p-4 border border-1 border-20 w-100">
+								<h3 class="mb-0 h3 fw-semibold">Lorem ipsum dolo</h3>
+								<div class="mt-3 w-100" style="height: 400px">
+									<canvas id="reportChart" class width="100%"></canvas>
+								</div>
+							</div>
+						</div>
+						<div class="mt-80 col-12">
+							<div class="justify-content-between row g-4">
+								<div class="col-12 col-xxl-8">
+									<div class="align-items-end row g-4">
+										<div class="d-flex col-lg-6 col-xxl-3">
+											<div class="w-100 input">
+												<label for="UF_UNP"> Lor </label>
+												<input class="border-10 w-100 height-56" type="text" name="UF_UNP" value inputmode="text">
+											</div>
+										</div>
+										<div class="d-flex col-lg-6 col-xxl-3">
+											<div class="w-100 input">
+												<label class="label" for="STATUS">Lorem </label>
+												<select class="border-10 w-100 select height-56" name="STATUS">
+													<option value="Все" selected>Lor</option>
+													<option value="Новые заказы">Lorem ipsum </option>
+													<option value="Заказы в работе">
+														Lorem ipsum dol
+													</option>
+												</select>
+											</div>
+										</div>
+										<div class="d-flex col-lg-6 col-xxl-3">
+											<div class="w-100 input">
+												<div class="border-10 w-100 button height-56" type="button">
+													Lorem ips
+												</div>
+											</div>
+										</div>
+										<div class="d-flex col-lg-6 col-xxl-3">
+											<div class="w-100 input">
+												<div class="border-10 w-100 button button_empty height-56" type="button">
+													Lorem ip
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="d-flex col-12 col-xxl-2">
+									<div class="d-flex flex-row align-items-end w-100">
+										<div class="w-100 input">
+											<div class="border-10 w-100 button button_empty height-56" type="button">
+												Lorem ipsum d
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- <div>
-				<button @click="play">Play</button>
-				<button @click="pause">Pause</button>
-				<button @click="toggleMute">{{ muted ? 'Unmute' : 'Mute' }}</button>
-			</div> -->
-			<!-- <div class='mt-3'>
-				<b>Таймкоды:</b>
-				<ul>
-					<li v-for="(tc, idx) in timeCodes" :key="idx">
-						<a href="#" @click.prevent="seekTo(tc.time)">
-							{{ formatTime(tc.time) }} — {{ tc.label }}
-						</a>
-					</li>
-				</ul>
-			</div> -->
-			<div class="d-flex mt-4 mt-xl-0 col-xl-4 col-12" :class="[loading ? '' : '']">
-				<div class="bg-white-gray px-3 pt-3 pb-2 border-20 w-100">
-					<h3 class="mb-0 h3">Lorem </h3>
-					<div class="chapter-block d-flex flex-column gap-3 mt-3 pe-2" style="--max-height: 356px; overflow-y: auto; max-height: var(--max-height)">
-						<div :class="[loading ? 'd-block' : 'd-none']" class="d-flex flex-row align-items-center gap-2 transition-3 transition-3 color-black hover-gold">
-							<!-- <i class="w-fit-content bi fs-32"
-								:class="[idx <= currentChapterIdx ? 'bi-eye-fill color-gold' : 'bi-eye color-gray' ]"></i> -->
-							<div class="d-flex flex-row gap-1 p-1 border border-1 border-10 border-gray w-100">
-								<div class="py-3 border-20 w-100 placeholder placeholder-wave"></div>
-							</div>
-						</div>
-
-						<a v-for="(ch, idx) in chapters" :key="idx" href="#" class="d-flex flex-row align-items-center gap-2 transition-3 transition-3 color-black hover-gold" @click.prevent="seekTo(ch.time)" :class="[loading ? 'invisible' : 'visible']">
-							<!-- <i class="w-fit-content bi fs-32"
-								:class="[idx <= currentChapterIdx ? 'bi-eye-fill color-gold' : 'bi-eye color-gray' ]"></i> -->
-							<div class="d-flex flex-row gap-1 px-3 py-2 border border-1 border-10 border-gray w-100 fs-14" :class="[idx <= currentChapterIdx ? 'color-gold' : 'color-black' ]">
-								<span>Lorem ipsum dolor sit amet consectetur adi </span>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</template>
-	<player-component></player-component>
-</div>
-
-<script type="module">
-	import { VidstackPlayer, VidstackPlayerLayout } from 'https://cdn.vidstack.io/player';
-
-	window.Vue.createApp({
-		components: {
-			'player-component': {
-				template: document.getElementById('player-template').innerHTML,
-				data() {
-					return {
-						player: null,
-						muted: false,
-						title: 'Sprite Fight',
-						duration: 0,
-						// timeCodes: [
-						// 	{ time: 10, label: 'Вступление' },
-						// 	{ time: 42, label: 'Битва начинается' },
-						// 	{ time: 75, label: 'Кульминация' },
-						// ],
-						chapters: [],
-						timeouts: [],
-						intervals: [],
-						cleanupCallbacks: [],
-						RUSSIAN: {
-							Accessibility: 'Особые возможности',
-							AirPlay: 'AirPlay',
-							Announcements: 'Объявления',
-							Audio: 'Аудио',
-							Auto: 'Авто',
-							Boost: 'Усиление',
-							Captions: 'Субтитры',
-							Chapters: 'Главы',
-							Color: 'Цвет',
-							Connected: 'Подключено',
-							Connecting: 'Подключение',
-							Continue: 'Продолжить',
-							Default: 'По умолчанию',
-							Disabled: 'Отключено',
-							Disconnected: 'Отключено',
-							Download: 'Скачать',
-							Family: 'Шрифты',
-							Font: 'Шрифт',
-							Fullscreen: 'Полноэкранный режим',
-							LIVE: 'Прямой эфир',
-							Loop: 'Повторение',
-							Mute: 'Выключить звук',
-							Normal: 'Нормальный',
-							Off: 'Выключено',
-							Opacity: 'Прозрачность',
-							Pause: 'Пауза',
-							PiP: 'Картинка в картинке',
-							Play: 'Воспроизведение',
-							Playback: 'Воспроизведение',
-							Quality: 'Качество',
-							Replay: 'Повтор',
-							Reset: 'Сброс',
-							Seek: 'Перемотка',
-							Settings: 'Настройки',
-							Shadow: 'Тень',
-							Size: 'Размер',
-							Speed: 'Скорость',
-							Text: 'Текст',
-							Track: 'Трек',
-							Unmute: 'Включить звук',
-							Volume: 'Громкость',
-							'Caption Styles': 'Стили субтитров',
-							'Captions look like this': 'Субтитры выглядят так',
-							'Closed-Captions Off': 'Выключить субтитры',
-							'Closed-Captions On': 'Включить субтитры',
-							'Display Background': 'Фон',
-							'Enter Fullscreen': 'Полноэкранный режим',
-							'Enter PiP': 'Картинка в картинке',
-							'Exit Fullscreen': 'Выход из полноэкранного режима',
-							'Exit PiP': 'Выход из картинки в картинке',
-							'Google Cast': 'Google Cast',
-							'Keyboard Animations': 'Анимации клавиатуры',
-							'Seek Backward': 'Перемотка назад',
-							'Seek Forward': 'Перемотка вперед',
-							'Skip To Live': 'Перейти к прямому эфиру',
-							'Text Background': 'Фон текста',
-						},
-						currentChapterIdx: -1,
-						rafId: null,
-						loading: true,
-						authorized: false,
-						locked: false,
-						previewLimitSec: null,
-						storageKeyBase: null,
-						lastSavedSecond: -1,
-						resumeRestored: false,
-					};
-				},
-				methods: {
-					hashString(str) {
-						let h = 2166136261;
-						for (let i = 0; i < str.length; i++) {
-							h ^= str.charCodeAt(i);
-							h = Math.imul(h, 16777619);
-						}
-						return (h >>> 0).toString(16);
-					},
-					getStorageKeyBase() {
-						const src = (this.player && typeof this.player.src === 'string') ? this.player.src : String(this.title || 'video');
-						return `ap_video_${this.hashString(src)}`;
-					},
-					ensureStorageKeyBase() {
-						if (this.storageKeyBase) return;
-						this.storageKeyBase = this.getStorageKeyBase();
-					},
-					keyResumeTime() {
-						this.ensureStorageKeyBase();
-						return `${this.storageKeyBase}:resumeTime`;
-					},
-					keyLocked() {
-						this.ensureStorageKeyBase();
-						return `${this.storageKeyBase}:locked`;
-					},
-					queueTimeout(fn, delay) {
-						const id = window.setTimeout(() => {
-							this.timeouts = this.timeouts.filter((item) => item !== id);
-							fn();
-						}, delay);
-						this.timeouts.push(id);
-						return id;
-					},
-					queueInterval(fn, delay) {
-						const id = window.setInterval(fn, delay);
-						this.intervals.push(id);
-						return id;
-					},
-					registerCleanup(fn) {
-						this.cleanupCallbacks.push(fn);
-					},
-					clearAsyncResources() {
-						this.timeouts.forEach((id) => clearTimeout(id));
-						this.intervals.forEach((id) => clearInterval(id));
-						this.timeouts = [];
-						this.intervals = [];
-						this.cleanupCallbacks.forEach((fn) => {
-							try { fn(); } catch (_) { }
-						});
-						this.cleanupCallbacks = [];
-					},
-					readResumeTime() {
-						const raw = localStorage.getItem(this.keyResumeTime());
-						const n = raw == null ? NaN : Number(raw);
-						return Number.isFinite(n) && n >= 0 ? n : 0;
-					},
-					writeResumeTime(sec) {
-						if (!Number.isFinite(sec) || sec < 0) return;
-						localStorage.setItem(this.keyResumeTime(), String(sec));
-					},
-					clearResumeTime() {
-						localStorage.removeItem(this.keyResumeTime());
-					},
-					readLockedFlag() {
-						return localStorage.getItem(this.keyLocked()) === '1';
-					},
-					writeLockedFlag(val) {
-						if (val) localStorage.setItem(this.keyLocked(), '1');
-						else localStorage.removeItem(this.keyLocked());
-					},
-					calcPreviewLimit(durationSec) {
-						if (!Number.isFinite(durationSec) || durationSec <= 0) return null;
-						if (durationSec <= 180) return durationSec < 60 ? 30 : 60;
-						if (durationSec <= 20 * 60) return 3 * 60;
-						return 5 * 60;
-					},
-					getPreviewLimit() {
-						if (Number.isFinite(this.previewLimitSec)) return this.previewLimitSec;
-						const duration = this.player?.duration;
-						if (Number.isFinite(duration) && duration > 0) {
-							this.previewLimitSec = this.calcPreviewLimit(duration);
-						}
-						return this.previewLimitSec;
-					},
-					clampToPreviewLimit(time) {
-						const limit = this.getPreviewLimit();
-						if (!Number.isFinite(limit)) return time;
-						const duration = this.player?.duration || limit;
-						return Math.max(0, Math.min(limit, duration));
-					},
-					applyPreviewLock(reason = 'limit') {
-						if (this.locked) return;
-						this.locked = true;
-						this.writeLockedFlag(true);
-
-						try {
-							this.player?.pause();
-						} catch (_) { }
-					},
-					unlockPlayback() {
-						this.locked = false;
-						this.writeLockedFlag(false);
-					},
-					applyPreviewLimitGuard(reason = 'limit') {
-						if (this.authorized || !this.player) return false;
-						const limit = this.getPreviewLimit();
-						if (!Number.isFinite(limit) || this.locked) return false;
-						if (this.player.currentTime >= limit) {
-							const stopAt = this.clampToPreviewLimit(this.player.currentTime);
-							this.player.currentTime = stopAt;
-							this.writeResumeTime(stopAt);
-							this.applyPreviewLock(reason);
-							return true;
-						}
-						return false;
-					},
-					saveResumeTimeThrottled() {
-						if (!this.player) return;
-						const sec = Math.floor(this.player.currentTime || 0);
-						if (sec === this.lastSavedSecond) return;
-						this.lastSavedSecond = sec;
-						this.writeResumeTime(sec);
-					},
-					tryRestoreResumeTime(force = false) {
-						if (!this.player) return;
-						if (this.resumeRestored && !force) return;
-						const resume = this.readResumeTime();
-						if (resume > 0) {
-							try {
-								this.player.currentTime = resume;
-								this.resumeRestored = true;
-							} catch (_) { }
-						}
-					},
-					queueChapterUpdate() {
-						this.updateCurrentChapter();
-						if (!this.authorized) {
-							this.saveResumeTimeThrottled();
-							this.applyPreviewLimitGuard('time-update');
-						}
-					},
-					getChapterLinkTime(time) {
-						return time;
-					},
-					extractRequestedTime(detail) {
-						if (typeof detail === 'number') return detail;
-						if (!detail || typeof detail !== 'object') return null;
-						if (typeof detail.time === 'number') return detail.time;
-						if (typeof detail.currentTime === 'number') return detail.currentTime;
-						return null;
-					},
-					getTimeFromUrl() {
-						// Ищем ?t= или #t= в адресе
-						const url = new URL(window.location.href);
-						let t = url.searchParams.get('t');
-						const sec = parseInt(t, 10);
-						return isNaN(sec) ? 0 : sec;
-					},
-
-					async initPlayer() {
-						this.loading = true;
-						this.player = await VidstackPlayer.create({
-							target: this.$refs.target,
-							title: this.title,
-							src: 'https://files.vidstack.io/sprite-fight/720p.mp4',
-							poster: 'https://files.vidstack.io/sprite-fight/poster.webp',
-							layout: new VidstackPlayerLayout({
-								thumbnails: 'https://files.vidstack.io/sprite-fight/thumbnails.vtt',
-							}),
-							streamType: 'on-demand',
-							logLevel: 'warn',
-							playsInline: true,
-							tracks: [
-								{
-									src: 'https://files.vidstack.io/sprite-fight/subs/english.vtt',
-									label: 'English',
-									language: 'en-US',
-									kind: 'subtitles',
-									type: 'vtt',
-									default: true,
-								},
-								{
-									src: 'https://files.vidstack.io/sprite-fight/chapters.vtt',
-									language: 'en-US',
-									kind: 'chapters',
-									type: 'vtt',
-									default: true,
-								},
-							],
-						});
-
-						this.storageKeyBase = this.getStorageKeyBase();
-						this.ensureStorageKeyBase();
-						this.registerCleanup(() => {
-							this.player?.removeEventListener('volumechange', updateMuted);
-							this.player?.removeEventListener('volume-change', updateMuted);
-						});
-
-						// Для авторизованного пользователя стараемся восстановить таймкод максимально рано.
-						if (this.authorized) this.tryRestoreResumeTime(true);
-
-						this.muted = this.player.muted;
-						const updateMuted = () => { this.muted = this.player.muted; };
-						this.player.addEventListener('volumechange', updateMuted);
-						this.player.addEventListener('volume-change', updateMuted);
-
-						const onLoadedMetadata = () => {
-							this.duration = this.player.duration;
-							this.previewLimitSec = this.calcPreviewLimit(this.duration);
-							if (this.authorized) this.tryRestoreResumeTime(true);
-						};
-						this.player.addEventListener('loadedmetadata', onLoadedMetadata);
-						this.player.addEventListener('loaded-metadata', onLoadedMetadata);
-						if (this.player.duration) {
-							this.duration = this.player.duration;
-							this.previewLimitSec = this.calcPreviewLimit(this.duration);
-						}
-
-						// Скрываем лоадер после полной инициализации плеера или loadedmetadata
-						let loadingCleared = false;
-						const clearLoading = () => {
-							if (!loadingCleared) {
-								this.loading = false;
-								loadingCleared = true;
-							}
-						};
-						this.player.addEventListener('loadedmetadata', clearLoading);
-						this.player.addEventListener('loaded-metadata', clearLoading);
-						if (this.player.duration) clearLoading();
-						this.queueTimeout(clearLoading, 2000);
-
-						// ГЛАВЫ: слушаем появление трека и cues
-						const updateChapters = () => {
-							const chaptersTrack = Array.from(this.player.textTracks || []).find((t) => t.kind === 'chapters');
-							if (!chaptersTrack) return;
-							chaptersTrack.mode = 'hidden';
-							let attempts = 0;
-							const tryUpdate = () => {
-								if (chaptersTrack.cues && chaptersTrack.cues.length) {
-									this.chapters = Array.from(chaptersTrack.cues).map((cue) => ({ time: cue.startTime, label: cue.text }));
-									this.updateCurrentChapter();
-									return;
-								}
-								attempts += 1;
-								if (attempts < 25) this.queueTimeout(tryUpdate, 200);
-							};
-							tryUpdate();
-						};
-
-						updateChapters();
-						this.player.textTracks?.addEventListener?.('addtrack', updateChapters);
-
-						const layout = document.querySelector('media-video-layout');
-						if (layout) layout.translations = this.RUSSIAN;
-
-						this.player.addEventListener('timeupdate', this.queueChapterUpdate);
-						this.player.addEventListener('time-update', this.queueChapterUpdate);
-						this.player.addEventListener('seeked', this.queueChapterUpdate);
-						this.player.addEventListener('play', this.queueChapterUpdate);
-
-						const protectVideo = () => {
-							const video = this.$refs.target.querySelector('video');
-							if (!video) return;
-							video.addEventListener('contextmenu', (e) => e.preventDefault());
-							video.addEventListener('dragstart', (e) => e.preventDefault());
-							video.addEventListener('selectstart', (e) => e.preventDefault());
-							video.setAttribute('controlsList', 'nodownload noremoteplayback');
-							video.setAttribute('disablePictureInPicture', '');
-							video.setAttribute('oncontextmenu', 'return false;');
-							video.style.userSelect = 'none';
-							video.style.pointerEvents = '';
-						};
-						const observer = new MutationObserver(() => { protectVideo(); });
-						observer.observe(this.$refs.target, { childList: true, subtree: true });
-						this.registerCleanup(() => observer.disconnect());
-						this.queueTimeout(protectVideo, 500);
-
-						if (this.authorized) {
-							this.unlockPlayback();
-						} else if (this.readLockedFlag()) {
-							this.locked = true;
-						}
-
-						const waitMeta = this.queueInterval(() => {
-							if (this.player && this.player.duration) {
-								clearInterval(waitMeta);
-								this.intervals = this.intervals.filter((id) => id !== waitMeta);
-								if (this.authorized) this.tryRestoreResumeTime(true);
-								if (!this.authorized && this.locked) {
-									try { this.player.pause(); } catch (_) { }
-								}
-								this.applyPreviewLimitGuard('meta-ready');
-							}
-						}, 200);
-
-						const restoreOnReady = () => { if (this.authorized) this.tryRestoreResumeTime(true); };
-						this.player.addEventListener('provider-setup', restoreOnReady, { once: true });
-						this.player.addEventListener('can-play', restoreOnReady, { once: true });
-						this.player.addEventListener('loaded-data', restoreOnReady, { once: true });
-						this.queueTimeout(restoreOnReady, 250);
-						this.queueTimeout(restoreOnReady, 900);
-
-						const seekToUrlTime = () => {
-							const sec = this.getTimeFromUrl();
-							if (sec > 0 && this.player) this.player.currentTime = sec;
-						};
-						if (this.player && this.player.duration) seekToUrlTime();
-						else {
-							const wait = this.queueInterval(() => {
-								if (this.player && this.player.duration) {
-									seekToUrlTime();
-									clearInterval(wait);
-									this.intervals = this.intervals.filter((id) => id !== wait);
-								}
-							}, 200);
-						}
-
-						const onSeekRequest = (e) => {
-							if (this.authorized) return;
-							const limit = this.getPreviewLimit();
-							if (!Number.isFinite(limit)) return;
-							const requested = this.extractRequestedTime(e.detail);
-							if (!Number.isFinite(requested) || requested <= limit) return;
-							e.preventDefault?.();
-							const stopAt = this.clampToPreviewLimit(requested);
-							try { this.player.currentTime = stopAt; } catch (_) { }
-							this.writeResumeTime(stopAt);
-							this.applyPreviewLock('seek-request');
-						};
-						this.player.addEventListener('media-seek-request', onSeekRequest);
-						this.player.addEventListener('media-seeking-request', onSeekRequest);
-						this.registerCleanup(() => {
-							this.player?.removeEventListener('media-seek-request', onSeekRequest);
-							this.player?.removeEventListener('media-seeking-request', onSeekRequest);
-						});
-
-						this.player.addEventListener('seeking', () => {
-							this.applyPreviewLimitGuard('seek');
-						});
-						this.player.addEventListener('seeked', () => {
-							this.applyPreviewLimitGuard('seeked');
-							this.saveResumeTimeThrottled();
-						});
-						this.player.addEventListener('pause', () => {
-							this.saveResumeTimeThrottled();
-						});
-
-						window.addEventListener('pagehide', () => this.saveResumeTimeThrottled());
-						document.addEventListener('visibilitychange', () => {
-							if (document.visibilityState === 'hidden') this.saveResumeTimeThrottled();
-						});
-
-						this.player.addEventListener('play', (e) => {
-							if (!this.authorized && this.locked) {
-								e.preventDefault?.();
-								try { this.player.pause(); } catch (_) { }
-							}
-						});
-						this.player.addEventListener('ended', () => {
-							this.clearResumeTime();
-							this.writeLockedFlag(false);
-							this.locked = false;
-						});
-					},
-					play() {
-						if (this.player) this.player.play();
-					},
-					pause() {
-						if (this.player) this.player.pause();
-					},
-					toggleMute() {
-						if (this.player) this.player.muted = !this.player.muted;
-					},
-					seekTo(time) {
-						if (this.player) {
-							if (!this.authorized) {
-								const limit = this.getPreviewLimit();
-								if (Number.isFinite(limit) && time > limit) {
-									const stopAt = this.clampToPreviewLimit(time);
-									try { this.player.currentTime = stopAt; } catch (_) { }
-									this.writeResumeTime(stopAt);
-									this.applyPreviewLock('chapter-seek');
-									return;
-								}
-							}
-							this.player.currentTime = time;
-							setTimeout(() => this.updateCurrentChapter(), 100);
-						}
-					},
-					formatTime(sec) {
-						const h = Math.floor(sec / 3600);
-						const m = Math.floor((sec % 3600) / 60);
-						const s = Math.floor(sec % 60);
-						if (h > 0) {
-							return `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-						} else {
-							return `${m}:${s.toString().padStart(2, '0')}`;
-						}
-					},
-					updateCurrentChapter() {
-						if (!this.chapters.length || !this.player) {
-							this.currentChapterIdx = -1;
-							return;
-						}
-						const time = this.player.currentTime;
-						let idx = -1;
-						for (let i = 0; i < this.chapters.length; i++) {
-							const start = this.chapters[i].time;
-							const end = i < this.chapters.length - 1 ? this.chapters[i + 1].time : Infinity;
-							if (time >= start && time < end) {
-								idx = i;
-								break;
-							}
-						}
-						this.currentChapterIdx = idx;
-					},
-					startChapterRaf() {
-						const loop = () => {
-							this.updateCurrentChapter();
-							if (this.player && !this.authorized) {
-								this.applyPreviewLimitGuard('raf');
-								this.saveResumeTimeThrottled();
-							}
-							this.rafId = requestAnimationFrame(loop);
-						};
-						this.rafId = requestAnimationFrame(loop);
-					},
-					stopChapterRaf() {
-						if (this.rafId) {
-							cancelAnimationFrame(this.rafId);
-							this.rafId = null;
-						}
-					},
-				},
-				mounted() {
-					this.initPlayer();
-					this.startChapterRaf();
-				},
-				beforeUnmount() {
-					this.stopChapterRaf();
-					this.clearAsyncResources();
-					if (this.player) {
-						this.player.removeEventListener('timeupdate', this.queueChapterUpdate);
-						this.player.removeEventListener('time-update', this.queueChapterUpdate);
-						this.player.removeEventListener('seeked', this.queueChapterUpdate);
-						this.player.removeEventListener('play', this.queueChapterUpdate);
-						this.player.destroy();
-					}
-				},
-				watch: {
-					chapters() {
-						this.updateCurrentChapter();
-					},
-				},
-			},
-		},
-	}).mount('#app');
-</script></section>
-				<div class="mt-4"></div>
 			</div>
 			<div class="my-5"></div>
 			<footer class="footer">
@@ -1303,6 +764,91 @@
 			     </div>
 			</footer>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script>
+			const ctx = document.getElementById('reportChart');
+
+			function formatPeriodLabels(dateRange) {
+				const [dateFrom, dateTo] = dateRange;
+				const pad = (n) => String(n).padStart(2, '0');
+				const labels = [];
+				const cursor = new Date(dateFrom);
+				while (cursor <= dateTo) {
+					const start = new Date(cursor);
+					const end = new Date(cursor);
+					end.setDate(end.getDate() + 6);
+					if (end > dateTo) end.setTime(dateTo.getTime());
+
+					labels.push(
+						`${pad(start.getDate())}-${pad(end.getDate())}.${pad(end.getMonth() + 1)}.${end.getFullYear()}`,
+					);
+
+					cursor.setDate(cursor.getDate() + 7);
+				}
+				return labels;
+			}
+
+			const dateRange = [new Date(2026, 5, 1), new Date(2026, 5, 30)];
+			const labels = formatPeriodLabels(dateRange);
+
+			const newOrdersData = [12, 18, 12, 15, 20, 11];
+			const inProgressOrdersData = [25, 28, 10, 15, 35, 24];
+
+			const data = {
+				labels: labels,
+				datasets: [
+					{
+						label: 'Новые заказы',
+						data: newOrdersData,
+						borderColor: '#034A66',
+						backgroundColor: '#034A66',
+						tension: 0.3,
+					},
+					{
+						label: 'Заказы в работе',
+						data: inProgressOrdersData,
+						borderColor: '#C47A2C',
+						backgroundColor: '#C47A2C',
+						tension: 0.3,
+					},
+				],
+			};
+			new Chart(ctx, {
+				type: 'line',
+				data: data,
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					devicePixelRatio: window.devicePixelRatio || 2,
+					scales: {
+						x: {
+							ticks: {
+								font: { size: 16 },
+							},
+						},
+						y: {
+							beginAtZero: true,
+							suggestedMax: Math.max(...newOrdersData, ...inProgressOrdersData),
+							ticks: {
+								precision: 0,
+								font: { size: 16 },
+							},
+						},
+					},
+					plugins: {
+						legend: {
+							position: 'top',
+							labels: {
+								font: { size: 16 },
+							},
+						},
+						title: {
+							display: false,
+						},
+					},
+				},
+			});
+		</script>
 		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
