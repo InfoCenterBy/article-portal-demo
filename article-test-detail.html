@@ -875,13 +875,7 @@
               actionBtn.disabled = false;
 
               if (savedAnswer.checked) {
-                optionsContainer.querySelectorAll('.article-test__option').forEach(function (item) {
-                  item.classList.add('is-locked');
-                });
-                const savedOption = question.options.find(function (option) {
-                  return option.id === savedAnswer.optionId;
-                });
-                applyAnswerState(savedItem, savedAnswer.correct, savedOption ? savedOption.explanation : '');
+                revealQuestionFeedback(question, savedAnswer, optionsContainer);
                 isChecked = true;
                 actionBtn.textContent = currentIndex < questions.length - 1 ? 'Далее' : 'Показать результаты';
               }
@@ -924,6 +918,87 @@
             isCorrect ? 'article-test__explanation--correct' : 'article-test__explanation--incorrect',
           );
           setExplanationContent(explanation, isCorrect, explanationText, 'article-test__explanation-status');
+        }
+
+        function revealQuestionFeedback(question, userAnswer, container) {
+          container.querySelectorAll('.article-test__option').forEach(function (item) {
+            item.classList.add('is-locked');
+          });
+
+          const selectedOption = question.options.find(function (option) {
+            return option.id === userAnswer.optionId;
+          });
+          const selectedItem = container.querySelector('[data-option-id="' + userAnswer.optionId + '"]');
+
+          if (selectedItem && selectedOption) {
+            selectedItem.querySelector('.article-test__option').classList.add('is-selected');
+            applyAnswerState(selectedItem, userAnswer.correct, selectedOption.explanation);
+          }
+
+          if (userAnswer && !userAnswer.correct) {
+            const correctOption = question.options.find(function (option) {
+              return option.correct;
+            });
+
+            if (correctOption) {
+              const correctItem = container.querySelector('[data-option-id="' + correctOption.id + '"]');
+              if (correctItem) {
+                applyAnswerState(correctItem, true, correctOption.explanation);
+              }
+            }
+          }
+        }
+
+        function buildReviewOptions(question, userAnswer) {
+          const optionsEl = document.createElement('div');
+          optionsEl.className = 'article-test__options';
+
+          question.options.forEach(function (option) {
+            const optionItem = document.createElement('div');
+            optionItem.className = 'article-test__option-item';
+
+            const optionEl = document.createElement('div');
+            optionEl.className = 'article-test__option is-locked';
+
+            const text = document.createElement('span');
+            text.className = 'article-test__option-label';
+            text.textContent = option.label;
+
+            const explanation = document.createElement('div');
+            explanation.className = 'article-test__explanation d-none';
+
+            optionEl.appendChild(text);
+            optionItem.appendChild(optionEl);
+            optionItem.appendChild(explanation);
+
+            const isSelected = userAnswer && userAnswer.optionId === option.id;
+
+            if (isSelected) {
+              optionEl.classList.add('is-selected');
+              optionEl.classList.add(userAnswer.correct ? 'is-correct' : 'is-incorrect');
+              explanation.classList.remove('d-none');
+              explanation.classList.add(
+                userAnswer.correct
+                  ? 'article-test__explanation--correct'
+                  : 'article-test__explanation--incorrect',
+              );
+              setExplanationContent(
+                explanation,
+                userAnswer.correct,
+                option.explanation,
+                'article-test__explanation-status',
+              );
+            } else if (userAnswer && !userAnswer.correct && option.correct) {
+              optionEl.classList.add('is-correct');
+              explanation.classList.remove('d-none');
+              explanation.classList.add('article-test__explanation--correct');
+              setExplanationContent(explanation, true, option.explanation, 'article-test__explanation-status');
+            }
+
+            optionsEl.appendChild(optionItem);
+          });
+
+          return optionsEl;
         }
 
         function getSelectedOptionId() {
@@ -970,12 +1045,7 @@
             checked: true,
           };
 
-          optionsContainer.querySelectorAll('.article-test__option').forEach(function (item) {
-            item.classList.add('is-locked');
-          });
-
-          const selectedItem = optionsContainer.querySelector('[data-option-id="' + selectedOption.id + '"]');
-          applyAnswerState(selectedItem, selectedOption.correct, selectedOption.explanation);
+          revealQuestionFeedback(questions[currentIndex], userAnswers[currentIndex], optionsContainer);
 
           actionBtn.disabled = false;
           actionBtn.textContent = currentIndex < questions.length - 1 ? 'Далее' : 'Показать результаты';
@@ -993,60 +1063,73 @@
           resultsSummaryText.textContent =
             'Вы ответили правильно на ' + correctCount + ' из ' + totalCount + ' вопросов';
 
+          const accordion = document.createElement('div');
+          accordion.className = 'accordion mt-4 accordion-gray';
+          accordion.id = 'resultsAccordion';
+
           questions.forEach(function (question, index) {
             const userAnswer = userAnswers[index];
-            const item = document.createElement('div');
-            item.className = 'article-test__result-item';
+            const isCorrect = userAnswer && userAnswer.correct;
+            const collapseId = 'resultCollapse' + index;
+
+            const accordionItem = document.createElement('div');
+            accordionItem.className = 'my-2 accordion-item';
+
+            const header = document.createElement('h2');
+            header.className = 'accordion-header';
+
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className =
+              'collapsed accordion-button bg-white-gray after-no article-test__result-toggle';
+            toggleBtn.type = 'button';
+            toggleBtn.setAttribute('data-bs-toggle', 'collapse');
+            toggleBtn.setAttribute('data-bs-target', '#' + collapseId);
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-controls', collapseId);
+
+            const toggleInner = document.createElement('span');
+            toggleInner.className = 'article-test__result-toggle-inner';
+
+            const statusIcon = document.createElement('i');
+            statusIcon.className = isCorrect
+              ? 'bi bi-check-circle article-test__result-icon article-test__result-icon--correct'
+              : 'bi bi-x-circle article-test__result-icon article-test__result-icon--incorrect';
+
+            const toggleTitle = document.createElement('span');
+            toggleTitle.className = 'article-test__result-toggle-title';
+            toggleTitle.textContent = 'Вопрос ' + (index + 1);
+
+            const toggleView = document.createElement('span');
+            toggleView.className = 'article-test__result-view';
+            toggleView.innerHTML = 'Просмотр <i class="bi bi-arrow-right"></i>';
+
+            toggleInner.appendChild(statusIcon);
+            toggleInner.appendChild(toggleTitle);
+            toggleInner.appendChild(toggleView);
+            toggleBtn.appendChild(toggleInner);
+            header.appendChild(toggleBtn);
+
+            const collapse = document.createElement('div');
+            collapse.id = collapseId;
+            collapse.className = 'accordion-collapse collapse';
+            collapse.setAttribute('data-bs-parent', '#resultsAccordion');
+
+            const body = document.createElement('div');
+            body.className = 'accordion-body pt-0';
 
             const questionEl = document.createElement('p');
-            questionEl.className = 'article-test__result-question';
+            questionEl.className = 'article-test__question-text mb-3';
             questionEl.textContent = question.text;
-            item.appendChild(questionEl);
+            body.appendChild(questionEl);
+            body.appendChild(buildReviewOptions(question, userAnswer));
 
-            const optionsEl = document.createElement('div');
-            optionsEl.className = 'article-test__result-options';
-
-            question.options.forEach(function (option) {
-              const optionItem = document.createElement('div');
-              optionItem.className = 'article-test__result-option-item';
-
-              const optionEl = document.createElement('div');
-              optionEl.className = 'article-test__result-option';
-
-              const isSelected = userAnswer && userAnswer.optionId === option.id;
-              if (isSelected) {
-                optionEl.classList.add('is-selected');
-                optionEl.classList.add(userAnswer.correct ? 'is-correct' : 'is-incorrect');
-              } else {
-                optionEl.classList.add('is-unselected');
-              }
-
-              optionEl.textContent = option.label;
-              optionItem.appendChild(optionEl);
-
-              if (isSelected) {
-                const explanation = document.createElement('div');
-                explanation.className = 'article-test__result-explanation';
-                explanation.classList.add(
-                  userAnswer.correct
-                    ? 'article-test__result-explanation--correct'
-                    : 'article-test__result-explanation--incorrect',
-                );
-                setExplanationContent(
-                  explanation,
-                  userAnswer.correct,
-                  option.explanation,
-                  'article-test__result-explanation-status',
-                );
-                optionItem.appendChild(explanation);
-              }
-
-              optionsEl.appendChild(optionItem);
-            });
-
-            item.appendChild(optionsEl);
-            resultsContainer.appendChild(item);
+            collapse.appendChild(body);
+            accordionItem.appendChild(header);
+            accordionItem.appendChild(collapse);
+            accordion.appendChild(accordionItem);
           });
+
+          resultsContainer.appendChild(accordion);
         }
       });
     </script>
