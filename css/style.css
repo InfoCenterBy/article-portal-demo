@@ -4676,6 +4676,120 @@ input[type=radio]:checked + .try-btn {
   transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
 }
 
+.service-card {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.service-card__icon {
+  width: 4rem;
+  height: 4rem;
+  min-height: 4rem;
+  min-width: 4rem;
+  max-height: 4rem;
+  max-width: 4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.625rem;
+  position: relative;
+}
+
+.service-card-orange .service-card__icon {
+  background-color: var(--color-orange-light);
+}
+
+.service-card-orange .service-card__arrow {
+  color: var(--color-gold);
+}
+
+.service-card__title {
+  font-weight: 600;
+  margin-bottom: 0;
+  font-size: 1.125rem;
+  color: var(--color-nav-black);
+  -webkit-transition: color ease-out 0.3s;
+  -o-transition: color ease-out 0.3s;
+  transition: color ease-out 0.3s;
+}
+
+.service-card__text {
+  margin-top: 0.5rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--color-gray-dark);
+}
+
+.service-card__badge {
+  font-size: 0.5625rem;
+  font-weight: 500;
+  left: 0.75rem;
+  border-radius: 6.25rem;
+  padding: 0.0625rem 0.25rem 0.125rem 0.25rem;
+}
+
+.service-card-blue .service-card__badge {
+  background-color: var(--color-blue-light);
+  color: var(--color-white-gray);
+}
+
+.service-card-blue .service-card__icon {
+  background-color: #EDF2F4;
+}
+
+.service-card-blue .service-card__arrow {
+  color: var(--color-blue-light);
+}
+
+.service-card-white .service-card__badge,
+.service-card-orange .service-card__badge {
+  background-color: var(--color-gold);
+  color: var(--color-white-gray);
+}
+
+.service-card-white .service-card__arrow,
+.service-card-orange .service-card__arrow {
+  color: var(--color-gold);
+}
+
+.service-card-white .service-card__icon {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray);
+}
+
+.service-card__arrow {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: opacity ease-out 0.3s;
+  -o-transition: opacity ease-out 0.3s;
+  transition: opacity ease-out 0.3s;
+}
+
+@-webkit-keyframes service-card-arrow {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  50% {
+    -webkit-transform: translateX(0.375rem);
+            transform: translateX(0.375rem);
+  }
+}
+
+@keyframes service-card-arrow {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  50% {
+    -webkit-transform: translateX(0.375rem);
+            transform: translateX(0.375rem);
+  }
+}
+
 p {
   margin-bottom: 24px;
 }
@@ -16475,6 +16589,24 @@ body.orders-unp-panel-open {
     color: var(--color-gold);
   }
 
+  .service-card:hover .service-card__arrow {
+    opacity: 1;
+    -webkit-animation: service-card-arrow 1s ease-in-out infinite;
+            animation: service-card-arrow 1s ease-in-out infinite;
+  }
+
+  .service-card.service-card-orange:hover .service-card__title {
+    color: var(--color-gold);
+  }
+
+  .service-card.service-card-white:hover .service-card__title {
+    color: var(--color-gold);
+  }
+
+  .service-card.service-card-blue:hover .service-card__title {
+    color: var(--color-blue-light);
+  }
+
   .cash-about-block:not(.cash-about-block-disabled):hover {
     border-color: var(--color-gold);
   }
@@ -16595,6 +16727,38 @@ body.orders-unp-panel-open {
   }
 }
 
+@media (hover: none) {
+  .service-card:active .service-card__arrow {
+    opacity: 1;
+    -webkit-animation: service-card-arrow 1s ease-in-out infinite;
+            animation: service-card-arrow 1s ease-in-out infinite;
+  }
+
+  .service-card.service-card-orange:active .service-card__title {
+    color: var(--color-gold);
+  }
+
+  .service-card.service-card-white:active .service-card__title {
+    color: var(--color-gold);
+  }
+
+  .service-card.service-card-blue:active .service-card__title {
+    color: var(--color-blue-light);
+  }
+
+  a:hover {
+    color: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card .service-card:hover .service-card__arrow,
+  .service-card .service-card:active .service-card__arrow {
+    -webkit-animation: none;
+            animation: none;
+  }
+}
+
 @media print {
   header {
     display: none;
@@ -16618,11 +16782,5 @@ body.orders-unp-panel-open {
 
   .interesting-article {
     display: none;
-  }
-}
-
-@media (hover: none) {
-  a:hover {
-    color: none;
   }
 }
